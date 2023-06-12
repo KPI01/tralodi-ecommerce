@@ -1,0 +1,23 @@
+//Custom font
+@import url('https://fonts.cdnfonts.com/css/myriad-pro');
+$font-family-sans-serif: 'Myriad Pro', sans-serif;
+
+//Custom variables
+$main: #700548;
+$secondary: #FFE732;
+$alter1: #FFFFFF;
+$alter2: #28E1FA;
+
+//Custom theme
+$theme-colors: (
+  'primary': $main,
+  'secondary': $secondary,
+  'alter1': $alter1,
+  'alter2': $alter2
+);
+
+// Importing custom Sass
+@import '_navbar';
+
+//Importing bootstrap
+@import '/node_modules/bootstrap/scss/bootstrap.scss';

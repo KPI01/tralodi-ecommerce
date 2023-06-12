@@ -1,5 +1,6 @@
+import '/styles/scss/main.scss'
+import '/styles/css/main.css'
 import Navbar from './components/Navbar'
-
 export const metadata = {
   title: 'Tralodi',
   description: 'Página web comercial para Inversiones Tralodi'
@@ -13,13 +14,13 @@ export default function RootLayout ({ children }) {
         <meta title='description' content={metadata.description} />
         <link rel='icon' type='image/png' href='/favicon.png' />
       </head>
-      <body>
+      <body className='bg-primary text-secondary'>
         <header>
-          <nav>
             <Navbar />
-          </nav>
         </header>
-        {children}
+        <div className='container'>
+          {children}
+        </div>
       </body>
     </html>
   )

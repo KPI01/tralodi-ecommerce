@@ -1,0 +1,14 @@
+/* Importing custom */
+@import '_navbar';
+
+/* Variables */
+:root {
+    --primary: #700548;
+    --secondary: #FFE732;
+    --alter1: #FFFFFF;
+    --alter2: #28E1FA;
+}
+
+* {
+    transition: all .2s;
+}

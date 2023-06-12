@@ -1,0 +1,35 @@
+/* Branding */
+
+.logo {
+    max-width: 30%;
+}
+
+/* Menu */
+
+.nav-link {
+    transition: .2s;
+}
+
+.nav-link:hover {
+    color: var(--alter2);
+}
+
+/* Search bar */
+
+.form-control[type=search] {
+    color: var(--alter1);
+    transition: .2s;
+}
+
+.form-control[type=search]::placeholder {
+    transition: .2s;
+}
+
+.form-control[type=search]:focus {
+    outline-style: none;
+    box-shadow: none;
+}
+
+.form-control[type=search]:focus::placeholder {
+    color: transparent;
+}
