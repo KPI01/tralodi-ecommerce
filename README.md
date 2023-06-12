@@ -14,3 +14,15 @@ Para ello se instalaron los siguientes paquetes por medio de `npm`:
 - bootstrap
 - eslint
 - sass
+
+---
+
+Para instalar el proyecto solo tiene que ejecutarse el comando
+
+`npm i`
+
+o
+
+`npm ci`
+
+" Este es para una instalación limpia
