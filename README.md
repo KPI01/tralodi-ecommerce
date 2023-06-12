@@ -25,4 +25,4 @@ o
 
 `npm ci`
 
-" Este es para una instalación limpia
+> Este es para una instalación limpia
