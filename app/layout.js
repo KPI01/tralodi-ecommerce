@@ -12,10 +12,10 @@ export default function RootLayout ({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta title='description' content={metadata.description} />
-        <link rel='icon' type='image/png' href='/favicon.png' />
+        <link rel='icon' href='/svg/favicon.svg' />
       </head>
       <body className='bg-primary text-secondary'>
-        <header>
+        <header className='container-fluid'>
             <Navbar />
         </header>
         <div className='container'>
