@@ -1,35 +1,69 @@
+/* Navbar */
+
+#navbar {
+    margin: 0 1rem;
+}
+
 /* Branding */
 
-.logo {
-    max-width: 30%;
+#logo {
+    min-width: 25%;
+    max-width: 35%;
+    margin-right: 1rem;
+}
+
+#branding {
+    letter-spacing: .15rem;
 }
 
 /* Menu */
 
-.nav-link {
-    transition: .2s;
-}
-
-.nav-link:hover {
-    color: var(--alter2);
+#nav-link:hover    {
+    color: var(--alter2) !important;
 }
 
 /* Search bar */
 
-.form-control[type=search] {
+#form-search-bar {
+    cursor: pointer;
+}
+
+#search-bar {
     color: var(--alter1);
+    width: 15ch;
     transition: .2s;
 }
 
-.form-control[type=search]::placeholder {
+#search-bar::placeholder {
     transition: .2s;
 }
 
-.form-control[type=search]:focus {
+#search-bar:focus {
     outline-style: none;
     box-shadow: none;
+    background-color: var(--alter1) !important;
+    color: var(--primary);
+    width: 18ch;
 }
 
-.form-control[type=search]:focus::placeholder {
+#search-bar:focus::placeholder {
     color: transparent;
+}
+
+/* Login Button */
+
+#login-btn:hover {
+    background-color: var(--secondary);
+    color: var(--primary) !important;
+}
+
+#bi-person-circle {
+    margin: 0 .6rem .3rem 0 ;
+}
+
+/* Cart Button */
+
+#cart-btn:hover {
+    border: 1px solid var(--alter2);
+    background-color: var(--alter2);
 }
