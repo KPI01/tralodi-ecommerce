@@ -10,9 +10,9 @@ Se está haciendo uso de:
 Para ello se instalaron los siguientes paquetes por medio de `npm`:
 
 - next
-- react-bootstrap
-- bootstrap
 - eslint
+- bootstrap
+- boostrap-icons
 - sass
 
 ---
@@ -26,3 +26,7 @@ o
 `npm ci`
 
 > Este es para una instalación limpia
+
+Para ejecutar el servidor local se utiliza:
+
+`npm run dev`
