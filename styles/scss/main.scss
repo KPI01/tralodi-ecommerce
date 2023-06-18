@@ -4,14 +4,14 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 $font-size-root: 20px;
 
 //Custom variables
-$main: #700548;
+$primary: #700548;
 $secondary: #FFE732;
 $alter1: #FFFFFF;
 $alter2: #28E1FA;
 
 //Custom theme
 $theme-colors: (
-  'primary': $main,
+  'primary': $primary,
   'secondary': $secondary,
   'alter1': $alter1,
   'alter2': $alter2

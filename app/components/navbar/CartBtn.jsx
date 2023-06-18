@@ -1,10 +1,10 @@
 export default function CartBtn() {
   return (
-    <button className="btn btn-secondary text-primary" id="cart-btn">
+    <button className="btn btn-secondary d-flex align-items-center justify-content-end text-primary my-2 my-lg-auto mx-lg-2" id="cart-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="38"
-        height="38"
+        width="32"
+        height="32"
         fill="currentColor"
         class="bi bi-cart-fill m-1"
         viewBox="0 0 16 16"
