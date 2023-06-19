@@ -1,6 +1,6 @@
 export default function LoginBtn() {
   return (
-    <button className="btn btn-primary d-flex justify-content-end text-alter1 my-4 mx-auto mx-lg-2" id="login-btn">
+    <button className="btn text-alter1 d-flex align-items-center" id="login-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"

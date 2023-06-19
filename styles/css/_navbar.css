@@ -79,10 +79,19 @@
 /* Cart Button */
 
 #cart-btn {
-    justify-self: end;
+    transition: all 0.1s;
 }
 
 #cart-btn:hover {
     border: 1px solid var(--alter2);
     background-color: var(--alter2);
+}
+
+#cart-btn-text {
+    display: none;
+    transition: all 0.1s;
+}
+
+#cart-btn:hover #cart-btn-text {
+    display: block;
 }

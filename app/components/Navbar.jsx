@@ -99,8 +99,10 @@ export default function Navbar() {
             ))}
           </ul>
           <SearchBar />
+          <div className="d-flex gap-4">
           <LoginBtn />
           <CartBtn />
+          </div>
         </div>
       </div>
     </nav>
