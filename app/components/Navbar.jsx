@@ -43,7 +43,7 @@ export default function Navbar() {
           TRALODI
         </a>
         <button
-          className="navbar-toggler my-3 mx-auto border-0 position-absolute top-0 end-0"
+          className="navbar-toggler my-4 mx-auto border-0 position-absolute top-0 end-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -99,7 +99,7 @@ export default function Navbar() {
             ))}
           </ul>
           <SearchBar />
-          <div className="d-flex gap-4">
+          <div className="d-flex flex-column flex-lg-row gap-4 my-4">
           <LoginBtn />
           <CartBtn />
           </div>
