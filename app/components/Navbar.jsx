@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-import "/node_modules/bootstrap/js/src/collapse.js";
 import Link from "next/link";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
@@ -23,9 +19,6 @@ const links = [
 ];
 
 export default function Navbar() {
-  useEffect(() => {
-    require("bootstrap/js/src/collapse.js");
-  });
 
   return (
     <nav className="navbar navbar-expand-lg bg-primary mb-3" id="navbar">
