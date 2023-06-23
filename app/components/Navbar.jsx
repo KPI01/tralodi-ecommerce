@@ -1,26 +1,12 @@
 import Link from "next/link";
+import { links } from "../context/pages";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
 import CurrencySelector from "./navbar/CurrencySelector";
 
-const links = [
-  {
-    label: "Ofertas",
-    route: "/ofertas",
-  },
-  {
-    label: "Productos",
-    route: "/productos",
-  },
-  {
-    label: "Marcas",
-    route: "/marcas",
-  },
-];
-
 export default function Navbar() {
-
+  const nav_links = links.filter(links => links.route!="/main")
   return (
     <nav className="navbar navbar-expand-lg bg-primary mb-3" id="navbar">
       <div className="container-fluid">
@@ -63,7 +49,7 @@ export default function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto" id="navbar-nav">
-            {links.map(({ label, route }) => (
+            {nav_links.map(({ label, route }) => (
               <li key={route} className="nav-item fs-4 align-self-end align-self-lg-center" id="nav-item">
                 <Link
                   href={route}
