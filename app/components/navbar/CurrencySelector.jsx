@@ -1,6 +1,6 @@
 export default function CurrencySelector() {
   return (
-    <div className="dropdown mx-2 my-auto">
+    <div className="dropdown mx-2 my-auto ms-auto">
       <button
         class="btn btn-primary dropdown-toggle"
         type="button"
