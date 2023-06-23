@@ -61,6 +61,29 @@
     color: transparent;
 }
 
+/* Currency Selector */
+
+.dropdown-toggle:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.dropdown-toggle:focus {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.dropdown-item {
+    cursor: pointer;
+    color: var(--alter1);
+    transition: .1s;
+}
+
+.dropdown-item:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
 /* Login Button */
 
 #login-btn {

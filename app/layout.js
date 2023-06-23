@@ -1,21 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import "/styles/scss/main.scss";
 import "/styles/css/main.css";
 import Navbar from "./components/Navbar";
-import Spinner from "./components/Spinner";
+import Footer from "./components/Footer";
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  const [isLoading, setLoading] = useState(isHome);
-
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap");
 
-    if (isLoading) return;
-  }, [isLoading]);
+  });
 
   return (
     <html lang="es">
@@ -28,14 +22,15 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/svg/favicon.svg" />
       </head>
       <body className="bg-primary text-secondary">
-          <>
             <header className="container-fluid">
               <Navbar />
             </header>
+            <main>
             <div className="container">
                 {children}
             </div>
-          </>
+            </main>
+            <Footer />
       </body>
     </html>
   );

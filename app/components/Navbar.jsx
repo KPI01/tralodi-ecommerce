@@ -2,6 +2,7 @@ import Link from "next/link";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
+import CurrencySelector from "./navbar/CurrencySelector";
 
 const links = [
   {
@@ -26,7 +27,7 @@ export default function Navbar() {
         <a
           className="navbar-brand text-alter1 fs-2 fw-bold fst-italic me-5"
           id="branding"
-          href="/"
+          href="/main"
         >
           <img
             src="/png/isotipo250.png"
@@ -93,6 +94,7 @@ export default function Navbar() {
           </ul>
           <SearchBar />
           <div className="d-flex flex-column flex-lg-row gap-4 my-4">
+          <CurrencySelector />
           <LoginBtn />
           <CartBtn />
           </div>
