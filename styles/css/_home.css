@@ -1,0 +1,7 @@
+/* Cards */
+
+.card {
+    width: cal(100%/3) !important;
+    background-color: rgba(var(--rgb-alter1),.5);
+    cursor: pointer;
+}
