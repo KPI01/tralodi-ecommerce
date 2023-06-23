@@ -47,7 +47,7 @@
 
 #search-bar::placeholder {
     font-size: 2ch;
-    transition: .1s;
+    transition: .5s;
 }
 
 #search-bar:focus {
