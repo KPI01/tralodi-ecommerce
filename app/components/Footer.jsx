@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { links } from "../context/pages";
+import { links } from "../context/links";
 
 export default function Footer() {
   return (
-    <footer className="container">
+    <footer className="container mt-5">
       <div className="row">
         <div id="productos" className="col">
-          <h3>Secciones</h3>
+          <h3>Navegación</h3>
           <ul>
             {links.map(({ label, route }) => (
               <li key={route}>
@@ -18,7 +18,8 @@ export default function Footer() {
         <div id="contactanos" className="col">
           <h3 className="">Contáctanos</h3>
           <div id="whatsapp">
-            <p>WhatsApp + Numero</p>
+            
+            <p>+58 0000 000 00 00</p>
           </div>
           <form>
             <div className="mb-3">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { links } from "../context/pages";
+import { links } from "../context/links";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
@@ -8,7 +8,7 @@ import BsList from "./svg/BsList";
 import BsTagsFill from "./svg/BsTagsFill";
 
 export default function Navbar() {
-  const nav_links = links.filter(links => links.route!="/main")
+  const nav_links = links.filter(link => link.route!="/main" && link.route!="/cart" && link.route!="/login")
   return (
     <nav className="navbar navbar-expand-lg bg-primary mb-3" id="navbar">
       <div className="container-fluid">
