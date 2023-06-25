@@ -1,7 +1,26 @@
+/* Headings */
+
+#heading {
+    z-index: 900;
+}
+
 /* Cards */
 
 .card {
-    width: cal(100%/3) !important;
-    background-color: rgba(var(--rgb-alter1),.5);
+    width: 20ch;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.card:hover {
+    color: var(--alter1);
+    transform: scale(1.15);
+    box-shadow: 0 0 50px rgba(0,0,0, 0.45);
+    z-index: 3;
+}
+
+/* Marcas */
+
+#a-nav-link {
     cursor: pointer;
 }
