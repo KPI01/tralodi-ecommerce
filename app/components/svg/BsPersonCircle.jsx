@@ -2,10 +2,10 @@ export default function BsPersonCircle () {
     return (
         <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="26"
+        height="26"
         fill="currentColor"
-        className="bi bi-person-circle"
+        className="bi bi-person-circle my-auto"
         viewBox="0 0 16 16"
         id="bi-person-circle"
       >

@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    require("bootstrap/dist/js/bootstrap");
+    require("bootstrap/dist/js/bootstrap.min.js");
 
   });
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/svg/favicon.svg" />
       </head>
       <body className="bg-primary text-secondary">
-            <header className="container-fluid">
+            <header className="container-fluid mb-4 mb-lg-0">
               <Navbar />
             </header>
             <main>

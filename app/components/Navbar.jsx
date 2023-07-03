@@ -8,12 +8,16 @@ import BsList from "./svg/BsList";
 import BsTagsFill from "./svg/BsTagsFill";
 
 export default function Navbar() {
-  const nav_links = links.filter(link => link.route!="/main" && link.route!="/cart" && link.route!="/login")
+  const nav_links = links.filter(
+    (link) =>
+      link.route != "/main" && link.route != "/cart" && link.route != "/login"
+  );
+
   return (
-    <nav className="navbar navbar-expand-lg bg-primary mb-3" id="navbar">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-primary" id="navbar">
+      <div className="container-fluid align-items-center">
         <a
-          className="navbar-brand text-alter1 fs-2 fw-bold fst-italic me-5"
+          className="navbar-brand text-alter1 fs-3 fw-bold fst-italic"
           id="branding"
           href="/main"
         >
@@ -25,44 +29,51 @@ export default function Navbar() {
           TRALODI
         </a>
         <button
-          className="navbar-toggler my-4 mx-auto border-0 position-absolute top-0 end-0"
+          className="navbar-toggler my-4 border-0 position-absolute end-0 top-0"
+          id="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="true"
+          data-bs-target="#navbarToggler"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="text-secondary">
             <BsList />
           </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto" id="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul className="navbar-nav" id="navbar-nav">
             {nav_links.map(({ label, route }) => (
-              <li key={route} className="nav-item fs-4 align-self-end align-self-lg-center" id="nav-item">
+              <li
+                key={route}
+                className="nav-item fs-5"
+                id="nav-item"
+              >
                 <Link
                   href={route}
+                  id="nav-link"
                   className={
                     label == "Ofertas"
                       ? "nav-link d-flex align-items-center text-secondary"
                       : "nav-link text-secondary"
                   }
-                  id="nav-link"
                 >
-                  {label == "Ofertas" && (
-                    <BsTagsFill />
-                  )}
+                  {label == "Ofertas" && <BsTagsFill />}
                   {label}
                 </Link>
               </li>
             ))}
           </ul>
-          <SearchBar />
-          <div className="d-flex flex-column flex-lg-row gap-4 my-4">
-          <CurrencySelector />
-          <LoginBtn />
-          <CartBtn />
+          <SearchBar style="d-none d-lg-flex align-items-center justify-content-end text-alter1 my-md-3 mx-auto" />
+          <div
+            className="d-flex flex-column flex-lg-row gap-3"
+            id="btn-group"
+          >
+            <CurrencySelector />
+            <LoginBtn />
+            <CartBtn />
+            <SearchBar style="d-flex d-lg-none align-items-center text-alter1 ms-auto" />
           </div>
         </div>
       </div>

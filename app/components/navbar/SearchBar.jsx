@@ -1,8 +1,8 @@
 import BsSearch from "../svg/BsSearch";
 
-export default function SearchBar() {  
+export default function SearchBar({style}) {  
   return (
-    <form className="d-flex align-items-center justify-content-end text-alter1 my-md-3 mx-auto" id="form-search-bar" role="search">
+    <form className={style} id="form-search-bar" role="search">
       <label htmlFor="search-bar">
       <BsSearch />
       </label>

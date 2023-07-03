@@ -9,7 +9,7 @@ export default function Cards({ context, type, isOferta }) {
           class="container-fluid d-flex flex-wrap gap-4"
         >
           {products.map(({ id, label, price, discount }) => (
-            <div className="card bg-alter1 text-primary border-0" product={id}>
+            <div className="card bg-alter1 text-primary border-0 shadow-sm" product={id}>
               <img src="/productos/producto1.png" alt={label} />
               <div className="card-body text-left">
                 <h5 className="card-title">{label}</h5>
@@ -31,7 +31,7 @@ export default function Cards({ context, type, isOferta }) {
           class="container-fluid d-flex flex-wrap gap-4"
         >
           {products.map(({ id, label, price }) => (
-            <div className="card bg-alter1 text-primary border-0" product={id}>
+            <div className="card bg-alter1 text-primary border-0 shadow-sm" product={id}>
               <img src="/productos/producto1.png" alt={label} />
               <div className="card-body text-left">
                 <h5 className="card-title">{label}</h5>
