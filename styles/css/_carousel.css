@@ -5,6 +5,22 @@
     width: fit-content;
     height: fit-content;
     margin: auto 0;
+    padding: .5vw;
     border-radius: 50%;
-    padding: 5px;
+    opacity: .9;
+}
+
+#carousel-prev-button {
+    left: -1vw;
+}
+
+#carousel-next-button {
+    right: -1vw;
+}
+
+/* Icons */
+
+#carousel-prev-button-icon, #carousel-next-button-icon {
+    width: 3vw;
+    height: 3vw;
 }

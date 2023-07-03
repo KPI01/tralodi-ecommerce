@@ -22,6 +22,10 @@ $theme-colors: (
   'alter2': $alter2
 );
 
+/* Enabling shadows */
+
+$enable-shadows: true;
+
 /* Search Bar */
 
 $input-placeholder-color: $primary;

@@ -1,14 +1,16 @@
 /* Navbar */
 
 #navbar {
-    margin: 0 1rem;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 
 /* Branding */
 
 #logo {
-    width: 50%;
-    max-width: 105px;
+    width: 20%;
     margin-right: .5rem;
 }
 
@@ -18,14 +20,13 @@
 
 /* Toggler */
 
-.navbar-toggler:focus {
-    outline-style: none;
-    border: none;
+#navbar-toggler {
+    margin-top: 10px !important;
 }
 
 /* Menu */
 
-#nav-link:hover    {
+#nav-link:hover {
     color: var(--alter2) !important;
 }
 
@@ -42,7 +43,7 @@
 #search-bar {
     color: var(--primary);
     transition: .2s;
-    width: 22ch;
+    width: 35ch;
 }
 
 #search-bar::placeholder {
@@ -63,42 +64,50 @@
 
 /* Currency Selector */
 
-.dropdown-toggle:hover {
+#currency-selector-btn:hover,
+#currency-selector-btn:focus {
+    color: var(--primary) !important;
+    background-color: var(--secondary);
+}
+
+
+#cs-dropdown-toggle:hover {
     color: var(--primary);
     background-color: var(--secondary);
 }
 
-.dropdown-toggle:focus {
+#cs-dropdown-toggle:focus {
     color: var(--primary);
     background-color: var(--secondary);
 }
 
-.dropdown-item {
+#currency {
     cursor: pointer;
     color: var(--alter1);
     transition: .1s;
 }
 
-.dropdown-item:hover {
+#currency:hover {
     color: var(--primary);
     background-color: var(--secondary);
 }
 
 /* Login Button */
 
-#login-btn {
+#btn-group #login-btn {
     justify-content: end;
     max-width: fit-content;
     transition: all .15s;
 }
 
-#login-btn:hover {
+#btn-group #login-btn:hover {
     background-color: var(--secondary);
     color: var(--primary) !important;
+    text-decoration: none !important;
 }
 
 #bi-person-circle {
-    margin: 0 .6rem .3rem 0 ;
+    margin: 0 .6rem .3rem 0;
 }
 
 /* Cart Button */

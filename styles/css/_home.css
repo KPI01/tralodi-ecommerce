@@ -14,7 +14,7 @@
 
 .card:hover {
     color: var(--alter1);
-    transform: scale(1.15);
+    transform: scale(1.05);
     box-shadow: 0 0 50px rgba(0,0,0, 0.45);
     z-index: 3;
 }
