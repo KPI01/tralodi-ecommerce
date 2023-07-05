@@ -4,13 +4,11 @@ import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
 import CurrencySelector from "./navbar/CurrencySelector";
-import BsList from "./svg/BsList";
-import BsTagsFill from "./svg/BsTagsFill";
 
 export default function Navbar() {
   const nav_links = links.filter(
     (link) =>
-      link.route != "/main" && link.route != "/cart" && link.route != "/login"
+      link.route != "/home" && link.route != "/cart" && link.route != "/login"
   );
 
   return (
@@ -39,7 +37,7 @@ export default function Navbar() {
           aria-label="Toggle navigation"
         >
           <span class="text-secondary">
-            <BsList />
+          <i id="menu-icon" className="bi bi-list"></i>
           </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
@@ -59,7 +57,7 @@ export default function Navbar() {
                       : "nav-link text-secondary"
                   }
                 >
-                  {label == "Ofertas" && <BsTagsFill />}
+                  {label == "Ofertas" && <i id="tags-icon" className="bi bi-tags-fill"></i>}
                   {label}
                 </Link>
               </li>

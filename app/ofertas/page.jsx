@@ -1,6 +1,6 @@
 import { productos } from "../context/productos";
-import Cards from "../components/pages/Cards";
-import Carousel from "../components/pages/Carousel";
+import Cards from "../components/visual/Cards";
+import Carousel from "../components/visual/Carousel";
 
 export default function Ofertas () {
   return (

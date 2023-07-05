@@ -1,10 +1,8 @@
-import BsSearch from "../svg/BsSearch";
-
 export default function SearchBar({style}) {  
   return (
     <form className={style} id="form-search-bar" role="search">
       <label htmlFor="search-bar">
-      <BsSearch />
+      <i id="search-bar-icon" className="bi bi-search"></i>
       </label>
       <input
         name="search-bar"

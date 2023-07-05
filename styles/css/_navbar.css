@@ -30,6 +30,11 @@
     color: var(--alter2) !important;
 }
 
+#tags-icon {
+    font-size: .75rem;
+    margin-right: 1ch;
+}
+
 /* Search bar */
 
 #form-search-bar {
@@ -60,6 +65,11 @@
 
 #search-bar:focus::placeholder {
     color: transparent;
+}
+
+#search-bar-icon {
+    font-size: 1rem;
+    margin-right: 1ch;
 }
 
 /* Currency Selector */
@@ -106,8 +116,8 @@
     text-decoration: none !important;
 }
 
-#bi-person-circle {
-    margin: 0 .6rem .3rem 0;
+#user-icon {
+    margin-right: 1ch;
 }
 
 /* Cart Button */
@@ -121,4 +131,8 @@
 #cart-btn:hover {
     border: 1px solid var(--alter2);
     background-color: var(--alter2);
+}
+
+#cart-icon {
+    margin-right: 1ch;
 }

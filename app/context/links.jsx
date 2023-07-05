@@ -1,7 +1,7 @@
 export const links = [
   {
     label: "Inicio",
-    route: "/main"
+    route: "/home"
   },
   {
     label: "Ofertas",

@@ -43,5 +43,11 @@ $carousel-control-color: $alter1;
 $nav-link-hover-color: $secondary;
 $nav-underline-link-active-color: $alter2;
 
+/* Accordion */
+
+$accordion-button-color: $secondary;
+$accordion-bg: $primary;
+$accordion-color: $secondary;
+
 /* Importing bootstrap */
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
