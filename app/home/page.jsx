@@ -2,6 +2,7 @@ import { productos } from "../context/productos";
 import { marcas } from "../context/marcas";
 import Carousel from "../components/visual/Carousel";
 import Cards from "../components/visual/Cards";
+import NavPills from "../components/visual/NavPills";
 
 export default function Home() {
   return (
@@ -26,26 +27,7 @@ export default function Home() {
         <h1 id="heading" className="display-6 fw-bold">
           Nuestras Marcas Aliadas
         </h1>
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              Active
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Link
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Link
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
+      <NavPills context={marcas}/>
       </div>
     </div>
   );
