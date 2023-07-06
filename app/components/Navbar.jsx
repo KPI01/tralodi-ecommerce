@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { links } from "../context/links";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
@@ -12,7 +11,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="navbar navbar-expand-lg bg-primary" id="navbar">
+    <nav className="navbar navbar-expand-lg" id="navbar">
       <div className="container-fluid align-items-center">
         <a
           className="navbar-brand text-alter1 fs-3 fw-bold fst-italic"
@@ -41,14 +40,14 @@ export default function Navbar() {
           </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul className="navbar-nav" id="navbar-nav">
+          <ul className="navbar-nav mx-3" id="navbar-nav">
             {nav_links.map(({ label, route }) => (
               <li
                 key={route}
                 className="nav-item fs-5"
                 id="nav-item"
               >
-                <Link
+                <a
                   href={route}
                   id="nav-link"
                   className={
@@ -59,7 +58,7 @@ export default function Navbar() {
                 >
                   {label == "Ofertas" && <i id="tags-icon" className="bi bi-tags-fill"></i>}
                   {label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
