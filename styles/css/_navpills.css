@@ -1,0 +1,17 @@
+#nav-pill-item {
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+#nav-pill-link {
+    color: var(--secondary) !important;
+}
+
+#nav-pill-link:hover {
+    color: var(--alter2) !important;
+}
+
+#nav-pill-link.active {
+    color: var(--primary) !important;
+    background-color: var(--secondary) !important;
+}
