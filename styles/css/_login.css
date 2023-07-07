@@ -1,0 +1,35 @@
+/* Form container */
+
+#login-form-container {
+    border-radius: 5%;
+    max-width: 500px;
+}
+
+/* Header */
+
+#login-header {
+    cursor: default;
+}
+
+/* Input & Label */
+
+#login > form > div > .form-control  {
+    color: var(--alter1);
+    border: none;
+    background-color: var(--rgb-alter1-opacity25) !important;
+}
+
+.form-label {
+    color: var(--alter1);
+}
+
+/* Button */
+
+#login-btn {
+    border: none;
+    color: var(--rgb-primary);
+}
+
+#login-btn:hover {
+    background-color: var(--rgb-alter2);
+}

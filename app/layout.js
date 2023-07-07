@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-primary text-secondary">
         <header className="container-fluid mb-4 mb-lg-0">
-          <Navbar currencyChanger={setCurrency} currency={currency} />
+          <Navbar setCurrency={setCurrency} currency={currency} />
         </header>
         <main>
           <div className="container">{children}</div>

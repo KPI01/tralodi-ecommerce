@@ -35,11 +35,11 @@ export default function Navbar({ setCurrency, currency }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="text-secondary">
+          <span className="text-secondary">
             <i id="menu-icon" className="bi bi-list"></i>
           </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
+        <div className="collapse navbar-collapse" id="navbarToggler">
           <ul className="navbar-nav mx-3" id="navbar-nav">
             {nav_links.map(({ label, route }) => (
               <li key={route} className="nav-item fs-5" id="navbar-item">
