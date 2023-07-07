@@ -4,7 +4,7 @@ import Carousel from "../components/visual/Carousel";
 import Cards from "../components/visual/Cards";
 import NavPills from "../components/visual/NavPills";
 
-export default function Home() {
+export default function Home({ currency }) {
   return (
     <div className="container-fluid">
       <Carousel />
@@ -13,7 +13,12 @@ export default function Home() {
         <h1 id="heading" className="display-5 fw-bold">
           Productos en Oferta
         </h1>
-        <Cards context={productos} type={"producto"} isOferta={true} />
+        <Cards
+          context={productos}
+          type={"producto"}
+          isOferta={true}
+          currency={currency}
+        />
       </div>
 
       <div id="productos-destacados" className="my-5 mx-auto">
@@ -27,7 +32,7 @@ export default function Home() {
         <h1 id="heading" className="display-6 fw-bold">
           Nuestras Marcas Aliadas
         </h1>
-      <NavPills context={marcas}/>
+        <NavPills context={marcas} />
       </div>
     </div>
   );

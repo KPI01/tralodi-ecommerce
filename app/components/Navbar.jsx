@@ -4,7 +4,7 @@ import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
 import CurrencySelector from "./navbar/CurrencySelector";
 
-export default function Navbar() {
+export default function Navbar({ setCurrency, currency }) {
   const nav_links = links.filter(
     (link) =>
       link.route != "/home" && link.route != "/cart" && link.route != "/login"
@@ -16,7 +16,7 @@ export default function Navbar() {
         <a
           className="navbar-brand text-alter1 fs-3 fw-bold fst-italic"
           id="branding"
-          href="/main"
+          href="/home"
         >
           <img
             src="/png/isotipo250.png"
@@ -36,38 +36,33 @@ export default function Navbar() {
           aria-label="Toggle navigation"
         >
           <span class="text-secondary">
-          <i id="menu-icon" className="bi bi-list"></i>
+            <i id="menu-icon" className="bi bi-list"></i>
           </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
           <ul className="navbar-nav mx-3" id="navbar-nav">
             {nav_links.map(({ label, route }) => (
-              <li
-                key={route}
-                className="nav-item fs-5"
-                id="nav-item"
-              >
+              <li key={route} className="nav-item fs-5" id="navbar-item">
                 <a
                   href={route}
-                  id="nav-link"
+                  id="navbar-link"
                   className={
                     label == "Ofertas"
                       ? "nav-link d-flex align-items-center text-secondary"
                       : "nav-link text-secondary"
                   }
                 >
-                  {label == "Ofertas" && <i id="tags-icon" className="bi bi-tags-fill"></i>}
+                  {label == "Ofertas" && (
+                    <i id="tags-icon" className="bi bi-tags-fill"></i>
+                  )}
                   {label}
                 </a>
               </li>
             ))}
           </ul>
           <SearchBar style="d-none d-lg-flex align-items-center justify-content-end text-alter1 my-md-3 mx-auto" />
-          <div
-            className="d-flex flex-column flex-lg-row gap-3"
-            id="btn-group"
-          >
-            <CurrencySelector />
+          <div className="d-flex flex-column flex-lg-row gap-3" id="btn-group">
+            <CurrencySelector setCurrency={setCurrency} currency={currency} />
             <LoginBtn />
             <CartBtn />
             <SearchBar style="d-flex d-lg-none align-items-center text-alter1 ms-auto" />

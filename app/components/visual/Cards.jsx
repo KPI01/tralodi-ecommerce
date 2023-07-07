@@ -1,4 +1,4 @@
-export default function Cards({ context, type, isOferta }) {
+export default function Cards({ context, type, isOferta, currency }) {
   if (type == "producto") {
     if (isOferta) {
       const products = context.filter((product) => product.discount > 0);
@@ -14,7 +14,7 @@ export default function Cards({ context, type, isOferta }) {
               <div className="card-body text-left">
                 <h5 className="card-title">{label}</h5>
                 <p className="card-text text-break">
-                  $ {price - price * (discount / 100)}
+                  {currency} {price - price * (discount / 100)}
                   <small> con IVA y descuento del %{discount}!</small>
                 </p>
               </div>

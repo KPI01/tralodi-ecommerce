@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "/styles/scss/main.scss";
 import "/styles/css/main.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -10,6 +10,8 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.min.js");
   });
+
+  const [currency, setCurrency] = useState("Bs.");
 
   return (
     <html lang="es">
@@ -23,7 +25,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-primary text-secondary">
         <header className="container-fluid mb-4 mb-lg-0">
-          <Navbar />
+          <Navbar currencyChanger={setCurrency} currency={currency} />
         </header>
         <main>
           <div className="container">{children}</div>
