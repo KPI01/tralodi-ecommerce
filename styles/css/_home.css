@@ -7,16 +7,20 @@
 /* Cards */
 
 .card {
-    width: 20ch;
+    color: var(--rgb-primary) !important;
+    width: 50%;
     cursor: pointer;
     transition: 0.1s;
 }
 
 .card:hover {
-    color: var(--alter1);
     transform: scale(1.05);
     box-shadow: 0 0 50px rgba(0,0,0, 0.45);
     z-index: 3;
+}
+
+#product-card-img {
+    max-width: 30%;
 }
 
 /* Marcas */

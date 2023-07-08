@@ -1,4 +1,5 @@
 /* Importing custom */
+@import '_cart';
 @import '_login';
 @import '_navpills';
 @import '_footer';

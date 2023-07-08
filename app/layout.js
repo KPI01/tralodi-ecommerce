@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <head>
-        <title>Tralodi</title>
+        <title>Tralodi Distribución</title>
         <meta
           title="description"
           content="Página web comercial para Inversiones Tralodi"

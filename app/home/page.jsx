@@ -13,19 +13,16 @@ export default function Home({ currency }) {
         <h1 id="heading" className="display-5 fw-bold">
           Productos en Oferta
         </h1>
-        <Cards
-          context={productos}
-          type={"producto"}
-          isOferta={true}
-          currency={currency}
-        />
+        <Cards context={productos} isOferta={true} />
       </div>
 
       <div id="productos-destacados" className="my-5 mx-auto">
         <h1 id="heading" className="display-6 fw-bold">
           Productos Destacados
         </h1>
-        <Cards context={productos} type={"producto"} />
+        <div className="container">
+          <Cards context={productos} isOferta={false} />
+        </div>
       </div>
 
       <div id="productos-marcas">

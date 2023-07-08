@@ -1,0 +1,27 @@
+#cart-product-img-container {
+    height: fit-content;
+    width: fit-content;
+    padding: .25em .35em;
+}
+
+#cart-product-img {
+    max-width: 100px;
+    margin: auto;
+    filter: drop-shadow(0 0 1px black);
+}
+
+#brief-box {
+    height: max-content;
+}
+
+#cart-cnt-field {
+    width: 4ch !important;
+}
+
+#stepper .btn {
+    border: none !important;
+}
+
+#stepper .btn:hover {
+    background-color: var(--rgb-alter2);
+}

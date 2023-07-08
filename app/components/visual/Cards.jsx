@@ -1,61 +1,35 @@
-export default function Cards({ context, type, isOferta, currency }) {
-  if (type == "producto") {
-    if (isOferta) {
-      const products = context.filter((product) => product.discount > 0);
+export default function Cards({ context, isOferta }) {
+  if (isOferta) {
+    let products = context.filter((product) => product.descuento > 0);
 
-      return (
-        <div
-          id="productos-ofertas"
-          class="container-fluid d-flex flex-wrap gap-4"
-        >
-          {products.map(({ id, label, price, discount }) => (
-            <div className="card bg-alter1 text-primary border-0 shadow-sm" product={id}>
-              <img src="/productos/producto1.png" alt={label} />
-              <div className="card-body text-left">
-                <h5 className="card-title">{label}</h5>
-                <p className="card-text text-break">
-                  {currency} {price - price * (discount / 100)}
-                  <small> con IVA y descuento del %{discount}!</small>
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    } else {
-      const products = context.filter((product) => product.discount == 0);
-
-      return (
-        <div
-          id="productos-destacados"
-          class="container-fluid d-flex flex-wrap gap-4"
-        >
-          {products.map(({ id, label, price }) => (
-            <div className="card bg-alter1 text-primary border-0 shadow-sm" product={id}>
-              <img src="/productos/producto1.png" alt={label} />
-              <div className="card-body text-left">
-                <h5 className="card-title">{label}</h5>
-                <p className="card-text text-break">
-                  $ {price}
-                  <small> con IVA</small>
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    }
-  } else if (type == "marcas") {
     return (
-      <ul class="nav nav-underline">
-        {context.map(({ id, label }) => (
-          <li id="li-nav-item" class="nav-item">
-            <a id="a-nav-link" key={id} class={id==1 ? "nav-link active" : "nav-link"} aria-current="page">
-              {label}
-            </a>
-          </li>
+      <div className="row">
+        {products.map(({ id, descripcion, precio, descuento }) => (
+          <div className="col-auto">
+            <div className="card">
+              <img
+                id="product-card-img"
+                className="card-img-top"
+                src={"/png/products/" + id + ".png"}
+                alt={"Imagen del producto " + id}
+              />
+              <div className="card-body mx-2">
+                <div className="card-title">{descripcion}</div>
+                <div className="card-text">
+                  {precio - (descuento / 100) * precio} - {descuento}% + IVA
+                </div>
+                <button className="btn btn-primary btn-sm">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     );
+  } else {
+    let products = context.filter((product) => product.descuento === 0);
+
+    return <h1>No es oferta</h1>;
   }
 }

@@ -1,3 +1,7 @@
+// Idealmente aquí habría código para extraer todas las marcas de alguna 
+// base de datos y luego guardarlas en algún objeto
+
+
 export const marcas = [
     {
         id: 1,
