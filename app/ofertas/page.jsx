@@ -1,5 +1,4 @@
 import { productos } from "../context/productos";
-import Cards from "../components/visual/Cards";
 import Carousel from "../components/visual/Carousel";
 
 export default function Ofertas () {
@@ -11,7 +10,6 @@ export default function Ofertas () {
 
       <div id="productos">
         <h2 className="display-6 fw-bold">Productos</h2>
-        <Cards context={productos} type={'producto'} isOferta={true} />
       </div>
     </div>
   )
