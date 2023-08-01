@@ -2,9 +2,9 @@ import { links } from "../context/links";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
-import CurrencySelector from "./navbar/CurrencySelector";
+import CambiarMoneda from "./navbar/CambiarMoneda";
 
-export default function Navbar({ setCurrency, currency }) {
+export default function Navbar() {
   const nav_links = links.filter(
     (link) =>
       link.route != "/home" && link.route != "/cart" && link.route != "/login"
@@ -62,7 +62,7 @@ export default function Navbar({ setCurrency, currency }) {
           </ul>
           <SearchBar style="d-none d-lg-flex align-items-center justify-content-end text-alter1 my-md-3 mx-auto" />
           <div className="d-flex flex-column flex-lg-row gap-3" id="btn-group">
-            <CurrencySelector setCurrency={setCurrency} currency={currency} />
+            <CambiarMoneda />
             <LoginBtn />
             <CartBtn />
             <SearchBar style="d-flex d-lg-none align-items-center text-alter1 ms-auto" />
