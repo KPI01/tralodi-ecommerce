@@ -6,6 +6,7 @@
 @import '_carousel';
 @import '_home';
 @import '_navbar';
+@import '_tarjetas';
 
 /* Variables */
 :root {

@@ -78,6 +78,10 @@
 
 /* Cambiar moneda */
 
+#cambiar-mnd-btn {
+    width: auto;
+}
+
 #cambiar-mnd-btn:hover,
 #cambiar-mnd-btn:focus {
     color: var(--primary) !important;

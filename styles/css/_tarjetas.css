@@ -1,0 +1,20 @@
+#tarjeta-producto img {
+    max-width: 45%;
+}
+
+#tarjeta-producto #cuerpo-tarjeta {
+    max-height: fit-content;
+}
+
+#tarjeta-producto #cuerpo-tarjeta p {
+    margin: 0;
+}
+
+#tarjeta-producto #cuerpo-tarjeta button {
+    border: none;
+}
+
+#tarjeta-producto #cuerpo-tarjeta button:hover {
+    background-color: var(--alter2) !important;
+    color: var(--primary) !important;
+}
