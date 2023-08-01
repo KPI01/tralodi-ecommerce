@@ -76,10 +76,10 @@
     margin-right: 1ch;
 }
 
-/* Currency Selector */
+/* Cambiar moneda */
 
-#currency-selector-btn:hover,
-#currency-selector-btn:focus {
+#cambiar-mnd-btn:hover,
+#cambiar-mnd-btn:focus {
     color: var(--primary) !important;
     background-color: var(--secondary);
 }
@@ -95,15 +95,20 @@
     background-color: var(--secondary);
 }
 
-#currency {
+#mnd {
     cursor: pointer;
     color: var(--alter1);
     transition: .1s;
 }
 
-#currency:hover {
-    color: var(--primary);
+#mnd:hover {
+    color: var(--primary) !important;
     background-color: var(--secondary);
+}
+
+#mnd.active {
+    color: var(--primary);
+    background-color: var(--alter2);
 }
 
 /* Login Button */

@@ -6,6 +6,10 @@
 
 /* Cards */
 
+#col-card {
+    width: fit-content !important;
+}
+
 .card {
     color: var(--rgb-primary) !important;
     width: 50%;

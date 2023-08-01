@@ -1,25 +1,25 @@
 /* Custom font */
-@import url('https://fonts.cdnfonts.com/css/myriad-pro');
-$font-family-sans-serif: 'Myriad Pro', sans-serif;
-$display-font-family: 'Myriad Pro';
+@import url("https://fonts.cdnfonts.com/css/myriad-pro");
+$font-family-sans-serif: "Myriad Pro", sans-serif;
+$display-font-family: "Myriad Pro";
 $font-size-root: 20px;
 
 /* Custom variables */
 $primary: #700548;
-$secondary: #FFE732;
-$alter1: #FFFFFF;
-$alter2: #28E1FA;
+$secondary: #ffe732;
+$alter1: #ffffff;
+$alter2: #28e1fa;
 $rgb-primary: rgb(112, 5, 72);
 $rgb-secondary: rgb(255, 231, 50);
-$rgb-alter1: rgb(255,255,255);
+$rgb-alter1: rgb(255, 255, 255);
 $rgb-alter2: rgb(40, 225, 250);
 
 /* Custom theme */
 $theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'alter1': $alter1,
-  'alter2': $alter2
+  "primary": $primary,
+  "secondary": $secondary,
+  "alter1": $alter1,
+  "alter2": $alter2,
 );
 
 /* Enabling shadows */
@@ -46,4 +46,4 @@ $accordion-bg: $primary;
 $accordion-color: $secondary;
 
 /* Importing bootstrap */
-@import '/node_modules/bootstrap/scss/bootstrap.scss';
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
