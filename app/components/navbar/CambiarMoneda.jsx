@@ -3,8 +3,7 @@ import { Sesion } from "../../context/sesion";
 
 export default function CambiarMoneda() {
   const { monedaActiva, divisas, dispatch } = useContext(Sesion);
-  const [newMnd, setNewMnd] = useState("");
-
+  
   const cambiarMoneda = (moneda) => {
     dispatch({
       type: "SET_MONEDA",
@@ -22,7 +21,7 @@ export default function CambiarMoneda() {
         data-bs-display="static"
         aria-expanded="false"
       >
-        {monedaActiva.nombre} ({monedaActiva.simbolo}) {newMnd}
+        {monedaActiva.nombre} ({monedaActiva.simbolo})
       </button>
 
       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-primary border-alter2">

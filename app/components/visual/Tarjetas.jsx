@@ -5,7 +5,7 @@ import { productos } from "../../context/productos";
 export const Tarjetas = () => {
   const { monedaActiva, divisas } = useContext(Sesion);
 
-  let divisa = divisas[1];
+  let mndLocal = divisas[0];
 
   return (
     <div className="container text-center">
@@ -32,9 +32,9 @@ export const Tarjetas = () => {
               <div id="cuerpo-tarjeta" className="d-flex align-items-center">
                 <p className="text-start">
                   {monedaActiva.simbolo}{" "}
-                  {monedaActiva.simbolo === "Bs"
-                    ? prdct.precio * divisa.valor
-                    : prdct.precio}
+                  {monedaActiva.simbolo === "$"
+                    ? prdct.precio
+                    : prdct.precio * mndLocal.valorDolar}
                 </p>
                 <button className="btn btn-primary ms-auto">Agregar</button>
               </div>

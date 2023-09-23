@@ -23,7 +23,7 @@ export const Reducer = (state, action) => {
 // Información básica para sesión
 const sesion = {
     usuario: usuario,
-    monedaActiva: monedas[1],
+    monedaActiva: monedas[0],
     divisas: monedas,
     carrito: "",
 };
