@@ -4,7 +4,7 @@
 export const productos = [
     {
         id: 39100057,
-        empresa: "Alfonzo Rivas",
+        empresa: 2,
         marca: "Alfonzo Rivas",
         descrip: "Cronch Flakes",
         presentcn: "Bolsa",
@@ -18,8 +18,8 @@ export const productos = [
     },
     {
         id: 12124100,
-        empresa: "Savoy",
-        marca: "Nestlé",
+        empresa: 1,
+        marca: "Savoy",
         descrip: "Cri-Cri",
         presentcn: "Display",
         peso: 123,
@@ -32,7 +32,7 @@ export const productos = [
     },
     {
         id: 12087277,
-        empresa: "Nestlé",
+        empresa: 1,
         marca: "Savoy",
         descrip: "Samba Fresa",
         presentcn: "Display",
@@ -46,7 +46,7 @@ export const productos = [
     },
     {
         id: 441076,
-        empresa: "Nestlé",
+        empresa: 1,
         marca: "Nestea",
         descrip: "Nestea de Durazno",
         presentcn: "Display",
