@@ -23,8 +23,8 @@ export const links = [
     label: "Inicio de sesión",
     route: "/login",
   },
-  {
-    label: "Carrito",
-    route: "/cart",
-  },
+  // {
+  //   label: "Carrito",
+  //   route: "/cart",
+  // },
 ];
