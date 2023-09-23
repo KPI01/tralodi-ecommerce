@@ -1,6 +1,6 @@
 export default function CartBtn() {
   return (
-    <a href="/">
+    <a href="/cart">
       <button
         className="btn btn-secondary text-primary ms-auto mx-lg-auto"
         id="cart-btn"

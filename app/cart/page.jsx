@@ -1,4 +1,4 @@
-// import { cart } from "../context/cart";
+import { cart } from "../context/cart";
 
 export default function Cart() {
   let subTotal = 0;
@@ -21,7 +21,7 @@ export default function Cart() {
         <div className="row">
           <div id="cart-detail" className="col-9 container">
             <hr className="border-4" />
-            {/* {cart.map(({ id, descripcion, medida, precio, cnt }) => (
+            {cart.map(({ id, descripcion, medida, precio, cnt }) => (
               <div className="row container producto" key={id}>
                 <div className="header-producto">
                   <h5 className="display-6 fs-3 fw-bold">
@@ -68,7 +68,7 @@ export default function Cart() {
                 </div>
                 <hr className="border-2 my-4" />
               </div>
-            ))} */}
+            ))}
           </div>
           <div
             id="cart-brief"
