@@ -13,13 +13,14 @@ export default function Home() {
         <h1 id="heading" className="display-5 fw-bold">
           Productos en Oferta
         </h1>
+        <Tarjetas descuento={true} />
       </div>
 
       <div id="productos-destacados" className="my-5 mx-auto">
         <h1 id="heading" className="display-6 fw-bold">
           Productos Destacados
         </h1>
-        <Tarjetas />
+        <Tarjetas descuento={false} />
       </div>
 
       <div id="productos-marcas">
