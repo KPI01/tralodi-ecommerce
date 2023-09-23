@@ -10,7 +10,8 @@ export default function Home() {
   const [marcaAct, setMarcaAct] = useState(1);
   console.log(marcaAct);
 
-  let prdctsMarcaAct = productos.filter(prdct => prdct.empresa == marcaAct)
+  let productosAct = productos.filter(producto => producto.estado === "Activo");
+  let prdctsMarcaAct = productosAct.filter(prdct => prdct.empresa == marcaAct)
   
   return (
     <div className="container-fluid">
@@ -20,14 +21,14 @@ export default function Home() {
         <h1 id="heading" className="display-5 fw-bold">
           Productos en Oferta
         </h1>
-        <Tarjetas contexto={productos} descuento={true} />
+        <Tarjetas contexto={productosAct} descuento={true} />
       </div>
 
       <div id="productos-destacados" className="my-5 mx-auto">
         <h1 id="heading" className="display-6 fw-bold">
           Productos Destacados
         </h1>
-        <Tarjetas contexto={productos} descuento={false} />
+        <Tarjetas contexto={productosAct} descuento={false} />
       </div>
 
       <div id="productos-marcas">

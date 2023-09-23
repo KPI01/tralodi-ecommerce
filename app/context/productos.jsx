@@ -51,7 +51,8 @@ export const productos = [
         categoria: "Sazonadoras",
         cant: "1 Unidad",
         precio: 1,
-        estado: "Activo"
+        estado: "Activo",
+        descuento: 0
     },
     {
         id: 141103205,
@@ -63,7 +64,8 @@ export const productos = [
         categoria: "Sazonadoras",
         cant: "1 Unidad",
         precio: 1,
-        estado: "Activo"
+        estado: "Activo",
+        descuento: 0
     },
     {
         id: 10006,

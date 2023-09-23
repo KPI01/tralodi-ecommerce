@@ -1,9 +1,16 @@
-#tarjeta-producto img {
-    max-width: 45%;
+#tarjeta-producto {
+    margin: 0 1%;
+    padding: 1vw;
+    width: 18vw;
+}
+
+#tarjeta-producto #producto-img img {
+    height: 12vw !important;
+    margin: 0.5rem auto;
 }
 
 #tarjeta-producto #cuerpo-tarjeta {
-    max-height: fit-content;
+    max-height: 100%;
 }
 
 #tarjeta-producto #cuerpo-tarjeta p {
