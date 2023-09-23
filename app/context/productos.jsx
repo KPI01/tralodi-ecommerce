@@ -43,7 +43,7 @@ export const productos = [
     },
     {
         id: 141102208,
-        empresa: "Alfonzo Rivas",
+        empresa: 2,
         marca: "McCormick",
         descripcion: "Curry",
         presentacion: "Frasco",

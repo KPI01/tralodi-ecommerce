@@ -2,10 +2,12 @@
     margin: 0 1%;
     padding: 1vw;
     width: 18vw;
+    cursor: pointer;
+    transition: ease-in-out 1s;
 }
 
 #tarjeta-producto #producto-img img {
-    height: 12vw !important;
+    height: 10vw !important;
     margin: 0.5rem auto;
 }
 

@@ -27,7 +27,7 @@ export const Tarjetas = ({ contexto, descuento }) => {
                     }
                   />
                 </a>
-                <h6 className="fs-5 fw-bold mt-1 text-start">
+                <h6 className="fs-6 fw-bold mt-1 text-start">
                   {prdct.descripcion + " " + prdct.medida}
                 </h6>
                 <div id="cuerpo-tarjeta" className="d-flex align-items-center">
@@ -72,7 +72,7 @@ export const Tarjetas = ({ contexto, descuento }) => {
                     }
                   />
                 </a>
-                <h6 className="fs-5 fw-bold mt-1 text-start">
+                <h6 className="fs-6 fw-bold mt-1 text-start">
                   {prdct.descripcion + " " + prdct.medida}
                 </h6>
                 <div id="cuerpo-tarjeta" className="d-flex align-items-center">
@@ -93,7 +93,7 @@ export const Tarjetas = ({ contexto, descuento }) => {
   } else {
     console.log("Otros");
     return (
-      <div className="d-flex justify-content-space-between">
+      <div className="d-flex justify-content-space-between flex-wrap">
         {contexto.map((prdct) => {
           return (
             <div
@@ -110,7 +110,7 @@ export const Tarjetas = ({ contexto, descuento }) => {
                     }
                   />
                 </a>
-                <h6 className="fs-5 fw-bold mt-1 text-start">
+                <h6 className="fs-6 fw-bold mt-1 text-start">
                   {prdct.descripcion + " " + prdct.medida}
                 </h6>
                 <div id="cuerpo-tarjeta" className="d-flex align-items-center">
