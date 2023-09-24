@@ -49,6 +49,28 @@
     
 }
 
+#carrito-productos-btns {
+    width: 100%;
+}
+
+#carrito-producto-btn .btn-alter2 {
+    width: fit-content;
+}
+
+
+#carrito-producto-btn-delete {
+    border: none;
+}
+
+#carrito-producto-btn-delete:hover {
+    background-color: var(--primary);
+    color: var(--alter1);
+}
+
+#delete-icon {
+    font-size: 0.75em;
+}
+
 #carrito-resumen-btn-comprar {
     border: none;
 }
