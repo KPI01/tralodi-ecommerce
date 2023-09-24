@@ -1,27 +1,58 @@
-#cart-product-img-container {
+/* Clases carrito vacío */
+
+#container-carrito-vacio {
     height: fit-content;
+    padding: 15% 0;
+}
+
+#alert-carrito-vacio {
     width: fit-content;
-    padding: .25em .35em;
+    height: fit-content;
 }
 
-#cart-product-img {
-    max-width: 100px;
-    margin: auto;
-    filter: drop-shadow(0 0 1px black);
+#alert-carrito-vacio h4 {
+    margin: 0;
 }
 
-#brief-box {
-    height: max-content;
+/* Clases carrito con cosas */
+
+#container-carrito {
+    height: fit-content;
 }
 
-#cart-cnt-field {
-    width: 4ch !important;
+#container-carrito .row {
+    height: fit-content;
 }
 
-#stepper .btn {
-    border: none !important;
+#container-carrito .row .col-8 {
+    height: fit-content;
 }
 
-#stepper .btn:hover {
-    background-color: var(--rgb-alter2);
+#container-carrito .row .col-4 {
+    height: fit-content;
+}
+
+#producto-carrito-img {
+    max-width: 15vw;
+}
+
+#producto-carrito-img img{
+    max-height: 10vw;
+}
+
+#carrito-producto-btn:hover {
+    background-color: var(--alter2);
+}
+
+#resumen-iva-producto {
+    list-style: none;
+    
+}
+
+#carrito-resumen-btn-comprar {
+    border: none;
+}
+
+#carrito-resumen-btn-comprar:hover {
+    background-color: var(--alter2);
 }

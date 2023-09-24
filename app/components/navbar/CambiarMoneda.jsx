@@ -1,9 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Sesion } from "../../context/sesion";
 
 export default function CambiarMoneda() {
+  // Traer los valores de las monedas y el dispatch del contexto
   const { monedaActiva, divisas, dispatch } = useContext(Sesion);
   
+  // ActionCreator para cambiar moneda
   const cambiarMoneda = (moneda) => {
     dispatch({
       type: "SET_MONEDA",
