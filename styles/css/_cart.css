@@ -33,11 +33,11 @@
 }
 
 #producto-carrito-img {
-    max-width: 15vw;
+    max-width: 100%;
 }
 
 #producto-carrito-img img{
-    max-height: 10vw;
+    max-height: 7.5vw;
 }
 
 #carrito-producto-btn:hover {
