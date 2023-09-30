@@ -1,9 +1,11 @@
+"use client";
 import { useContext } from "react";
-import { Sesion } from "../../context/sesion";
+import { Sesion } from "/context/sesion";
 
-export const Tarjetas = ({ contexto, descuento }) => {
+export function Tarjetas({ contexto, descuento }) {
   const { monedaActiva, divisas } = useContext(Sesion);
 
+  // Variable que contiene el valor de la divisa
   var mndLocal = divisas[0];
 
   if (descuento === true) {
@@ -143,6 +145,6 @@ export const Tarjetas = ({ contexto, descuento }) => {
       </div>
     );
   }
-};
+}
 
 export default Tarjetas;

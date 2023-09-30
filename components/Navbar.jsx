@@ -1,9 +1,8 @@
-import { links } from "/context/links";
+import { links } from "/context/AppContext";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
 import CambiarMoneda from "./navbar/CambiarMoneda";
-import Link from "next/link";
 
 export default function Navbar() {
   const nav_links = links.filter(

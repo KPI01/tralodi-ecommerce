@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Sesion } from "../../context/sesion";
+import { Sesion } from "/context/sesion";
 
 export default function CambiarMoneda() {
   // Traer los valores de las monedas y el dispatch del contexto

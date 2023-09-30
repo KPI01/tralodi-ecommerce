@@ -1,4 +1,3 @@
-"use client";
 export default function NavPills({ contexto, index, callback }) {
 
   const toggleTab = (id) => {

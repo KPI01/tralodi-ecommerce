@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { links } from "../context/links";
+import { links } from "/context/AppContext";
 
 export default function Footer() {
   return (
@@ -32,13 +31,13 @@ export default function Footer() {
           <ul id="footer-nav">
             {links.map(({ label, route }) => (
               <li key={route}>
-                <Link
+                <a
                   href={route}
                   id="footer-nav-option"
                   className="text-secondary text-decoration-none"
                 >
                   {label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
