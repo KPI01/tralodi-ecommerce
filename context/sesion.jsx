@@ -1,6 +1,5 @@
 import { createContext, useReducer } from "react";
-import { monedas } from "./monedas";
-import { usuario } from "./usuario";
+import { monedas, usuario } from "./AppContext";
 
 // Reducer
 export const Reducer = (state, action) => {
