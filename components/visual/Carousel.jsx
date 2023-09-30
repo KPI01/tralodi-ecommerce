@@ -1,58 +1,42 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 
 export default function Carousel() {
-
   useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.min.js");
+    require("bootstrap/dist/js/bootstrap.js");
   });
 
   return (
-    <div className="carousel slide mb-5" id="main-slider">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            className="d-block w-100"
-            src="/png/banner-main.png"
-            alt="Fondo"
-          />
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <img src="/png/banner-main.png" class="d-block w-100" alt="Banner 1" />
         </div>
-        <div className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="/png/banner-main.png"
-            alt="Fondo"
-          />
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="..." class="d-block w-100" alt="Banner 2" />
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="..." class="d-block w-100" alt="Banner 3" />
         </div>
       </div>
-      <a
-        id="carousel-prev-button"
-        className="carousel-control-prev w-auto"
+      <button
+        class="carousel-control-prev"
         type="button"
-        data-bs-target="#main-slider"
+        data-bs-target="#carouselExampleRide"
         data-bs-slide="prev"
       >
-        <span
-          id="carousel-prev-button-icon"
-          class="carousel-control-prev-icon"
-          aria-hidden="true"
-        ></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-      </a>
-      <a
-        id="carousel-next-button"
-        class="carousel-control-next w-auto"
+      </button>
+      <button
+        class="carousel-control-next"
         type="button"
-        data-bs-target="#main-slider"
+        data-bs-target="#carouselExampleRide"
         data-bs-slide="next"
       >
-        <span
-          id="carousel-next-button-icon"
-          class="carousel-control-next-icon bg-primary rounded-circle"
-          aria-hidden="true"
-        ></span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </a>
+      </button>
     </div>
   );
 }

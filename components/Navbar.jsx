@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg" id="navbar">
-      <div className="container-fluid align-items-center">
+      <div className="container-fluid align-items-center mb-2">
         <a
           href="/"
           className="navbar-brand text-alter1 fs-3 fw-bold fst-italic"
@@ -40,15 +40,21 @@ export default function Navbar() {
           </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarToggler">
-          <ul className="navbar-nav mx-3" id="navbar-nav">
+          <ul
+            className="navbar-nav mx-4 d-flex flex-column flex-lg-row align-items-end align-items-lg-center justify-content-center"
+            id="navbar-nav"
+          >
             {nav_links.map(({ label, route }) => (
-              <li key={route} className="nav-item fs-5" id="navbar-item">
+              <li 
+                key={route}
+                className="nav-item fs-5" 
+                id="navbar-item">
                 <a
                   href={route}
                   id="navbar-link"
                   className={
                     label == "Ofertas"
-                      ? "nav-link d-flex align-items-center text-secondary"
+                      ? "nav-link text-secondary d-flex align-items-center"
                       : "nav-link text-secondary"
                   }
                 >
@@ -60,12 +66,14 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <SearchBar style="d-none d-lg-flex align-items-center justify-content-end text-alter1 my-md-3 mx-auto" />
-          <div className="d-flex flex-column flex-lg-row gap-3" id="btn-group">
+          <div
+            className="d-flex flex-column justify-content-end align-items-end w-100 gap-2 flex-lg-row align-items-lg-center "
+            id="btn-group"
+          >
+            <SearchBar />
             <CambiarMoneda />
             <LoginBtn />
             <CartBtn />
-            <SearchBar style="d-flex d-lg-none align-items-center text-alter1 ms-auto" />
           </div>
         </div>
       </div>

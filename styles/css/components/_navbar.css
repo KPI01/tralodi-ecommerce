@@ -19,7 +19,12 @@
 #branding {
     padding: auto;
     letter-spacing: .15rem;
-    max-width: 20%;
+    width: min-content !important;
+    transition: all .2s;
+}
+
+#branding:hover {
+    color: var(--alter2) !important;
 }
 
 /* Toggler */

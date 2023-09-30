@@ -1,8 +1,8 @@
-export default function SearchBar({style}) {  
+export default function SearchBar() {  
   return (
-    <form className={style} id="form-search-bar" role="search">
+    <form className="d-flex align-items-center text-alter1" id="form-search-bar" role="search">
       <label htmlFor="search-bar">
-      <i id="search-bar-icon" className="bi bi-search"></i>
+      <i id="search-bar-icon" className="bi bi-search me-2"></i>
       </label>
       <input
         name="search-bar"
