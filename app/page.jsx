@@ -1,34 +1,23 @@
-"use client";
-import { useContext, useState } from "react";
-import { marcas } from "/context/marcas";
-import { productos } from "/context/productos";
-import { Sesion } from "/context/sesion";
+import { useContext } from "react";
+import { productos } from "/context/AppContext";
 import Carousel from "/components/visual/Carousel";
-import NavPills from "/components/visual/NavPills";
 import Tarjetas from "/components/visual/Tarjetas";
+import ProductosMarcas from "/components/app/ProductosMarcas";
 
 export default function Home() {
-  const { dispatch } = useContext(Sesion);
-  // Estado que permite identificar cual proveedor ha sido seleccionado
-  // Hacer que esto sea un componente
-  const [marcaAct, setMarcaAct] = useState(1);
-  console.log(marcaAct);
+  // const { dispatch } = useContext(Sesion);
 
   // Filtro en productos para detectar cuales están activos
   let productosAct = productos.filter(
     (producto) => producto.estado === "Activo"
   );
-  // Filtro en productos para mostrar los que son de la marca seleccionada
-  let prdctsMarcaAct = productosAct.filter(
-    (prdct) => prdct.empresa == marcaAct
-  );
 
-  const addProductoToCarrito = (id) => {
-    dispatch({
-      type: "ADD_TO_CARRITO",
-      payload: {id: id, cant: 1}
-    });
-  };
+  // const addProductoToCarrito = (id) => {
+  //   dispatch({
+  //     type: "ADD_TO_CARRITO",
+  //     payload: {id: id, cant: 1}
+  //   });
+  // };
 
   return (
     <div className="container-fluid">
@@ -52,8 +41,7 @@ export default function Home() {
         <h1 id="heading" className="display-6 fw-bold">
           Nuestras Marcas Aliadas
         </h1>
-        <NavPills contexto={marcas} index={marcaAct} callback={setMarcaAct} />
-        <Tarjetas contexto={prdctsMarcaAct} descuento={undefined} />
+        <ProductosMarcas contexto_tarjetas={productosAct}/>
       </div>
     </div>
   );
