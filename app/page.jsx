@@ -1,23 +1,15 @@
-import { useContext } from "react";
 import { productos } from "/context/AppContext";
 import Carousel from "/components/visual/Carousel";
 import Tarjetas from "/components/visual/Tarjetas";
 import ProductosMarcas from "/components/app/ProductosMarcas";
 
 export default function Home() {
-  // const { dispatch } = useContext(Sesion);
-
   // Filtro en productos para detectar cuales están activos
   let productosAct = productos.filter(
     (producto) => producto.estado === "Activo"
   );
 
-  // const addProductoToCarrito = (id) => {
-  //   dispatch({
-  //     type: "ADD_TO_CARRITO",
-  //     payload: {id: id, cant: 1}
-  //   });
-  // };
+  // 
 
   return (
     <div className="container-fluid">

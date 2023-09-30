@@ -1,19 +1,14 @@
-"use client";
-import { useEffect } from "react";
 import "/styles/scss/main.scss";
 import "/styles/css/main.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { App } from "/context/sesion";
 import Navbar from "/components/Navbar";
 import Footer from "/components/Footer";
-import { Main } from "/context/sesion";
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.min.js");
-  });
 
   return (
-    <Main>
+    <App>
       <html lang="es">
         <head>
           <title>Tralodi Distribución</title>
@@ -33,6 +28,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </body>
       </html>
-    </Main>
+    </App>
   );
 }

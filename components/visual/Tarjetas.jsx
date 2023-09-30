@@ -3,7 +3,16 @@ import { useContext } from "react";
 import { Sesion } from "/context/sesion";
 
 export function Tarjetas({ contexto, descuento }) {
+  // Rescatar valores del contexto
   const { monedaActiva, divisas } = useContext(Sesion);
+
+  // ActionCreator para agregar producto al carrito
+  const addProductoToCarrito = (id) => {
+    dispatch({
+      type: "ADD_TO_CARRITO",
+      payload: { id: id, cant: 1 },
+    });
+  };
 
   // Variable que contiene el valor de la divisa
   var mndLocal = divisas[0];
