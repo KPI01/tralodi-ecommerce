@@ -1,12 +1,13 @@
 /* Importing custom */
+@import '_home';
 @import '_cart';
 @import '_login';
-@import '_navpills';
-@import '_footer';
-@import '_carousel';
-@import '_home';
-@import '_navbar';
-@import '_tarjetas';
+@import './components/_navpills';
+@import './components/_footer';
+@import './components/_carousel';
+@import './components/_navbar';
+@import './components/_tarjetas';
+@import './components/_spinner';
 
 /* Variables */
 :root {

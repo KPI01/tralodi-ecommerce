@@ -12,7 +12,7 @@ export default function Home() {
   // 
 
   return (
-    <div className="container-fluid">
+<div className="container-fluid">
       <Carousel />
 
       <div id="productos-ofertas" className="my-5 mx-auto">
