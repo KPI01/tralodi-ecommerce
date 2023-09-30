@@ -1,4 +1,4 @@
-import { marcas } from "../context/marcas";
+import { marcas } from "/context/marcas";
 
 export default function Marcas() {
   return (

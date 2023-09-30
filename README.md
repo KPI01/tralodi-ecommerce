@@ -7,7 +7,7 @@ Se está haciendo uso de:
 - Next.js
 - Bootstrap
 
-Para ello se instalaron los siguientes paquetes por medio de `npm`:
+Para ello se instalaron los siguientes paquetes:
 
 - next
 - eslint

@@ -1,5 +1,4 @@
-import { productos } from "../context/productos";
-import Carousel from "../components/visual/Carousel";
+import Carousel from "/components/visual/Carousel";
 
 export default function Ofertas () {
   return (

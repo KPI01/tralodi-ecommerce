@@ -1,7 +1,7 @@
 "use client";
 import { useContext } from "react";
-import { Sesion } from "../context/sesion";
-import { productos } from "../context/productos";
+import Link from "next/link";
+import { Sesion } from "/context/sesion";
 
 export default function Cart() {
   // Utilizar el carrito del contexto
@@ -67,7 +67,7 @@ export default function Cart() {
         className="alert alert-secondary p-4 mx-auto"
       >
         <h4 className="mx-4 fs-2">
-          El carrito está vacío. <a href="/home">Ve a agregar productos!</a>
+          El carrito está vacío. <Link href="/">Ve a agregar productos!</Link>
         </h4>
       </div>
     </div>

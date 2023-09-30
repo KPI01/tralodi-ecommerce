@@ -1,22 +1,23 @@
-import { links } from "../context/links";
+import { links } from "/context/links";
 import SearchBar from "./navbar/SearchBar";
 import LoginBtn from "./navbar/LoginBtn";
 import CartBtn from "./navbar/CartBtn";
 import CambiarMoneda from "./navbar/CambiarMoneda";
+import Link from "next/link";
 
 export default function Navbar() {
   const nav_links = links.filter(
     (link) =>
-      link.route != "/home" && link.route != "/cart" && link.route != "/login"
+      link.route != "/" && link.route != "/cart" && link.route != "/login"
   );
 
   return (
     <nav className="navbar navbar-expand-lg" id="navbar">
       <div className="container-fluid align-items-center">
         <a
+          href="/"
           className="navbar-brand text-alter1 fs-3 fw-bold fst-italic"
           id="branding"
-          href="/home"
         >
           <img
             src="/png/isotipo250.png"

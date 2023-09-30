@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "/styles/scss/main.scss";
 import "/styles/css/main.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import { Main } from "./context/sesion";
+import Navbar from "/components/Navbar";
+import Footer from "/components/Footer";
+import { Main } from "/context/sesion";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
