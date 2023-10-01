@@ -5,9 +5,10 @@ export default function NavPills({ contexto, index, callback }) {
   };
 
   return (
-    <ul id="nav-pills" class="nav nav-pills">
+    <ul id="nav-pills" className="nav nav-pills">
       {contexto.map(({ id, label }) => (
         <li
+        key={id}
           id="nav-pill-item"
           className="nav-item mx-1"
           onClick={() => toggleTab(id)}

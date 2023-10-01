@@ -84,6 +84,7 @@ export default function Cart() {
               {carritoValid.map((producto) => {
                 return (
                   <li
+                  key={producto.id}
                     id="detalles-producto"
                     className="list-group-item text-primary container"
                   >
@@ -95,8 +96,8 @@ export default function Cart() {
                         <img src={"/png/productos/" + producto.id + ".png"} />
                       </div>
                       <div className="col text-primary d-flex align-item-center">
-                        <div class="ms-2 me-auto my-auto">
-                          <div class="fw-bold">
+                        <div className="ms-2 me-auto my-auto">
+                          <div className="fw-bold">
                             {producto.descripcion + " " + producto.medida}
                           </div>
                           <strong className="fs-6">Precio unit. : </strong>{" "}
@@ -114,7 +115,7 @@ export default function Cart() {
                         </div>
                       </div>
                       <div className="col text-primary d-flex align-items-center justify-content-center">
-                        <div class="ms-2 me-auto d-flex flex-column w-100">
+                        <div className="ms-2 me-auto d-flex flex-column w-100">
                           <div>
                             <strong>Cantidad: </strong>
                             {"  "}
@@ -185,6 +186,7 @@ export default function Cart() {
               {carritoValid.map((producto) => {
                 return (
                   <li
+                  key={producto.id}
                     id="resumen-iva-producto"
                     className="d-flex justify-content-between"
                   >

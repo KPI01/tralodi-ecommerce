@@ -4,7 +4,7 @@ import { Sesion } from "/context/sesion";
 
 export function Tarjetas({ contexto, descuento }) {
   // Rescatar valores del contexto
-  const { monedaActiva, divisas } = useContext(Sesion);
+  const { monedaActiva, divisas, dispatch } = useContext(Sesion);
 
   // ActionCreator para agregar producto al carrito
   const addProductoToCarrito = (id) => {
@@ -25,6 +25,7 @@ export function Tarjetas({ contexto, descuento }) {
         {prdctsDesc.map((prdct) => {
           return (
             <div
+              key={prdct.id}
               id="tarjeta-producto"
               className="col bg-alter1 text-primary rounded d-flex flex-column"
             >
@@ -54,7 +55,12 @@ export function Tarjetas({ contexto, descuento }) {
                       -{prdct.descuento}%
                     </span>
                   </p>
-                  <button className="btn btn-primary ms-auto">Agregar</button>
+                  <button
+                    className="btn btn-primary ms-auto"
+                    onClick={() => addProductoToCarrito(prdct.id)}
+                  >
+                    Agregar
+                  </button>
                 </div>
               </div>
             </div>
@@ -70,6 +76,7 @@ export function Tarjetas({ contexto, descuento }) {
         {prdctsSinDesc.map((prdct) => {
           return (
             <div
+              key={prdct.id}
               id="tarjeta-producto"
               className="col bg-alter1 text-primary rounded d-flex flex-column"
             >
@@ -93,7 +100,12 @@ export function Tarjetas({ contexto, descuento }) {
                       ? prdct.precio
                       : prdct.precio * mndLocal.valorDolar}
                   </p>
-                  <button className="btn btn-primary ms-auto">Agregar</button>
+                  <button
+                    className="btn btn-primary ms-auto"
+                    onClick={() => addProductoToCarrito(prdct.id)}
+                  >
+                    Agregar
+                  </button>
                 </div>
               </div>
             </div>
@@ -108,6 +120,7 @@ export function Tarjetas({ contexto, descuento }) {
         {contexto.map((prdct) => {
           return (
             <div
+              key={prdct.id}
               id="tarjeta-producto"
               className="col bg-alter1 text-primary rounded d-flex flex-column"
             >
@@ -145,7 +158,12 @@ export function Tarjetas({ contexto, descuento }) {
                       ""
                     )}
                   </p>
-                  <button className="btn btn-primary ms-auto">Agregar</button>
+                  <button
+                    className="btn btn-primary ms-auto"
+                    onClick={() => addProductoToCarrito(prdct.id)}
+                  >
+                    Agregar
+                  </button>
                 </div>
               </div>
             </div>

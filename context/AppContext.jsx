@@ -1,3 +1,14 @@
+export const monedas = [
+    {nombre: "Bolívar", simbolo: "Bs.", valorDolar: 33},
+    {nombre: "Dólar", simbolo: "$"}
+]
+
+export const usuario = {
+    sesionActiva: false,
+    username: "",
+    correo: "",
+    nombre: "Sin sesión",
+}
 export const links = [
     {
       id: 1,
@@ -68,17 +79,6 @@ export const links = [
     },
 ]
 
-export const monedas = [
-    {nombre: "Bolívar", simbolo: "Bs.", valorDolar: 33},
-    {nombre: "Dólar", simbolo: "$"}
-]
-
-export const usuario = {
-    sesionActiva: false,
-    username: "",
-    correo: "",
-    nombre: "Sin sesión",
-}
 
 export const productos = [
     {
