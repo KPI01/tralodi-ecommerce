@@ -5,32 +5,11 @@ import { Sesion } from "/context/sesion";
 
 export default function Cart() {
   // Utilizar el carrito del contexto
-  const { carrito, monedaActiva, divisas, dispatch } = useContext(Sesion);
+  const { carrito, monedaActiva, divisas, subTotal, total, dispatch } =
+    useContext(Sesion);
 
-  // Variable para obtener el valor del dolas en bolivares
-  var mndLocal = divisas[0];
-
-  // Generando subtotal sin iva
-  let subTotal = carrito.reduce((total, producto) => {
-    return (total += producto.precio * producto.cant);
-  }, 0);
-  console.log("El subtotal del carrito es: ", subTotal);
-
-  // Generando el total del carrrito
-  let total = carrito.reduce((total, producto) => {
-    let ivaProducto = 0;
-    if (producto.descuento === 0) {
-      ivaProducto = producto.precio * producto.cant * 0.16;
-      return (total += producto.precio * producto.cant + ivaProducto);
-    } else {
-      ivaProducto =
-        producto.precio * producto.cant -
-        producto.precio * producto.cant * (producto.descuento / 100);
-      ivaProducto *= 0.16;
-      return (total += producto.precio * producto.cant + ivaProducto);
-    }
-  }, 0);
-  console.log("El total del carrito es: ", total);
+  // Variable para obtener el valor del dolar en bolivares
+  var mndLocal = divisas[0].valorDolar;
 
   // ActionCreator para agregar al carrito de determinado producto
   const addProductoToCarrito = (id) => {
@@ -104,32 +83,40 @@ export default function Cart() {
                           {monedaActiva.simbolo}
                           {producto.descuento > 0
                             ? monedaActiva.simbolo === "$"
-                              ? (producto.precio -
-                                producto.precio * (producto.descuento / 100)).toFixed(2)
-                              : (producto.precio * mndLocal.valorDolar -
-                                producto.precio *
-                                  mndLocal.valorDolar *
-                                  (producto.descuento / 100)).toFixed(2)
+                              ? (
+                                  producto.precio -
+                                  producto.precio * (producto.descuento / 100)
+                                ).toFixed(2)
+                              : (
+                                  producto.precio * mndLocal -
+                                  producto.precio *
+                                    mndLocal.valorDolar *
+                                    (producto.descuento / 100)
+                                ).toFixed(2)
                             : monedaActiva.simbolo === "$"
                             ? producto.precio
-                            : producto.precio * mndLocal.valorDolar}{" "}
+                            : producto.precio * mndLocal}{" "}
                           <br />
                           <strong>Sub-total: </strong>
                           {monedaActiva.simbolo}
                           {producto.descuento > 0
                             ? monedaActiva.simbolo === "$"
-                              ? ((producto.precio -
-                                  producto.precio *
-                                    (producto.descuento / 100)) *
-                                producto.cant).toFixed(2)
-                              : ((producto.precio * mndLocal.valorDolar -
-                                  producto.precio *
-                                    mndLocal.valorDolar *
-                                    (producto.descuento / 100)) *
-                                producto.cant).toFixed(2)
+                              ? (
+                                  (producto.precio -
+                                    producto.precio *
+                                      (producto.descuento / 100)) *
+                                  producto.cant
+                                ).toFixed(2)
+                              : (
+                                  (producto.precio * mndLocal -
+                                    producto.precio *
+                                      mndLocal *
+                                      (producto.descuento / 100)) *
+                                  producto.cant
+                                ).toFixed(2)
                             : monedaActiva.simbolo === "$"
                             ? producto.precio * producto.cant
-                            : producto.precio * mndLocal.valorDolar * producto.cant}
+                            : producto.precio * mndLocal * producto.cant}
                           <br />
                           {producto.descuento > 0 && (
                             <span className="badge text-primary bg-secondary">
@@ -153,7 +140,7 @@ export default function Cart() {
                               <button
                                 id="carrito-producto-btn"
                                 className="btn btn-secondary border-1 border-start-0 border-top-0 border-bottom-0 border-primary"
-                                onClick={() =>
+                                onClick={(e) =>
                                   redProductoFromCarrito(producto.id)
                                 }
                               >
@@ -162,7 +149,7 @@ export default function Cart() {
                               <button
                                 id="carrito-producto-btn"
                                 className="btn btn-secondary border-1 border-end-0 border-top-0 border-bottom-0 border-primary"
-                                onClick={() =>
+                                onClick={(e) =>
                                   addProductoToCarrito(producto.id)
                                 }
                               >
@@ -172,7 +159,7 @@ export default function Cart() {
                             <button
                               id="carrito-producto-btn-delete"
                               className="btn btn-alter2 m-0 py-0 px-2"
-                              onClick={() =>
+                              onClick={(e) =>
                                 delProductoFromCarrito(producto.id)
                               }
                             >
@@ -201,8 +188,8 @@ export default function Cart() {
               <strong>Sub-total: </strong>
               {monedaActiva.simbolo}
               {monedaActiva.simbolo === "$"
-                ? subTotal
-                : subTotal * mndLocal.valorDolar}
+                ? subTotal.toFixed(2)
+                : (subTotal * mndLocal.valorDolar).toFixed(2)}
             </h3>
             <hr />
             <h4 className="m-0 fw-bold fs-6">IVA 16%</h4>

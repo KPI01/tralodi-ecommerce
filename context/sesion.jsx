@@ -23,7 +23,7 @@ export const Reducer = (state, action) => {
           if (prdct.id === action.payload.id) {
             prdct.cant += action.payload.cant;
           }
-          console.log(prdct)
+          console.log(prdct);
           updtCarrito.push(prdct);
           return true;
         });
@@ -115,16 +115,43 @@ export const App = (props) => {
   let carritoStrg = sessionStorage.getItem("carrito");
   let mndActStrg = sessionStorage.getItem("monedaActiva");
 
+  // Guardando en sesion el carrito si es que ya no existe
   if (carritoStrg) {
     state.carrito = JSON.parse(carritoStrg);
   } else {
     sessionStorage.setItem("carrito", JSON.stringify(state.carrito));
   }
+
+  // Guardando en sesion la moneda que se esta utilizando, si es que ya no existe
   if (mndActStrg) {
     state.monedaActiva = JSON.parse(mndActStrg);
   } else {
-    sessionStorage.setItem("monedaActiva", mndActStrg);
+    sessionStorage.setItem("monedaActiva", JSON.stringify(state.monedaActiva));
   }
+
+  // Calculando subtotal del carrito
+  let subTotal = state.carrito.reduce((total, prdct) => {
+    if (prdct.descuento > 0) {
+      let descuento = prdct.precio * (prdct.descuento / 100);
+      let precioProd = prdct.precio - descuento;
+      return (total += precioProd * prdct.cant);
+    } else {
+      return (total += prdct.precio * prdct.cant);
+    }
+  }, 0);
+
+  // Calculando total del carrito
+  let total = state.carrito.reduce((total, prdct) => {
+    if (prdct.descuento > 0) {
+      let descuento = prdct.precio * (prdct.descuento / 100);
+      let precioProd = prdct.precio - descuento;
+      let iva = precioProd * prdct.cant * 0.16;
+      return (total += precioProd * prdct.cant + iva);
+    } else {
+      let iva = prdct.precio * prdct.cant * 0.16;
+      return (total += (prdct.precio * prdct.cant) + (iva));
+    }
+  }, 0);
 
   return (
     <Sesion.Provider
@@ -133,6 +160,8 @@ export const App = (props) => {
         monedaActiva: state.monedaActiva,
         divisas: state.divisas,
         carrito: state.carrito,
+        subTotal: subTotal,
+        total: total,
         dispatch: dispatch,
       }}
     >

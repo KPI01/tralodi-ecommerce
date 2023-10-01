@@ -1,28 +1,10 @@
-"use client"
+"use client";
 import { useContext } from "react";
 import { Sesion } from "/context/sesion";
 
 export default function CartBtn() {
-  const { carrito, monedaActiva, divisas } = useContext(Sesion);
-  let mndLocal = divisas[0];
-
-  let total = carrito.reduce((total, producto) => {
-    let ivaProducto = 0;
-    if (producto.descuento === 0) {
-      ivaProducto = producto.precio * producto.cant * 0.16;
-      return (total += producto.precio * producto.cant + ivaProducto);
-    } else {
-      ivaProducto =
-        producto.precio * producto.cant -
-        producto.precio * producto.cant * (producto.descuento / 100);
-      ivaProducto *= 0.16;
-      return (total += producto.precio * producto.cant + ivaProducto);
-    }
-  }, 0);
-
-  if (monedaActiva.simbolo === "Bs.") {
-    total = (total * mndLocal.valorDolar).toFixed(2);
-  }
+  const { monedaActiva, divisas, total } = useContext(Sesion);
+  let mndLocal = divisas[0].valorDolar;
 
   return (
     <a href="/cart">
@@ -31,7 +13,12 @@ export default function CartBtn() {
         id="cart-btn"
       >
         <i id="cart-icon" className="bi bi-cart-fill"></i>
-        {total > 0 ? [monedaActiva.simbolo, (total).toFixed(2)].join(" ") : "Comprar"}
+        {monedaActiva.simbolo === "$"
+          ? [monedaActiva.simbolo, total.toFixed(2)].join(" ")
+          : [
+              monedaActiva.simbolo,
+              (total * mndLocal).toFixed(2),
+            ].join(" ")}
       </button>
     </a>
   );
