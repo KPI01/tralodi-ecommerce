@@ -31,7 +31,7 @@ export default function CartBtn() {
         id="cart-btn"
       >
         <i id="cart-icon" className="bi bi-cart-fill"></i>
-        {total > 0 ? [monedaActiva.simbolo, total].join(" ") : "Comprar"}
+        {total > 0 ? [monedaActiva.simbolo, (total).toFixed(2)].join(" ") : "Comprar"}
       </button>
     </a>
   );
