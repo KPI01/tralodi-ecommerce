@@ -9,13 +9,13 @@ export default function CartBtn() {
   let total = carrito.reduce((total, producto) => {
     let ivaProducto = 0;
     if (producto.descuento === 0) {
-      ivaProducto = producto.precio * producto.cant * 0.12;
+      ivaProducto = producto.precio * producto.cant * 0.16;
       return (total += producto.precio * producto.cant + ivaProducto);
     } else {
       ivaProducto =
         producto.precio * producto.cant -
         producto.precio * producto.cant * (producto.descuento / 100);
-      ivaProducto *= 0.12;
+      ivaProducto *= 0.16;
       return (total += producto.precio * producto.cant + ivaProducto);
     }
   }, 0);

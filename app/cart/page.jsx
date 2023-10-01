@@ -20,13 +20,13 @@ export default function Cart() {
   let total = carrito.reduce((total, producto) => {
     let ivaProducto = 0;
     if (producto.descuento === 0) {
-      ivaProducto = producto.precio * producto.cant * 0.12;
+      ivaProducto = producto.precio * producto.cant * 0.16;
       return (total += producto.precio * producto.cant + ivaProducto);
     } else {
       ivaProducto =
         producto.precio * producto.cant -
         producto.precio * producto.cant * (producto.descuento / 100);
-      ivaProducto *= 0.12;
+      ivaProducto *= 0.16;
       return (total += producto.precio * producto.cant + ivaProducto);
     }
   }, 0);
@@ -72,7 +72,7 @@ export default function Cart() {
       </div>
     </div>
   ) : (
-    <div id="container-carrito" className="container my-4">
+    <div id="container-carrito" className="container my-3">
       <div className="row">
         <div className="col-8">
           <h2 className="m-0 display-6 fw-bold">Tu carrito</h2>
@@ -84,7 +84,7 @@ export default function Cart() {
               {carritoValid.map((producto) => {
                 return (
                   <li
-                  key={producto.id}
+                    key={producto.id}
                     id="detalles-producto"
                     className="list-group-item text-primary container"
                   >
@@ -97,21 +97,45 @@ export default function Cart() {
                       </div>
                       <div className="col text-primary d-flex align-item-center">
                         <div className="ms-2 me-auto my-auto">
-                          <div className="fw-bold">
-                            {producto.descripcion + " " + producto.medida}
+                          <div id="producto-info" className="fw-bold">
+                            {producto.descripcion + " " + producto.medida + " "}
                           </div>
                           <strong className="fs-6">Precio unit. : </strong>{" "}
                           {monedaActiva.simbolo}
-                          {monedaActiva.simbolo === "$"
+                          {producto.descuento > 0
+                            ? monedaActiva.simbolo === "$"
+                              ? (producto.precio -
+                                producto.precio * (producto.descuento / 100)).toFixed(2)
+                              : (producto.precio * mndLocal.valorDolar -
+                                producto.precio *
+                                  mndLocal.valorDolar *
+                                  (producto.descuento / 100)).toFixed(2)
+                            : monedaActiva.simbolo === "$"
                             ? producto.precio
                             : producto.precio * mndLocal.valorDolar}{" "}
                           <br />
-                          <strong>Sub-total: </strong> {monedaActiva.simbolo}
-                          {monedaActiva.simbolo === "$"
+                          <strong>Sub-total: </strong>
+                          {monedaActiva.simbolo}
+                          {producto.descuento > 0
+                            ? monedaActiva.simbolo === "$"
+                              ? ((producto.precio -
+                                  producto.precio *
+                                    (producto.descuento / 100)) *
+                                producto.cant).toFixed(2)
+                              : ((producto.precio * mndLocal.valorDolar -
+                                  producto.precio *
+                                    mndLocal.valorDolar *
+                                    (producto.descuento / 100)) *
+                                producto.cant).toFixed(2)
+                            : monedaActiva.simbolo === "$"
                             ? producto.precio * producto.cant
-                            : producto.precio *
-                              producto.cant *
-                              mndLocal.valorDolar}
+                            : producto.precio * mndLocal.valorDolar * producto.cant}
+                          <br />
+                          {producto.descuento > 0 && (
+                            <span className="badge text-primary bg-secondary">
+                              -{producto.descuento}%
+                            </span>
+                          )}
                         </div>
                       </div>
                       <div className="col text-primary d-flex align-items-center justify-content-center">
@@ -181,28 +205,28 @@ export default function Cart() {
                 : subTotal * mndLocal.valorDolar}
             </h3>
             <hr />
-            <h4 className="m-0 fw-bold fs-6">IVA 12%</h4>
+            <h4 className="m-0 fw-bold fs-6">IVA 16%</h4>
             <ul id="resumen-iva-lista" className="ps-0">
               {carritoValid.map((producto) => {
                 return (
                   <li
-                  key={producto.id}
+                    key={producto.id}
                     id="resumen-iva-producto"
                     className="d-flex justify-content-between"
                   >
-                    <div>
-                      {producto.descripcion} {producto.medida}
+                    <div id="descripcion-producto">
+                      {producto.descripcion} {producto.medida}{" "}
                     </div>
                     <div>
                       {monedaActiva.simbolo}
                       {producto.descuento < 1
                         ? monedaActiva.simbolo === "$"
-                          ? (producto.precio * producto.cant * 0.12).toFixed(2)
+                          ? (producto.precio * producto.cant * 0.16).toFixed(2)
                           : (
                               producto.precio *
                               mndLocal.valorDolar *
                               producto.cant *
-                              0.12
+                              0.16
                             ).toFixed(2)
                         : monedaActiva.simbolo === "$"
                         ? (
@@ -210,7 +234,7 @@ export default function Cart() {
                             producto.precio *
                               (producto.descuento / 100) *
                               producto.cant *
-                              0.12
+                              0.16
                           ).toFixed(2)
                         : (
                             (producto.precio * mndLocal.valorDolar -
@@ -218,7 +242,7 @@ export default function Cart() {
                                 mndLocal.valorDolar *
                                 (producto.descuento / 100)) *
                             producto.cant *
-                            0.12
+                            0.16
                           ).toFixed(2)}
                     </div>
                   </li>
