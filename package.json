@@ -18,5 +18,10 @@
   },
   "devDependencies": {
     "standard": "^17.1.0"
+  },
+  "standard": {
+    "ignore": [
+      "/context/sesion.jsx"
+    ]
   }
 }

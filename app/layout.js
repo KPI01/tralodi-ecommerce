@@ -1,33 +1,32 @@
-import "/styles/scss/main.scss";
-import "/styles/css/main.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { App } from "/context/sesion";
-import Navbar from "/components/Navbar";
-import Footer from "/components/Footer";
+import '../styles/scss/main.scss'
+import '../styles/css/main.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import { App } from '../context/sesion'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
-export default function RootLayout({ children }) {
-
+export default function RootLayout ({ children }) {
   return (
     <App>
-      <html lang="es">
+      <html lang='es'>
         <head>
           <title>Tralodi Distribución</title>
           <meta
-            title="description"
-            content="Página web comercial para Inversiones Tralodi"
+            title='description'
+            content='Página web comercial para Inversiones Tralodi'
           />
-          <link rel="icon" href="/svg/favicon.svg" />
+          <link rel='icon' href='/svg/favicon.svg' />
         </head>
-        <body className="bg-primary text-secondary">
-          <header className="container-fluid mb-4 mb-lg-0">
-            <Navbar  />
+        <body className='bg-primary text-secondary'>
+          <header className='container-fluid mb-4 mb-lg-0'>
+            <Navbar />
           </header>
           <main>
-            <div className="container">{children}</div>
+            <div className='container'>{children}</div>
           </main>
           <Footer />
         </body>
       </html>
     </App>
-  );
+  )
 }

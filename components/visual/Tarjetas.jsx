@@ -1,62 +1,62 @@
-"use client";
-import { useContext } from "react";
-import { Sesion } from "/context/sesion";
+'use client'
+import { useContext } from 'react'
+import { Sesion } from '../../context/sesion'
 
-export function Tarjetas({ contexto, descuento }) {
+export function Tarjetas ({ contexto, descuento }) {
   // Rescatar valores del contexto
-  const { monedaActiva, divisas, dispatch } = useContext(Sesion);
+  const { monedaActiva, divisas, dispatch } = useContext(Sesion)
 
   // ActionCreator para agregar producto al carrito
   const addProductoToCarrito = (id) => {
     dispatch({
-      type: "ADD_TO_CARRITO",
-      payload: { id: id, cant: 1 },
-    });
-  };
+      type: 'ADD_TO_CARRITO',
+      payload: { id, cant: 1 }
+    })
+  }
 
   // Variable que contiene el valor de la divisa
-  var mndLocal = divisas[0];
+  const mndLocal = divisas[0]
 
   if (descuento === true) {
-    let prdctsDesc = contexto.filter((prdct) => prdct.descuento > 0);
-    console.log("Con descuento");
+    const prdctsDesc = contexto.filter((prdct) => prdct.descuento > 0)
+    console.log('Con descuento')
     return (
-      <div className="d-flex">
+      <div className='d-flex'>
         {prdctsDesc.map((prdct) => {
           return (
             <div
               key={prdct.id}
-              id="tarjeta-producto"
-              className="col bg-alter1 text-primary rounded d-flex flex-column"
+              id='tarjeta-producto'
+              className='col bg-alter1 text-primary rounded d-flex flex-column'
             >
-              <div className="d-flex flex-column flex-grow-1 text-start">
-                <a id="producto-img">
+              <div className='d-flex flex-column flex-grow-1 text-start'>
+                <a id='producto-img'>
                   <img
-                    className="d-flex justify-content-center align-items-center"
-                    src={"/png/productos/" + prdct.id + ".png"}
+                    className='d-flex justify-content-center align-items-center'
+                    src={'/png/productos/' + prdct.id + '.png'}
                     alt={
-                      "Presentación " + prdct.descripcion + " " + prdct.medida
+                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }
                   />
                 </a>
-                <h6 className="fs-6 fw-bold mt-1 text-start">
-                  {prdct.descripcion + " " + prdct.medida}
+                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                  {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
-                <div id="cuerpo-tarjeta" className="d-flex align-items-center">
-                  <p className="text-start">
-                    {monedaActiva.simbolo}{" "}
-                    {monedaActiva.simbolo === "$"
+                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
+                  <p className='text-start'>
+                    {monedaActiva.simbolo}{' '}
+                    {monedaActiva.simbolo === '$'
                       ? prdct.precio - prdct.precio * (prdct.descuento / 100)
                       : prdct.precio * mndLocal.valorDolar -
                         prdct.precio *
                           mndLocal.valorDolar *
                           (prdct.descuento / 100)}
-                    <span className="ms-3 badge text-primary bg-secondary">
+                    <span className='ms-3 badge text-primary bg-secondary'>
                       -{prdct.descuento}%
                     </span>
                   </p>
                   <button
-                    className="btn btn-primary ms-auto"
+                    className='btn btn-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar
@@ -64,44 +64,44 @@ export function Tarjetas({ contexto, descuento }) {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
-    );
+    )
   } else if (descuento === false) {
-    console.log("Sin descuento");
-    let prdctsSinDesc = contexto.filter((prdct) => prdct.descuento === 0);
+    console.log('Sin descuento')
+    const prdctsSinDesc = contexto.filter((prdct) => prdct.descuento === 0)
     return (
-      <div className="d-flex justify-content-space-between">
+      <div className='d-flex justify-content-space-between'>
         {prdctsSinDesc.map((prdct) => {
           return (
             <div
               key={prdct.id}
-              id="tarjeta-producto"
-              className="col bg-alter1 text-primary rounded d-flex flex-column"
+              id='tarjeta-producto'
+              className='col bg-alter1 text-primary rounded d-flex flex-column'
             >
-              <div className="d-flex flex-column flex-grow-1 text-start">
-                <a id="producto-img">
+              <div className='d-flex flex-column flex-grow-1 text-start'>
+                <a id='producto-img'>
                   <img
-                    className="d-flex justify-content-center align-items-center"
-                    src={"/png/productos/" + prdct.id + ".png"}
+                    className='d-flex justify-content-center align-items-center'
+                    src={'/png/productos/' + prdct.id + '.png'}
                     alt={
-                      "Presentación " + prdct.descripcion + " " + prdct.medida
+                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }
                   />
                 </a>
-                <h6 className="fs-6 fw-bold mt-1 text-start">
-                  {prdct.descripcion + " " + prdct.medida}
+                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                  {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
-                <div id="cuerpo-tarjeta" className="d-flex align-items-center">
-                  <p className="text-start">
-                    {monedaActiva.simbolo}{" "}
-                    {monedaActiva.simbolo === "$"
+                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
+                  <p className='text-start'>
+                    {monedaActiva.simbolo}{' '}
+                    {monedaActiva.simbolo === '$'
                       ? prdct.precio
                       : prdct.precio * mndLocal.valorDolar}
                   </p>
                   <button
-                    className="btn btn-primary ms-auto"
+                    className='btn btn-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar
@@ -109,57 +109,59 @@ export function Tarjetas({ contexto, descuento }) {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
-    );
+    )
   } else {
-    console.log("Otros");
+    console.log('Otros')
     return (
-      <div className="d-flex justify-content-space-between flex-wrap">
+      <div className='d-flex justify-content-space-between flex-wrap'>
         {contexto.map((prdct) => {
           return (
             <div
               key={prdct.id}
-              id="tarjeta-producto"
-              className="col bg-alter1 text-primary rounded d-flex flex-column"
+              id='tarjeta-producto'
+              className='col bg-alter1 text-primary rounded d-flex flex-column'
             >
-              <div className="d-flex flex-column flex-grow-1 text-start">
-                <a id="producto-img">
+              <div className='d-flex flex-column flex-grow-1 text-start'>
+                <a id='producto-img'>
                   <img
-                    className="d-flex justify-content-center align-items-center"
-                    src={"/png/productos/" + prdct.id + ".png"}
+                    className='d-flex justify-content-center align-items-center'
+                    src={'/png/productos/' + prdct.id + '.png'}
                     alt={
-                      "Presentación " + prdct.descripcion + " " + prdct.medida
+                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }
                   />
                 </a>
-                <h6 className="fs-6 fw-bold mt-1 text-start">
-                  {prdct.descripcion + " " + prdct.medida}
+                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                  {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
-                <div id="cuerpo-tarjeta" className="d-flex align-items-center">
-                  <p className="text-start">
-                    {monedaActiva.simbolo + " "}
+                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
+                  <p className='text-start'>
+                    {monedaActiva.simbolo + ' '}
                     {prdct.descuento > 0
-                      ? monedaActiva.simbolo === "$"
+                      ? monedaActiva.simbolo === '$'
                         ? prdct.precio - prdct.precio * (prdct.descuento / 100)
                         : prdct.precio * mndLocal.valorDolar -
                           prdct.precio *
                             mndLocal.valorDolar *
                             (prdct.descuento / 100)
-                      : monedaActiva.simbolo === "$"
-                      ? prdct.precio
-                      : prdct.precio * mndLocal.valorDolar}
-                    {prdct.descuento > 0 ? (
-                      <span className="ms-3 badge text-primary bg-secondary">
-                        -{prdct.descuento}%
-                      </span>
-                    ) : (
-                      ""
-                    )}
+                      : monedaActiva.simbolo === '$'
+                        ? prdct.precio
+                        : prdct.precio * mndLocal.valorDolar}
+                    {prdct.descuento > 0
+                      ? (
+                        <span className='ms-3 badge text-primary bg-secondary'>
+                          -{prdct.descuento}%
+                        </span>
+                        )
+                      : (
+                          ''
+                        )}
                   </p>
                   <button
-                    className="btn btn-primary ms-auto"
+                    className='btn btn-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar
@@ -167,11 +169,11 @@ export function Tarjetas({ contexto, descuento }) {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </div>
-    );
+    )
   }
 }
 
-export default Tarjetas;
+export default Tarjetas
