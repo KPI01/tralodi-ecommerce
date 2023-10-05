@@ -1,6 +1,12 @@
 "use client";
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { monedas, usuario, productos } from "./AppContext";
+
+function sessionSet(key, value) {
+  useEffect(() => {
+    sessionStorage.setItem(key, value);
+  });
+}
 
 // Reducer
 export const Reducer = (state, action) => {
@@ -10,10 +16,7 @@ export const Reducer = (state, action) => {
   switch (action.type) {
     case "SET_MONEDA":
       state.monedaActiva = action.payload;
-      sessionStorage.setItem(
-        "monedaActiva",
-        JSON.stringify(state.monedaActiva)
-      );
+      sessionSet("monedaActiva", JSON.stringify(state.monedaActiva));
       action.type = "DONE";
       return { ...state };
 
@@ -115,11 +118,13 @@ export const App = (props) => {
   let carritoStrg = sessionStorage.getItem("carrito");
   let mndActStrg = sessionStorage.getItem("monedaActiva");
 
-  // Guardando en sesion el carrito si es que ya no existe
-  if (carritoStrg) {
-    state.carrito = JSON.parse(carritoStrg);
-  } else {
-    sessionStorage.setItem("carrito", JSON.stringify(state.carrito));
+  if (typeof window !== "undefined") {
+    // Guardando en sesion el carrito si es que ya no existe
+    if (carritoStrg) {
+      state.carrito = JSON.parse(carritoStrg);
+    } else {
+      sessionStorage.setItem("carrito", JSON.stringify(state.carrito));
+    }
   }
 
   // Guardando en sesion la moneda que se esta utilizando, si es que ya no existe
@@ -149,7 +154,7 @@ export const App = (props) => {
       return (total += precioProd * prdct.cant + iva);
     } else {
       let iva = prdct.precio * prdct.cant * 0.16;
-      return (total += (prdct.precio * prdct.cant) + (iva));
+      return (total += prdct.precio * prdct.cant + iva);
     }
   }, 0);
 
