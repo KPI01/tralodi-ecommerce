@@ -1,0 +1,9 @@
+.custom-carousel {
+    width: 90%;
+    display: flex;
+    overflow: hidden;
+}
+
+.custom-carousel .inner {
+    padding: 1em;
+}
