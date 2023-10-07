@@ -39,9 +39,10 @@ export function Tarjetas ({ contexto, descuento }) {
                     }
                   />
                 </a>
-                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
                   {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
+                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
                     {monedaActiva.simbolo}{' '}
@@ -56,7 +57,7 @@ export function Tarjetas ({ contexto, descuento }) {
                     </span>
                   </p>
                   <button
-                    className='btn btn-primary ms-auto'
+                    className='btn btn-secondary text-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar
@@ -90,9 +91,10 @@ export function Tarjetas ({ contexto, descuento }) {
                     }
                   />
                 </a>
-                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
                   {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
+                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
                     {monedaActiva.simbolo}{' '}
@@ -101,7 +103,7 @@ export function Tarjetas ({ contexto, descuento }) {
                       : prdct.precio * mndLocal.valorDolar}
                   </p>
                   <button
-                    className='btn btn-primary ms-auto'
+                    className='btn btn-secondary text-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar
@@ -134,9 +136,10 @@ export function Tarjetas ({ contexto, descuento }) {
                     }
                   />
                 </a>
-                <h6 className='fs-6 fw-bold mt-1 text-start'>
+                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
                   {prdct.descripcion + ' ' + prdct.medida}
                 </h6>
+                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
                     {monedaActiva.simbolo + ' '}
@@ -161,7 +164,7 @@ export function Tarjetas ({ contexto, descuento }) {
                         )}
                   </p>
                   <button
-                    className='btn btn-primary ms-auto'
+                    className='btn btn-secondary text-primary ms-auto'
                     onClick={() => addProductoToCarrito(prdct.id)}
                   >
                     Agregar

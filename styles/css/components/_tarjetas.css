@@ -27,3 +27,7 @@
     background-color: var(--alter2) !important;
     color: var(--primary) !important;
 }
+
+#tarjeta-producto-detalles {
+    font-size: 0.75rem;
+}
