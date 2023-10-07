@@ -5,7 +5,7 @@ import WrapperBurbujas from './WrapperBurbujas'
 
 export default function CarouselBurbujas ({ contexto }) {
   const [marcaAct, setMarcaAct] = useState(0)
-  console.log(marcaAct);
+  console.log(marcaAct)
   useEffect(() => {
     require('bootstrap/js/dist/carousel')
   })
