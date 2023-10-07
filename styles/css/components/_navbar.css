@@ -10,22 +10,27 @@
 /* Branding */
 
 #logo {
-    width: 17.5%;
+    width: 4.5vw;
+    height: 4.5vh;
     min-width: 50px;
     margin-right: .5rem;
 
 }
 
 #branding {
-    padding: auto;
     letter-spacing: .15rem;
-    width: min-content !important;
+    width: fit-content !important;
     transition: all .2s;
+}
+
+#branding .row .col {
+    width: fit-content;
 }
 
 #branding:hover {
     color: var(--alter2) !important;
 }
+
 
 /* Toggler */
 

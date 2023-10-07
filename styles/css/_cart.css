@@ -78,3 +78,9 @@
 #carrito-resumen-btn-comprar:hover {
     background-color: var(--alter2);
 }
+
+/* Elementos de productos del carrito */
+
+#producto-carrito-info {
+    height: fit-content !important;
+}

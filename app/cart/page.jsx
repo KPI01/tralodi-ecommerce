@@ -76,14 +76,15 @@ export default function Cart () {
                         >
                           <img src={'/png/productos/' + producto.id + '.png'} />
                         </div>
-                        <div className='col text-primary d-flex align-item-center'>
-                          <div className='ms-2 me-auto my-auto'>
-                            <div id='producto-info' className='fw-bold'>
-                              {producto.descripcion + ' ' + producto.medida + ' '}
-                            </div>
-                            <strong className='fs-6'>Precio unit. : </strong>{' '}
-                            {monedaActiva.simbolo}
-                            {producto.descuento > 0
+                        <div
+                          id='producto-carrito-info'
+                          className='col text-primary container p-0'
+                        >
+                          <div id='producto-carrito-info-descripcion' className='row'>
+                            <div className='col'>{producto.descripcion} {producto.medida}</div>
+                          </div>
+                          <div id='producto-carrito-precioUnit' className='row'>
+                            <div className='col'>Precio Unit.: {monedaActiva.simbolo} {producto.descuento > 0
                               ? monedaActiva.simbolo === '$'
                                 ? (
                                     producto.precio -
@@ -92,39 +93,40 @@ export default function Cart () {
                                 : (
                                     producto.precio * mndLocal -
                                   producto.precio *
-                                    mndLocal.valorDolar *
-                                    (producto.descuento / 100)
+                                  mndLocal *
+                                  (producto.descuento / 100)
                                   ).toFixed(2)
                               : monedaActiva.simbolo === '$'
                                 ? producto.precio
                                 : producto.precio * mndLocal}{' '}
-                            <br />
-                            <strong>Sub-total: </strong>
-                            {monedaActiva.simbolo}
-                            {producto.descuento > 0
+                            </div>
+                          </div>
+                          <div id='producto-carrito-info-subTotal' className='row'>
+                            <div className='col'>Sub-Total: {monedaActiva.simbolo} {producto.descuento > 0
                               ? monedaActiva.simbolo === '$'
                                 ? (
                                     (producto.precio -
                                     producto.precio *
-                                      (producto.descuento / 100)) *
+                                    (producto.descuento / 100)) *
                                   producto.cant
                                   ).toFixed(2)
                                 : (
                                     (producto.precio * mndLocal -
                                     producto.precio *
-                                      mndLocal *
-                                      (producto.descuento / 100)) *
+                                    mndLocal *
+                                    (producto.descuento / 100)) *
                                   producto.cant
                                   ).toFixed(2)
                               : monedaActiva.simbolo === '$'
                                 ? producto.precio * producto.cant
                                 : producto.precio * mndLocal * producto.cant}
-                            <br />
-                            {producto.descuento > 0 && (
+                            </div>
+                          </div>
+                          <div>
+                            {producto.descuento > 0 &&
                               <span className='badge text-primary bg-secondary'>
                                 -{producto.descuento}%
-                              </span>
-                            )}
+                              </span>}
                           </div>
                         </div>
                         <div className='col text-primary d-flex align-items-center justify-content-center'>
@@ -188,7 +190,7 @@ export default function Cart () {
                 {monedaActiva.simbolo}
                 {monedaActiva.simbolo === '$'
                   ? subTotal.toFixed(2)
-                  : (subTotal * mndLocal.valorDolar).toFixed(2)}
+                  : (subTotal * mndLocal).toFixed(2)}
               </h3>
               <hr />
               <h4 className='m-0 fw-bold fs-6'>IVA 16%</h4>
@@ -208,28 +210,28 @@ export default function Cart () {
                         {producto.descuento < 1
                           ? monedaActiva.simbolo === '$'
                             ? (producto.precio * producto.cant * 0.16).toFixed(2)
-                            : (
-                                producto.precio *
-                              mndLocal.valorDolar *
+                            : parseFloat((
+                              producto.precio *
+                              mndLocal *
                               producto.cant *
                               0.16
-                              ).toFixed(2)
+                            ).toFixed(2))
                           : monedaActiva.simbolo === '$'
-                            ? (
-                                producto.precio -
-                            producto.precio *
+                            ? parseFloat((
+                              producto.precio -
+                              producto.precio *
                               (producto.descuento / 100) *
                               producto.cant *
                               0.16
-                              ).toFixed(2)
-                            : (
-                                (producto.precio * mndLocal.valorDolar -
-                              producto.precio *
-                                mndLocal.valorDolar *
+                            ).toFixed(2))
+                            : parseFloat((
+                              (producto.precio * mndLocal -
+                                producto.precio *
+                                mndLocal *
                                 (producto.descuento / 100)) *
-                            producto.cant *
-                            0.16
-                              ).toFixed(2)}
+                              producto.cant *
+                              0.16
+                            ).toFixed(2))}
                       </div>
                     </li>
                   )
@@ -241,7 +243,7 @@ export default function Cart () {
                 {monedaActiva.simbolo}
                 {monedaActiva.simbolo === '$'
                   ? total.toFixed(2)
-                  : (total * mndLocal.valorDolar).toFixed(2)}
+                  : parseFloat((total * mndLocal).toFixed(2))}
               </h3>
               <div className='w-100 d-flex justify-content-center mt-3'>
                 <button

@@ -1,8 +1,12 @@
 'use client'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Sesion } from '../../context/sesion'
 
 export default function CambiarMoneda () {
+  useEffect(() => {
+    require('bootstrap/js/src/dropdown')
+  })
+
   // Traer los valores de las monedas y el dispatch del contexto
   const { monedaActiva, divisas, dispatch } = useContext(Sesion)
 
