@@ -1,8 +1,13 @@
 'use client'
-import CarouselTarjetas from '../../components/visual/carousel_burbujas/CarouselTarjetas'
+import { useEffect } from 'react'
+import CarouselBurbujas from '../../components/visual/carousel_burbujas/CarouselBurbujas'
 import { marcas } from '../../context/AppContext'
+import './styles.css'
 
 export default function Test () {
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap')
+  })
   console.log(marcas.length)
   // Array para guardar arrays de tamaño definido
   let contextoMarcas = []
@@ -10,8 +15,8 @@ export default function Test () {
 
   // División de arrays
   while (contador <= marcas.length) {
-    contextoMarcas.push(marcas.slice(contador, contador + 2))
-    contador += 2
+    contextoMarcas.push(marcas.slice(contador, contador + 3))
+    contador += 3
   }
 
   // Limpieza de arrays vacios
@@ -20,6 +25,6 @@ export default function Test () {
   console.log(contextoMarcas)
 
   return (
-    <CarouselTarjetas contexto={contextoMarcas} />
+    <CarouselBurbujas contexto={contextoMarcas} />
   )
 }

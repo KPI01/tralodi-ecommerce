@@ -10,10 +10,10 @@ Se está haciendo uso de:
 Para ello se instalaron los siguientes paquetes:
 
 - next
-- eslint
 - bootstrap
 - boostrap-icons
 - sass
+- standard (linter)
 
 ---
 
