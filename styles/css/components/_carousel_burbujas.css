@@ -1,0 +1,51 @@
+/* Carrusel */
+
+/* Botones carrusel */
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: var(--alter1);
+    width: 5ch !important;
+    height: 5ch !important;
+    border-radius: 50%;
+    margin: auto;
+    padding: 0;
+}
+
+/* Wrapper */
+
+.wrapper-burbujas {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+/* Burbujas */
+
+.burbuja {
+    margin: 1vw;
+    width: 10vw !important;
+    height: 10vw !important;
+    background-color: var(--alter1) !important;
+    border-radius: 50%;
+    padding: 2.5% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: all 0.1s;
+}
+
+.burbuja:hover {
+    transform: scale(0.9);
+    box-shadow: 0 0 20px 4px var(--secondary);
+}
+
+.burbuja.active {
+    box-shadow: 0 0 0 6px var(--secondary) !important;
+}
+
+.burbuja-img {
+    width: 100%;
+}

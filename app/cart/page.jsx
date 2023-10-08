@@ -166,7 +166,7 @@ export default function Cart () {
                               >
                                 <i
                                   id='delete-icon'
-                                  className='bi bi-trash m-aut'
+                                  className='bi bi-trash m-auto'
                                 />
                               </button>
                             </div>

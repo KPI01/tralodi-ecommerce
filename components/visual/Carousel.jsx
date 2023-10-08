@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export default function Carousel () {
   useEffect(() => {
-    require('bootstrap/js/src/carousel')
+    require('bootstrap/dist/js/bootstrap.js')
   })
 
   return (

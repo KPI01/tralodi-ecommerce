@@ -8,6 +8,7 @@
 @import './components/_navbar';
 @import './components/_tarjetas';
 @import './components/_spinner';
+@import './components/_carousel_burbujas';
 
 /* Variables */
 :root {
