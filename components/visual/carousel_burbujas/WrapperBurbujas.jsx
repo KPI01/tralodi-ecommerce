@@ -1,14 +1,14 @@
 import Burbuja from './Burbuja'
 
-export default function WrappperBurbujas ({ contexto, activa, callback }) {
+export default function WrapperBurbujas ({ contexto, activa, callback }) {
   const handleMarcaSelection = (id) => {
     console.log('Llamando funcion desde wrapper de busbuja')
     console.log('Marca clicada: ', id)
     callback(id)
-  } 
-  
+  }
+
   return (
-    <div className='mb-4 wrapper-burbujas'>
+    <div className='wrapper-burbujas'>
       {contexto.map(marca => {
         marca.id === activa && console.log(marca.label)
         const act = activa === marca.id

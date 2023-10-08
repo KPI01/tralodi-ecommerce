@@ -31,7 +31,7 @@ export default function Home () {
         <h1 id='heading' className='display-6 fw-bold'>
           Nuestras Marcas Aliadas
         </h1>
-        <ProductosMarcas contextoTarjetas={productosAct}/>
+        <ProductosMarcas contextoTarjetas={productosAct} />
       </div>
     </div>
   )

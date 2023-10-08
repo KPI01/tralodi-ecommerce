@@ -13,14 +13,13 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
   // Crear array de marcas para el componente
   let contextoMarcas = []
   let contador = 0
-    // Subdivision en arrays más pequeños
+  // Subdivision en arrays más pequeños
   while (contador <= marcas.length) {
     contextoMarcas.push(marcas.slice(contador, contador + 3))
     contador += 3
   }
-    // Eliminando arrays sin contenido
+  // Eliminando arrays sin contenido
   contextoMarcas = contextoMarcas.filter(arr => arr.length > 0)
-
 
   // Filtro en productos para mostrar los que son de la marca seleccionada
   const prdctsMarcaAct = contextoTarjetas.filter(
@@ -30,6 +29,7 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
   return (
     <>
       <CarouselBurbujas contexto={contextoMarcas} state={marcaAct} callback={setMarcaAct} />
+      <hr className='my-2' />
       <Tarjetas contexto={prdctsMarcaAct} descuento={undefined} />
     </>
   )
