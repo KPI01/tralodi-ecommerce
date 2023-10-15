@@ -13,7 +13,7 @@ export default function Home () {
     <div className='container-fluid'>
 
       <CarouselMain />
-      
+
       <div id='productos-ofertas' className='my-5 mx-auto'>
         <h1 id='heading' className='display-5 fw-bold'>
           Productos en Oferta
