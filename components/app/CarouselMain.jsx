@@ -1,11 +1,18 @@
 import Carousel from '../visual/Carousel'
 
 export default async function CarouselMain () {
+  let imgs = []
   const dir = 'main_carousel'
-  const data = ['banner-main.png']
+  const data = await (await getData(dir))
   console.log('CarouselMain: ', data, typeof data)
 
+  // Guardar nombres de imágenes en array
+  data.map(item => {
+    imgs.push(item.name)
+    return true
+  })
+
   return (
-    <Carousel nombre='principal' contexto={data} dir={dir} />
+    <Carousel nombre='principal' contexto={imgs} dir={dir} />
   )
 }
