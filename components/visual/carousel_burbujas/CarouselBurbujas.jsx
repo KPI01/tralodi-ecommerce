@@ -17,7 +17,10 @@ export default function CarouselBurbujas ({ contexto, state, callback }) {
       <div className='carousel-inner'>
         {contexto.map(arr => {
           const activation = arr.filter(elmnt => elmnt.id === state)[0]
-          return (<div key={contexto.indexOf(arr)} className={'carousel-item ' + (activation ? 'active' : '')}><WrapperBurbujas contexto={arr} activa={state} callback={handleMarcaAct} /></div>)
+          return (
+          <div key={contexto.indexOf(arr)} className={'carousel-item ' + (activation ? 'active' : '')}>
+            <WrapperBurbujas contexto={arr} activa={state} callback={handleMarcaAct} />
+            </div>)
         })}
       </div>
       <button className='carousel-control-prev p-0' type='button' data-bs-target='#carousel-burbujas' data-bs-slide='prev'>

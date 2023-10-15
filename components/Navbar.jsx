@@ -20,7 +20,7 @@ export default function Navbar () {
         >
           <div className='row'>
             <img
-              src='/png/isotipo250.png'
+              src='/isotipo250.png'
               alt='Logo Inversiones Tralodi'
               id='logo'
               className='mt-2'
