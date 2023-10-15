@@ -33,7 +33,7 @@ export function Tarjetas ({ contexto, descuento }) {
                 <a id='producto-img'>
                   <img
                     className='d-flex justify-content-center align-items-center'
-                    src={'/png/productos/' + prdct.id + '.png'}
+                    src={'/productos/' + prdct.id + '.png'}
                     alt={
                       'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }
@@ -85,7 +85,7 @@ export function Tarjetas ({ contexto, descuento }) {
                 <a id='producto-img'>
                   <img
                     className='d-flex justify-content-center align-items-center'
-                    src={'/png/productos/' + prdct.id + '.png'}
+                    src={'/productos/' + prdct.id + '.png'}
                     alt={
                       'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }
@@ -130,7 +130,7 @@ export function Tarjetas ({ contexto, descuento }) {
                 <a id='producto-img'>
                   <img
                     className='d-flex justify-content-center align-items-center'
-                    src={'/png/productos/' + prdct.id + '.png'}
+                    src={'/productos/' + prdct.id + '.png'}
                     alt={
                       'Presentación ' + prdct.descripcion + ' ' + prdct.medida
                     }

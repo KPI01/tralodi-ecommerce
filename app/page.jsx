@@ -1,5 +1,5 @@
 import { productos } from '../context/AppContext'
-import Carousel from '../components/visual/Carousel'
+import CarouselMain from '../components/app/CarouselMain'
 import Tarjetas from '../components/visual/Tarjetas'
 import ProductosMarcas from '../components/app/ProductosMarcas'
 
@@ -11,8 +11,9 @@ export default function Home () {
 
   return (
     <div className='container-fluid'>
-      <Carousel />
 
+      <CarouselMain />
+      
       <div id='productos-ofertas' className='my-5 mx-auto'>
         <h1 id='heading' className='display-5 fw-bold'>
           Productos en Oferta
