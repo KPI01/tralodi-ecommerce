@@ -74,7 +74,7 @@ export default function Cart () {
                           id='producto-carrito-img'
                           className='col d-flex justify-content-center'
                         >
-                          <img src={'/png/productos/' + producto.id + '.png'} />
+                          <img src={'/productos/' + producto.id + '.png'} />
                         </div>
                         <div
                           id='producto-carrito-info'
