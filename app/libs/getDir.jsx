@@ -1,4 +1,4 @@
-import { headers } from 'next/headers'
+// import { headers } from 'next/headers'
 
 export default async function getData (action, dir) {
   const host = headers().get('host')
