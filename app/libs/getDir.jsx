@@ -1,7 +1,6 @@
 import { GITHUB_API } from './GITHUB_API_KEY'
 
 export default async function getData (dir) {
-  console.log(GITHUB_API)
   const options = {
     method: 'GET',
     headers: {
