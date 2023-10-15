@@ -113,7 +113,7 @@ const sesion = {
 export const Sesion = createContext()
 
 // Componente que envuelve a todos los elementos
-export const App = (props) => {
+export function App (props) {
   const [state, dispatch] = useReducer(Reducer, sesion)
 
   useEffect(() => {
