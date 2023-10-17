@@ -14,15 +14,18 @@ export default function CartBrief () {
       href='/cart'
     >
       <button
+        id='cartbrief-btn'
         className='bg-transparent text-primary'
       >
-        <i id='cart-icon' className='bi bi-cart-fill me-1' />
-        {mndAct.simbolo === '$'
-          ? [mndAct.simbolo, total.toFixed(2)].join(' ')
-          : [
-              mndAct.simbolo,
-              (total * mndLocal).toFixed(2)
-            ].join(' ')}
+        <i id='cartbrief-icon' className='bi bi-cart-fill me-1' />
+        <span id='cartbrief-cant'>
+          {mndAct.simbolo === '$'
+            ? [mndAct.simbolo, total.toFixed(2)].join(' ')
+            : [
+                mndAct.simbolo,
+                (total * mndLocal).toFixed(2)
+              ].join(' ')}
+        </span>
       </button>
     </Link>
   )

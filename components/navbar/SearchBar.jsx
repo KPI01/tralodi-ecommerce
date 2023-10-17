@@ -1,16 +1,34 @@
+'use client'
+
+import { useState } from 'react'
+
 export default function SearchBar () {
+  const [input, setInput] = useState('')
+
+  const limpiarContenido = () => {
+    setInput('')
+  }
+
   return (
-    <form className='d-flex align-items-center text-alter1' id='form-search-bar' role='search'>
-      <label htmlFor='search-bar'>
-        <i id='search-bar-icon' className='bi bi-search me-2' />
-      </label>
+    <form className='d-flex ms-auto ms-lg-0 me-lg-auto justify-content-end justify-content-lg-center' id='search-bar'>
+      <i className='bi bi-search my-auto text-alter1 me-2' />
       <input
-        name='search-bar'
         type='search'
-        id='search-bar'
-        className='form-control bg-alter1 color-alter1 border-0'
-        placeholder='Buscar aquí'
+        id='searchbar-input'
+        className='form-control bg-primary text-alter1 border-0'
+        placeholder='Buscar...'
+        onChange={(e) => setInput(e.target.value)}
+        value={input}
       />
+      {input !== '' &&
+        <button
+          id='searchbar-clear'
+          type='button'
+          className='btn bg-transparent p-1 m-0 w-auto shadow-none'
+          onClick={() => limpiarContenido()}
+        >
+          <i className='bi bi-x-circle-fill text-alter1 m-0 p-0' />
+        </button>}
     </form>
   )
 }

@@ -16,7 +16,7 @@ export default function SelectMnd () {
   }
 
   return (
-    <div className='dropdown' id='cambiar-mnd'>
+    <div className='dropdown ms-auto ms-lg-0' id='cambiar-mnd'>
       <button
         type='button'
         id='select-mnd'

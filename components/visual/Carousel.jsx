@@ -1,10 +1,10 @@
 export default function Carousel ({ nombre, contexto, dir }) {
   return (
-    <div id={'carousel-' + nombre} className='carousel slide'>
+    <div id={'carousel-' + nombre} className='carousel slide' data-bs-ride='carousel'>
       <div className='carousel-inner'>
         {contexto.map(img => {
           return (
-            <div key={contexto.indexOf(img)} className={'carousel-item' + (contexto.indexOf(img) === 0 ? ' active' : '')}>
+            <div key={contexto.indexOf(img)} className={'carousel-item' + (contexto.indexOf(img) === 0 ? ' active' : '')} data-bs-interval='5000'>
               <img src={`/${dir}/${img}`} alt={img} className='d-block w-100' />
             </div>
           )

@@ -2,10 +2,11 @@
 
 #navbar-brand {
     letter-spacing: 0.1rem;
+    transition: ease 0.25s
 }
 
 #navbar-brand:hover {
-    color: var(--alter2);
+    color: var(--alter2) !important;
 }
 
 #navbar-toggler {
@@ -63,15 +64,53 @@
     border: 0 !important
 }
 
-
-
 #cart-brief:hover{
     background-color: var(--alter2) !important;
 }
 
+#cartbrief-btn {
+    font-size: 1rem !important;
+}
+
+/* Búsqueda */
+
+#searchbar-input {
+    box-shadow: none;
+    border-bottom: 1px solid var(--alter1) !important;
+    transition: ease 0.25s;
+}
+
+#searchbar-input::placeholder {
+    color: var(--alter1);
+    transition: all 0.1s;
+}
+
+#searchbar-input:hover, #searchbar-input:focus {
+    background-color: var(--alter1) !important;
+    color: var(--primary) !important;
+}
+
+#searchbar-input:hover::placeholder {
+    color: var(--primary) !important;
+}
+
+#searchbar-input::-webkit-search-decoration, #searchbar-input::-webkit-search-cancel-button {
+    display: none;
+}
+
+#searchbar-clear {
+    box-shadow: none !important;
+    border: none !important;
+    transition: visibility 0.25s;
+}
+
 /* Reglas para lg */
 
-@media screen and ( width >= 992px ){
+@media ( min-width: 992px ){
+
+    #navbar-actions {
+        flex-direction: row !important;
+    }
 
     #navbar-link > *:hover {
     color: var(--alter2) !important;
@@ -80,16 +119,49 @@
 
 }
 
-/* Reglas para menor que lg */
+/* Reglas para móviles */
 
-@media screen and (width < 992px) {
+@media (max-width: 991.98px) {
+    
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        border-bottom: 1px solid var(--alter1);
+    }
 
     #navbar-link {
         margin-left: auto;
     }
-
+    
     #navbar-link > *:hover, #navbar-link > *:focus{
         color: var(--alter2);
+    }
+    
+    #navbar-actions {
+        flex-direction: column !important;
+        gap: 10px;
+        margin-bottom: 4ch;
+    }
+
+}
+
+/* Reglas personalizadas */
+
+@media (max-width: 1238px) {
+    
+    #cartbrief-cant {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 1109.98px) {
+
+    #cartbrief-icon {
+        margin: auto
     }
 
 }

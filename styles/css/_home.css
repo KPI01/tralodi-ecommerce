@@ -32,3 +32,19 @@
 #a-nav-link {
     cursor: pointer;
 }
+
+/* Reglas para dispositivos grandes */
+
+@media (min-width: 992px) {
+
+}
+
+/* Reglas para dispositivos móviles */
+
+@media (max-width: 991.98px) {
+
+    #container-home {
+        margin-top: 12vh;
+    }
+
+}
