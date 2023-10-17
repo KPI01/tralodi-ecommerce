@@ -1,17 +1,14 @@
 'use client'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { Sesion } from '../../context/sesion'
 
-export default function CambiarMoneda () {
-  useEffect(() => {
-    require('bootstrap/js/src/dropdown')
-  })
-
+export default function SelectMnd () {
   // Traer los valores de las monedas y el dispatch del contexto
-  const { monedaActiva, divisas, dispatch } = useContext(Sesion)
+  const { mndAct, divisas, dispatch } = useContext(Sesion)
 
   // ActionCreator para cambiar moneda
   const cambiarMoneda = (moneda) => {
+    console.log('Seleccionando moneda: ', moneda)
     dispatch({
       type: 'SET_MONEDA',
       payload: moneda
@@ -22,25 +19,28 @@ export default function CambiarMoneda () {
     <div className='dropdown' id='cambiar-mnd'>
       <button
         type='button'
-        className='btn btn-primary text-secondary shadow-none dropdown-toggle'
-        id='cambiar-mnd-btn'
+        id='select-mnd'
         data-bs-toggle='dropdown'
         data-bs-display='static'
         aria-expanded='false'
+        className='btn btn-primary text-secondary shadow-none dropdown-toggle'
       >
-        {monedaActiva.nombre} ({monedaActiva.simbolo})
+        {mndAct.nombre} ({mndAct.simbolo})
       </button>
 
-      <ul className='dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-primary border-alter2'>
+      <ul
+        id='lista-mnds'
+        className='dropdown-menu border-0 bg-secondary dropdown-menu-lg-end'
+      >
         {divisas.map((mnd) => {
           return (
             <li key={mnd.simbolo}>
               <button
-                id='mnd'
+                id='item-mnd'
                 className={
-                  mnd.nombre === monedaActiva.nombre
+                  mnd.nombre === mndAct.nombre
                     ? 'dropdown-item active'
-                    : 'dropdown-item text-secondary'
+                    : 'dropdown-item text-primary'
                 }
                 onClick={() => cambiarMoneda(mnd)}
               >

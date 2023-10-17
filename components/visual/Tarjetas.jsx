@@ -4,7 +4,7 @@ import { Sesion } from '../../context/sesion'
 
 export function Tarjetas ({ contexto, descuento }) {
   // Rescatar valores del contexto
-  const { monedaActiva, divisas, dispatch } = useContext(Sesion)
+  const { mndAct, divisas, dispatch } = useContext(Sesion)
 
   // ActionCreator para agregar producto al carrito
   const addProductoToCarrito = (id) => {
@@ -45,8 +45,8 @@ export function Tarjetas ({ contexto, descuento }) {
                 <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
-                    {monedaActiva.simbolo}{' '}
-                    {monedaActiva.simbolo === '$'
+                    {mndAct.simbolo}{' '}
+                    {mndAct.simbolo === '$'
                       ? prdct.precio - prdct.precio * (prdct.descuento / 100)
                       : prdct.precio * mndLocal.valorDolar -
                         prdct.precio *
@@ -97,8 +97,8 @@ export function Tarjetas ({ contexto, descuento }) {
                 <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
-                    {monedaActiva.simbolo}{' '}
-                    {monedaActiva.simbolo === '$'
+                    {mndAct.simbolo}{' '}
+                    {mndAct.simbolo === '$'
                       ? prdct.precio
                       : prdct.precio * mndLocal.valorDolar}
                   </p>
@@ -142,15 +142,15 @@ export function Tarjetas ({ contexto, descuento }) {
                 <small id='tarjeta-producto-detalles'>Detalles del producto</small>
                 <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
                   <p className='text-start'>
-                    {monedaActiva.simbolo + ' '}
+                    {mndAct.simbolo + ' '}
                     {prdct.descuento > 0
-                      ? monedaActiva.simbolo === '$'
+                      ? mndAct.simbolo === '$'
                         ? prdct.precio - prdct.precio * (prdct.descuento / 100)
                         : prdct.precio * mndLocal.valorDolar -
                           prdct.precio *
                             mndLocal.valorDolar *
                             (prdct.descuento / 100)
-                      : monedaActiva.simbolo === '$'
+                      : mndAct.simbolo === '$'
                         ? prdct.precio
                         : prdct.precio * mndLocal.valorDolar}
                     {prdct.descuento > 0

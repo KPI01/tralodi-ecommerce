@@ -1,10 +1,10 @@
-/* Custom font */
+/* Tipografía custom */
 @import url("https://fonts.cdnfonts.com/css/myriad-pro");
 $font-family-sans-serif: "Myriad Pro", sans-serif;
 $display-font-family: "Myriad Pro";
 $font-size-root: 20px;
 
-/* Custom variables */
+/* Variables custom*/
 $primary: #700548;
 $secondary: #ffe732;
 $alter1: #ffffff;
@@ -14,7 +14,7 @@ $rgb-secondary: rgb(255, 231, 50);
 $rgb-alter1: rgb(255, 255, 255);
 $rgb-alter2: rgb(40, 225, 250);
 
-/* Custom theme */
+/* Colores custom */
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -22,7 +22,7 @@ $theme-colors: (
   "alter2": $alter2,
 );
 
-/* Enabling shadows */
+/* Sombras */
 
 $enable-shadows: true;
 
@@ -30,20 +30,10 @@ $enable-shadows: true;
 
 $input-placeholder-color: $primary;
 
-/* Carousel */
-
-$carousel-control-color: $alter1;
-
-/* Nav underline */
+/* Nav subrayado */
 
 $nav-link-hover-color: $secondary;
 $nav-underline-link-active-color: $alter2;
 
-/* Accordion */
-
-$accordion-button-color: $secondary;
-$accordion-bg: $primary;
-$accordion-color: $secondary;
-
-/* Importing bootstrap */
+/* Importe bootstrap */
 @import "/node_modules/bootstrap/scss/bootstrap.scss";

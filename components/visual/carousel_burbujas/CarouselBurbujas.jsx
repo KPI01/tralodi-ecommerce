@@ -1,12 +1,6 @@
-'use client'
-import { useEffect } from 'react'
 import WrapperBurbujas from './WrapperBurbujas'
 
 export default function CarouselBurbujas ({ contexto, state, callback }) {
-  useEffect(() => {
-    require('bootstrap/js/dist/carousel')
-  })
-
   const handleMarcaAct = (id) => {
     console.log('Llamando a la función desde carrusel burbujas')
     callback(id)

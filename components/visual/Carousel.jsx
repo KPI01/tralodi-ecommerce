@@ -1,11 +1,4 @@
-'use client'
-import { useEffect } from 'react'
-
 export default function Carousel ({ nombre, contexto, dir }) {
-  useEffect(() => {
-    require('bootstrap/js/dist/carousel')
-  })
-
   return (
     <div id={'carousel-' + nombre} className='carousel slide'>
       <div className='carousel-inner'>

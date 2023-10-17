@@ -1,87 +1,79 @@
-import { links } from '../context/AppContext'
+'use client'
+import { useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 // import SearchBar from './navbar/SearchBar'
-import LoginBtn from './navbar/LoginBtn'
-import CartBtn from './navbar/CartBtn'
-import CambiarMoneda from './navbar/CambiarMoneda'
+// import LoginBtn from './navbar/LoginBtn'
+import CartBrief from './navbar/CartBrief'
+import SelectMnd from './navbar/SelectMnd'
 
 export default function Navbar () {
-  const navLinks = links.filter(
-    (link) =>
-      link.route !== '/' && link.route !== '/cart' && link.route !== '/login'
-  )
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap')
+  })
 
   return (
-    <nav className='navbar navbar-expand-lg' id='navbar'>
-      <div className='container-fluid align-items-center justify-content-center mb-2'>
-        <a
+    <nav className='navbar navbar-expand-lg mb-3' id='navbar'>
+      <div className='container-fluid' id='navbar-container'>
+        <Image
+          src='/isotipo250.png'
+          alt='branding-img'
+          width={250}
+          height={166}
+          style={
+            {
+              width: '5vw',
+              height: '3.5vw',
+              minWidth: '50px',
+              minHeight: '40px',
+              marginRight: '1ch'
+            }
+          }
+        />
+        <Link
+          id='navbar-brand'
+          className='navbar-brand text-alter1 fs-1 fw-bold fst-italic m-0 mt-2'
           href='/'
-          className='navbar-brand container'
-          id='branding'
         >
-          <div className='row'>
-            <img
-              src='/isotipo250.png'
-              alt='Logo Inversiones Tralodi'
-              id='logo'
-              className='mt-2'
-            />
-            <div className='col p-0'>
-              <h1 className='text-alter1 fs-2 fw-bold fst-italic m-0 pt-2'>TRALODI</h1>
-            </div>
-          </div>
-        </a>
+          TRALODI
+        </Link>
         <button
-          className='navbar-toggler my-4 border-0 position-absolute end-0 top-0'
           id='navbar-toggler'
+          className='navbar-toggler ms-auto me-3 mt-2 border-0'
           type='button'
           data-bs-toggle='collapse'
-          data-bs-target='#navbarToggler'
-          aria-controls='navbarToggler'
+          data-bs-target='#navbar-content'
+          aria-controls='#navbar-content'
           aria-expanded='false'
-          aria-label='Toggle navigation'
+          aria-label='Toggle'
         >
-          <span className='text-secondary'>
-            <i id='menu-icon' className='bi bi-list' />
-          </span>
+          <i className='bi bi-list text-secondary m-auto' />
         </button>
-        <div className='collapse navbar-collapse' id='navbarToggler'>
-          <ul
-            className='navbar-nav mx-4 d-flex flex-column flex-lg-row align-items-end align-items-lg-center justify-content-center'
-            id='navbar-nav'
-          >
-            {navLinks.map(({ label, route }) => (
-              <li
-                key={route}
-                className='nav-item fs-5'
-                id='navbar-item'
-              >
-                <a
-                  href={route}
-                  id='navbar-link'
-                  className={
-                    label === 'Ofertas'
-                      ? 'nav-link text-secondary d-flex align-items-center'
-                      : 'nav-link text-secondary'
-                  }
-                >
-                  {label === 'Ofertas' && (
-                    <i id='tags-icon' className='bi bi-tags-fill' />
-                  )}
-                  {label}
-                </a>
-              </li>
-            ))}
+        <div className='collapse navbar-collapse m-auto ' id='navbar-content'>
+          <ul className='navbar-nav ms-auto me-auto mt-2 mt-lg-0 mb-2 mb-lg-0'>
+            <li id='navbar-link' className='nav-item'>
+              <Link href='/ofertas' className='nav-link fw-bold'>
+                <i className='bi bi-tag-fill me-1' />
+                Ofertas
+              </Link>
+            </li>
+            <li id='navbar-link' className='nav-item'>
+              <Link href='/productos' className='nav-link fw-bold'>
+                Productos
+              </Link>
+            </li>
+            <li id='navbar-link' className='nav-item'>
+              <Link href='/marcas' className='nav-link fw-bold'>
+                Marcas
+              </Link>
+            </li>
           </ul>
-          <div
-            className='d-flex flex-column justify-content-end align-items-end w-100 gap-2 flex-lg-row align-items-lg-center '
-            id='btn-group'
-          >
-            {/* <SearchBar /> */}
-            <CambiarMoneda />
-            <LoginBtn />
-            <CartBtn />
+          <div className='d-flex pe-lg-3 w-25 justify-content-end justify-content-lg-between'>
+            <SelectMnd />
+            <CartBrief />
           </div>
         </div>
+
       </div>
     </nav>
   )

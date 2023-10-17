@@ -3,9 +3,7 @@ import { createContext, useEffect, useReducer } from 'react'
 import { monedas, usuario, productos } from './AppContext'
 
 function sessionSet (key, value) {
-  if (typeof window !== 'undefined') {
-    sessionStorage.setItem(key, value)
-  }
+    sessionStorage.setItem(key, value) 
 }
 
 // Reducer
@@ -15,10 +13,15 @@ export const Reducer = (state, action) => {
 
   switch (action.type) {
     case 'SET_MONEDA':
-      state.monedaActiva = action.payload
-      sessionSet('monedaActiva', JSON.stringify(state.monedaActiva))
-      action.type = 'DONE'
-      return { ...state }
+      console.log('Vieja moneda', state.mndAct)
+      if (action.payload.simbolo !== state.mndAct.simbolo) {
+        state.mndAct = action.payload
+        sessionSet('mndAct', JSON.stringify(state.mndAct))
+        action.type = 'DONE'
+        return { ...state }
+      }
+      console.log('Se ha seleccionado la misma moneda')
+      return {...state}
 
     case 'ADD_TO_CARRITO':
       if (state.carrito.find((prdct) => prdct.id === action.payload.id)) {
@@ -77,7 +80,7 @@ export const Reducer = (state, action) => {
 // Información básica para sesión
 const sesion = {
   usuario,
-  monedaActiva: monedas[0],
+  mndAct: monedas[0],
   divisas: monedas,
   carrito: [
     {
@@ -118,7 +121,7 @@ export function App (props) {
 
   useEffect(() => {
     const carritoStrg = sessionStorage.getItem('carrito')
-    const mndActStrg = sessionStorage.getItem('monedaActiva')
+    const mndActStrg = sessionStorage.getItem('mndAct')
     // Guardando en sesion el carrito si es que ya no existe
     if (carritoStrg) {
       state.carrito = JSON.parse(carritoStrg)
@@ -126,9 +129,9 @@ export function App (props) {
       sessionStorage.setItem('carrito', JSON.stringify(state.carrito))
     }
     if (mndActStrg) {
-      state.monedaActiva = JSON.parse(mndActStrg)
+      state.mndAct = JSON.parse(mndActStrg)
     } else {
-      sessionStorage.setItem('monedaActiva', JSON.stringify(state.monedaActiva))
+      sessionStorage.setItem('mndAct', JSON.stringify(state.mndAct))
     }
   })
 
@@ -162,7 +165,7 @@ export function App (props) {
     <Sesion.Provider
       value={{
         usuario: state.usuario,
-        monedaActiva: state.monedaActiva,
+        mndAct: state.mndAct,
         divisas: state.divisas,
         carrito: state.carrito,
         subTotal,

@@ -2,7 +2,7 @@ import Burbuja from './Burbuja'
 
 export default function WrapperBurbujas ({ contexto, activa, callback }) {
   const handleMarcaSelection = (id) => {
-    console.log('Llamando funcion desde wrapper de busbuja')
+    console.log('Llamando función desde wrapper de burbuja')
     console.log('Marca clicada: ', id)
     callback(id)
   }
