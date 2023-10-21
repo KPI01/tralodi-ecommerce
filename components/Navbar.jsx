@@ -13,11 +13,11 @@ export default function Navbar () {
   })
 
   return (
-    <nav className='navbar navbar-expand-lg bg-primary m-0 p-0' id='navbar'>
+    <nav className='navbar navbar-expand-lg bg-primary m-0 p-0 mb-lg-3' id='navbar'>
       <div className='container-fluid' id='navbar-container'>
         <Link
           id='navbar-brand'
-          className='navbar-brand text-alter1 fs-1 fw-bold fst-italic m-0 mt-2'
+          className='navbar-brand text-alter1 fs-1 fw-bold fst-italic m-0 mt-lg-1'
           href='/'
         >
           <Image
@@ -32,7 +32,8 @@ export default function Navbar () {
               height: '3.5vw',
               minWidth: '50px',
               minHeight: '40px',
-              marginRight: '1ch'
+              marginRight: '1ch',
+              marginBottom: '0.2em'
             }
           }
           />

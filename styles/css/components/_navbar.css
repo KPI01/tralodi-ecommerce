@@ -1,5 +1,6 @@
 /* Navbar */
 
+
 #navbar-brand {
     letter-spacing: 0.1rem;
     transition: ease 0.25s
@@ -75,6 +76,7 @@
 /* Búsqueda */
 
 #searchbar-input {
+    width: auto;
     box-shadow: none;
     border-bottom: 1px solid var(--alter1) !important;
     transition: ease 0.25s;
@@ -98,10 +100,18 @@
     display: none;
 }
 
+#searchbar-btn, #searchbar-btn > i {
+    box-shadow: none;
+    transition: ease 0.15s;
+}
+
+#searchbar-btn:hover, #searchbar-btn > i:hover {
+    color: var(--alter2) !important;
+}
+
 #searchbar-clear {
     box-shadow: none !important;
     border: none !important;
-    transition: visibility 0.25s;
 }
 
 /* Reglas para lg */

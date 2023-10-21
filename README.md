@@ -14,6 +14,7 @@ Para ello se instalaron los siguientes paquetes:
 - boostrap-icons
 - sass
 - standard (linter)
+- react-responsive
 
 ---
 

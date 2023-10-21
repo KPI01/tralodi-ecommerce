@@ -1,6 +1,5 @@
 import '../styles/scss/main.scss'
 import '../styles/css/main.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import dynamic from 'next/dynamic'
 import { App } from '../context/sesion'
 import Navbar from '../components/Navbar'
@@ -9,8 +8,8 @@ import Footer from '../components/Footer'
 dynamic(
   () => require('bootstrap/dist/js/bootstrap.min.js'),
   { ssr: false }
-)
-
+  )
+  
 export default function RootLayout ({ children }) {
   return (
     <App>

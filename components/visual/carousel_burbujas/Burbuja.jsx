@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Burbuja ({ src, alt, active, callback, marcaId }) {
   const handleMarcaClick = (id) => {
     console.log('Llamando funcion desde burbuja')
@@ -10,7 +12,7 @@ export default function Burbuja ({ src, alt, active, callback, marcaId }) {
       className={'burbuja' + (active ? ' active' : '')}
       onClick={() => handleMarcaClick(marcaId)}
     >
-      <img className='burbuja-img' src={src} alt={alt} />
+      <Image className='burbuja-img' src={src} alt={alt} fill/>
     </button>
   )
 }

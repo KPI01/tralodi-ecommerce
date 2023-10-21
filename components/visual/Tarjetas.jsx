@@ -1,182 +1,53 @@
 'use client'
 import { useContext } from 'react'
 import { Sesion } from '../../context/sesion'
+import Image from 'next/image'
 
-export function Tarjetas ({ contexto, descuento }) {
+export default function Tarjetas ({ contexto, descuento }) {
   // Rescatar valores del contexto
-  const { mndAct, divisas, dispatch } = useContext(Sesion)
+  const { mndAct, divisas } = useContext(Sesion)
 
   // ActionCreator para agregar producto al carrito
-  const addProductoToCarrito = (id) => {
-    dispatch({
-      type: 'ADD_TO_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
+  // const addProductoToCarrito = (id) => {
+  //   dispatch({
+  //     type: 'ADD_TO_CARRITO',
+  //     payload: { id, cant: 1 }
+  //   })
+  // }
 
   // Variable que contiene el valor de la divisa
   const mndLocal = divisas[0]
 
-  if (descuento === true) {
-    const prdctsDesc = contexto.filter((prdct) => prdct.descuento > 0)
-    console.log('Con descuento')
-    return (
-      <div className='d-flex'>
-        {prdctsDesc.map((prdct) => {
-          return (
-            <div
-              key={prdct.id}
-              id='tarjeta-producto'
-              className='col bg-alter1 text-primary rounded d-flex flex-column'
-            >
-              <div className='d-flex flex-column flex-grow-1 text-start'>
-                <a id='producto-img'>
-                  <img
-                    className='d-flex justify-content-center align-items-center'
-                    src={'/productos/' + prdct.id + '.png'}
-                    alt={
-                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
-                    }
-                  />
-                </a>
-                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
-                  {prdct.descripcion + ' ' + prdct.medida}
-                </h6>
-                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
-                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
-                  <p className='text-start'>
-                    {mndAct.simbolo}{' '}
-                    {mndAct.simbolo === '$'
-                      ? prdct.precio - prdct.precio * (prdct.descuento / 100)
-                      : prdct.precio * mndLocal.valorDolar -
-                        prdct.precio *
-                          mndLocal.valorDolar *
-                          (prdct.descuento / 100)}
-                    <span className='ms-3 badge text-primary bg-secondary'>
-                      -{prdct.descuento}%
-                    </span>
-                  </p>
-                  <button
-                    className='btn btn-secondary text-primary ms-auto'
-                    onClick={() => addProductoToCarrito(prdct.id)}
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
+  return (
+    <ul id='container-tarjetas' className='container_tarjetas'>
+      {contexto.map(producto => {
+        const precioMndLocal = producto.precio * mndLocal.valorDolar
+        const IVA = producto.precio * 0.16
+        const totalProd = producto.precio + IVA
+        const IVA_mndLocal = IVA * mndLocal.valorDolar
+        const totalProd_mndLocal = precioMndLocal + IVA_mndLocal
+        return (
+          <li key={producto.id} id={'producto-' + producto.id} className='tarjeta-producto'>
+            <Image 
+              id='producto-img'
+              className='m-auto'
+              src={'/productos/'+producto.id+'.png'}
+              alt={`${producto.descripcion} ${producto.medida}`}
+              fill
+            />
+            <div id='producto-descripcion' className='fw-bold fs-5'>
+            {producto.descripcion} {producto.medida} 
             </div>
-          )
-        })}
-      </div>
-    )
-  } else if (descuento === false) {
-    console.log('Sin descuento')
-    const prdctsSinDesc = contexto.filter((prdct) => prdct.descuento === 0)
-    return (
-      <div className='d-flex justify-content-space-between'>
-        {prdctsSinDesc.map((prdct) => {
-          return (
-            <div
-              key={prdct.id}
-              id='tarjeta-producto'
-              className='col bg-alter1 text-primary rounded d-flex flex-column'
-            >
-              <div className='d-flex flex-column flex-grow-1 text-start'>
-                <a id='producto-img'>
-                  <img
-                    className='d-flex justify-content-center align-items-center'
-                    src={'/productos/' + prdct.id + '.png'}
-                    alt={
-                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
-                    }
-                  />
-                </a>
-                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
-                  {prdct.descripcion + ' ' + prdct.medida}
-                </h6>
-                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
-                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
-                  <p className='text-start'>
-                    {mndAct.simbolo}{' '}
-                    {mndAct.simbolo === '$'
-                      ? prdct.precio
-                      : prdct.precio * mndLocal.valorDolar}
-                  </p>
-                  <button
-                    className='btn btn-secondary text-primary ms-auto'
-                    onClick={() => addProductoToCarrito(prdct.id)}
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
+            <div id='producto-precio' className='d-flex justify-content-between align-items-center'>
+            {mndAct.simbolo} {mndAct.simbolo === '$' ? totalProd : totalProd_mndLocal} + IVA
+            {producto.descuento > 0 && <span id='badge-descuento' className='badge bg-secondary text-primary'> -{producto.descuento}%</span>}
             </div>
-          )
-        })}
-      </div>
-    )
-  } else {
-    console.log('Otros')
-    return (
-      <div className='d-flex justify-content-space-between flex-wrap'>
-        {contexto.map((prdct) => {
-          return (
-            <div
-              key={prdct.id}
-              id='tarjeta-producto'
-              className='col bg-alter1 text-primary rounded d-flex flex-column'
-            >
-              <div className='d-flex flex-column flex-grow-1 text-start'>
-                <a id='producto-img'>
-                  <img
-                    className='d-flex justify-content-center align-items-center'
-                    src={'/productos/' + prdct.id + '.png'}
-                    alt={
-                      'Presentación ' + prdct.descripcion + ' ' + prdct.medida
-                    }
-                  />
-                </a>
-                <h6 className='fs-6 fw-bold mt-1 mb-0 text-start'>
-                  {prdct.descripcion + ' ' + prdct.medida}
-                </h6>
-                <small id='tarjeta-producto-detalles'>Detalles del producto</small>
-                <div id='cuerpo-tarjeta' className='d-flex align-items-center'>
-                  <p className='text-start'>
-                    {mndAct.simbolo + ' '}
-                    {prdct.descuento > 0
-                      ? mndAct.simbolo === '$'
-                        ? prdct.precio - prdct.precio * (prdct.descuento / 100)
-                        : prdct.precio * mndLocal.valorDolar -
-                          prdct.precio *
-                            mndLocal.valorDolar *
-                            (prdct.descuento / 100)
-                      : mndAct.simbolo === '$'
-                        ? prdct.precio
-                        : prdct.precio * mndLocal.valorDolar}
-                    {prdct.descuento > 0
-                      ? (
-                        <span className='ms-3 badge text-primary bg-secondary'>
-                          -{prdct.descuento}%
-                        </span>
-                        )
-                      : (
-                          ''
-                        )}
-                  </p>
-                  <button
-                    className='btn btn-secondary text-primary ms-auto'
-                    onClick={() => addProductoToCarrito(prdct.id)}
-                  >
-                    Agregar
-                  </button>
-                </div>
-              </div>
+            <div id='producto-actions'>
+              <button className='btn'>Agregar</button>
             </div>
-          )
-        })}
-      </div>
-    )
-  }
+          </li>
+        )
+      })}
+    </ul>
+  )
 }
-
-export default Tarjetas

@@ -10,8 +10,8 @@ export default function SearchBar () {
   }
 
   return (
-    <form className='d-flex ms-auto ms-lg-0 me-lg-auto justify-content-end justify-content-lg-center' id='search-bar'>
-      <i className='bi bi-search my-auto text-alter1 me-2' />
+    <form className='d-flex flex-row-reverse flex-lg-row ms-auto ms-lg-0 me-lg-auto justify-content-end justify-content-lg-center' id='search-bar'>
+      <i className='bi bi-search my-auto text-alter1 m-auto' />
       <input
         type='search'
         id='searchbar-input'

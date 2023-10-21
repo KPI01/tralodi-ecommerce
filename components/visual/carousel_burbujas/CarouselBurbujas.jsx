@@ -8,7 +8,7 @@ export default function CarouselBurbujas ({ contexto, state, callback }) {
 
   return (
     <div id='carousel-burbujas' className='carousel slide' data-bs-touch='true'>
-      <div className='carousel-inner'>
+      <div className='carousel-inner py-2 p-lg-0'>
         {contexto.map(arr => {
           const activation = arr.filter(elmnt => elmnt.id === state)[0]
           return (

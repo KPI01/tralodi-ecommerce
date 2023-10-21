@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Carousel ({ nombre, contexto, dir }) {
   return (
     <div id={'carousel-' + nombre} className='carousel slide' data-bs-ride='carousel'>
@@ -5,7 +7,7 @@ export default function Carousel ({ nombre, contexto, dir }) {
         {contexto.map(img => {
           return (
             <div key={contexto.indexOf(img)} className={'carousel-item' + (contexto.indexOf(img) === 0 ? ' active' : '')} data-bs-interval='5000'>
-              <img src={`/${dir}/${img}`} alt={img} className='d-block w-100' />
+              <Image src={`/${dir}/${img}`} alt={img} className='d-block w-100' fill />
             </div>
           )
         })}

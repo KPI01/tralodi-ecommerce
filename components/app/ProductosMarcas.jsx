@@ -15,9 +15,11 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
   let contador = 0
   // Subdivision en arrays más pequeños
   while (contador <= marcas.length) {
-    contextoMarcas.push(marcas.slice(contador, contador + 3))
-    contador += 3
+    const separador = 3
+    contextoMarcas.push(marcas.slice(contador, contador + separador))
+    contador += separador
   }
+
   // Eliminando arrays sin contenido
   contextoMarcas = contextoMarcas.filter(arr => arr.length > 0)
 

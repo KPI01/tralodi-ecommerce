@@ -15,6 +15,7 @@
 
 .wrapper-burbujas {
     height: 100px;
+    min-height: max-content;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -26,6 +27,8 @@
 .burbuja {
     margin: 1vw;
     width: 10vw !important;
+    min-width: 100px;
+    min-height: 100px;
     height: 10vw !important;
     background-color: var(--alter1) !important;
     border-radius: 50%;
@@ -48,4 +51,19 @@
 
 .burbuja-img {
     width: 100%;
+}
+
+/* Reglas para móviles */
+
+@media (max-width: 767.98px) {
+
+    .burbuja {
+        min-width: 80px;
+        min-height: 80px;
+    }    
+
+    .burbuja-img {
+        width: 85% !important;
+    }
+
 }
