@@ -8,7 +8,7 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
   // Estado que permite identificar cual proveedor ha sido seleccionado
   // Hacer que esto sea un componente
   const [marcaAct, setMarcaAct] = useState(1)
-  console.log(marcaAct)
+  console.log('ID marca activa:', marcaAct)
 
   // Crear array de marcas para el componente
   let contextoMarcas = []

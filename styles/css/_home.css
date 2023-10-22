@@ -4,34 +4,6 @@
     z-index: 900;
 }
 
-/* Tarjetas */
-
-#col-card {
-    width: fit-content !important;
-}
-
-.card {
-    color: var(--rgb-primary) !important;
-    width: 50%;
-    cursor: pointer;
-    transition: 0.1s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(0,0,0, 0.45);
-    z-index: 3;
-}
-
-#product-card-img {
-    max-width: 30%;
-}
-
-/* Marcas */
-
-#a-nav-link {
-    cursor: pointer;
-}
 
 /* Reglas para dispositivos grandes */
 
@@ -42,9 +14,10 @@
 /* Reglas para dispositivos móviles */
 
 @media (max-width: 991.98px) {
-
+    
     #container-home {
         margin-top: 12vh;
+        margin: 0 10px auto !important;
     }
 
 }

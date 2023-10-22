@@ -8,8 +8,8 @@ import Footer from '../components/Footer'
 dynamic(
   () => require('bootstrap/dist/js/bootstrap.min.js'),
   { ssr: false }
-  )
-  
+)
+
 export default function RootLayout ({ children }) {
   return (
     <App>
@@ -27,7 +27,7 @@ export default function RootLayout ({ children }) {
             <Navbar />
           </header>
           <main>
-            <div className='container'>{children}</div>
+            <div id='main-container' className='container'>{children}</div>
           </main>
           <Footer />
         </body>

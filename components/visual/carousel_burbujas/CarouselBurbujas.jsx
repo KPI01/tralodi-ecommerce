@@ -2,7 +2,6 @@ import WrapperBurbujas from './WrapperBurbujas'
 
 export default function CarouselBurbujas ({ contexto, state, callback }) {
   const handleMarcaAct = (id) => {
-    console.log('Llamando a la función desde carrusel burbujas')
     callback(id)
   }
 

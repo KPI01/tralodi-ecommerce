@@ -10,7 +10,6 @@ export default async function CarouselOfertas () {
     imgs.push(item.name)
     return true
   })
-  console.log('CarouselOfertas: ', imgs, typeof imgs)
   return (
     <Carousel nombre='principal' contexto={data} dir={dir} />
   )

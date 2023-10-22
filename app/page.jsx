@@ -4,7 +4,6 @@ import CarouselMain from '../components/app/CarouselMain'
 import Tarjetas from '../components/visual/Tarjetas'
 import ProductosMarcas from '../components/app/ProductosMarcas'
 
-
 export default function Home () {
   // Filtro en productos para detectar cuales están activos
   const productosAct = productos.filter(

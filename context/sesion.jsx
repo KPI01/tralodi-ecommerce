@@ -13,7 +13,7 @@ export const Reducer = (state, action) => {
 
   switch (action.type) {
     case 'SET_MONEDA':
-      console.log('Vieja moneda', state.mndAct)
+      console.log('Cambio moneda de ', state.mndAct, ' a ', action.payload)
       if (action.payload.simbolo !== state.mndAct.simbolo) {
         state.mndAct = action.payload
         sessionSet('mndAct', JSON.stringify(state.mndAct))
@@ -21,19 +21,20 @@ export const Reducer = (state, action) => {
         return { ...state }
       }
       console.log('Se ha seleccionado la misma moneda')
-      return {...state}
+      return { ...state }
 
     case 'ADD_TO_CARRITO':
       if (state.carrito.find((prdct) => prdct.id === action.payload.id)) {
         state.carrito.map((prdct) => {
           if (prdct.id === action.payload.id) {
+            console.log('Agregado ', action.payload.cant, ' a ', action.payload.id)
             prdct.cant += action.payload.cant
           }
-          console.log(prdct)
           updtCarrito.push(prdct)
           return true
         })
       } else {
+        console.log('Agregando ', action.payload, ' al carrito')
         updtCarrito = state.carrito
         nuevoProd = productos.filter(
           (prdct) => prdct.id === action.payload.id
@@ -48,8 +49,12 @@ export const Reducer = (state, action) => {
 
     case 'RED_FROM_CARRITO':
       state.carrito.map((producto) => {
-        if (producto.id === action.payload.id) {
+        if (producto.id === action.payload.id && producto.cant > 0) {
+          console.log('Eliminando ', action.payload.cant, ' a ', action.payload.id)
           producto.cant -= action.payload.cant
+        } else {
+          console.log('Eliminando ', action.payload.id, ' del carrito')
+          producto.cant = 0
         }
         updtCarrito.push(producto)
         return true
@@ -62,6 +67,7 @@ export const Reducer = (state, action) => {
     case 'DEL_FROM_CARRITO':
       state.carrito.map((producto) => {
         if (producto.id === action.payload.id) {
+          console.log('Eliminando ', action.payload.id, 'del carrito')
           producto.cant = 0
         }
         updtCarrito.push(producto)
@@ -91,7 +97,7 @@ const sesion = {
       presentacion: 'Bolsa',
       medida: '300 Gr',
       categoria: 'Cereales',
-      cant: 1,
+      cant: 1.0,
       precio: 1,
       estado: 'Activo',
       descuento: 0
@@ -104,7 +110,7 @@ const sesion = {
       presentacion: 'Bolsa',
       medida: '25 Gr',
       categoria: 'Cereales',
-      cant: 1,
+      cant: 1.0,
       precio: 1,
       estado: 'Activo',
       descuento: 30

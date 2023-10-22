@@ -1,86 +1,102 @@
-/* Clases carrito vacío */
-
-#container-carrito-vacio {
-    height: fit-content;
-    padding: 15% 0;
+#carrito-detalles {
+    flex-basis: 70% !important;
 }
 
-#alert-carrito-vacio {
-    width: fit-content;
-    height: fit-content;
+#carrito-resumen {
+    flex-basis: 30% !important;
 }
 
-#alert-carrito-vacio h4 {
-    margin: 0;
+#carrito-item {
+    color: var(--primary) !important;
 }
 
-/* Clases carrito con cosas */
-
-#container-carrito {
-    height: fit-content;
+#item-img {
+    flex-basis: 25% !important;
 }
 
-#container-carrito .row {
-    height: fit-content;
+#item-info {
+    flex-basis: 50% !important;
 }
 
-#container-carrito .row .col-8 {
-    height: fit-content;
+#item-actions {
+    flex-basis: 25% !important;
 }
 
-#container-carrito .row .col-4 {
-    height: fit-content;
+#item-red-btn:hover, #item-add-btn:hover {
+    background-color: var(--alter2) !important;
+    border: 1px solid var(--alter2);
 }
 
-#producto-carrito-img {
-    max-width: 100%;
+#item-del-btn:hover {
+    color: var(--primary) !important;
+    background-color: var(--secondary) !important;
+    border: 1px solid var(--secondary);
 }
 
-#producto-carrito-img img{
-    max-height: 7.5vw;
-}
-
-#carrito-producto-btn:hover {
-    background-color: var(--alter2);
-}
-
-#resumen-iva-producto {
+#producto-item {
     list-style: none;
-    
 }
 
-#carrito-productos-btns {
-    width: 100%;
-}
-
-#carrito-producto-btn .btn-alter2 {
-    width: fit-content;
-}
-
-
-#carrito-producto-btn-delete {
-    border: none;
-}
-
-#carrito-producto-btn-delete:hover {
-    background-color: var(--primary);
-    color: var(--alter1);
-}
-
-#delete-icon {
-    font-size: 0.75em;
-}
-
-#carrito-resumen-btn-comprar {
-    border: none;
-}
-
-#carrito-resumen-btn-comprar:hover {
+#comprar-btn:hover {
     background-color: var(--alter2);
+    border: 1px solid var(--alter2);
 }
 
-/* Elementos de productos del carrito */
+#separador-movil {
+    display: none;
+}
 
-#producto-carrito-info {
-    height: fit-content !important;
+/* Reglas para móviles */
+
+@media (max-width: 991.98px) {
+    
+    #separador-movil {
+        display: block;
+        border: 2.5px solid var(--secondary) !important;
+        opacity: 1;
+        border-radius: 1rem;
+    }
+
+    #container-carrito {
+        margin-top: 13vh;
+    }
+
+    #carrito-detalles {
+        flex-basis: 100%;
+    }
+
+    #carrito-resumen {
+        flex-basis: 100%;
+    }
+
+    #carrito-resumen {
+        padding: 0 !important;
+    }
+
+    #item-actions {
+        display: none !important;
+    }
+}
+
+/* Reglas para monitores pequeños */
+
+@media (max-width: 1199.98px) {
+
+    /* #item-actions {
+        display: none !important;
+    } */
+
+    #item-info, #item-info > * {
+        flex-basis: auto !important;
+    }
+
+    #item-actions {
+        flex-basis: content !important;
+        margin-left: auto;
+    }
+
+    #actions-edit-cant, #item-del-btn {
+        margin: 0 20px 0;
+    }
+
 }

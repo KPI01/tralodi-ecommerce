@@ -1,14 +1,10 @@
 .container_tarjetas {
+    width: 100%;
     padding-left: 0;
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(
-            150px,
-            1fr
-        )
-    );
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
 }
 
 .tarjeta-producto {
@@ -17,55 +13,79 @@
     color: var(--primary);
     padding: 1.25em 1em;
     width: fit-content !important;
-    min-width: min-content !important;
-    max-width: 400px;
+    min-width: 250px !important;
+    max-width: 325px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#producto-img {
-    position: inherit !important;
-    margin: auto !important;
-    width: auto !important;
-    height: 25vh !important;
+    row-gap: 5px;
+    margin: 0 10px;
 }
 
 #badge-descuento {
     width: fit-content !important;
 }
 
-@media (max-width: 991.98px) {
+#tarjeta-btn-add:hover, #tarjeta-red-cant:hover, #tarjeta-sum-cant:hover {
+    background-color: var(--alter2);
+    border: 1px solid var(--alter2);
+}
 
-    #producto-img {
-        position: inherit !important;
-        width: auto !important;
-        height: 50% !important;
-    }
+#tarjeta-input-group {
+    width: auto !important;
+}
+
+#tarjeta-cant-field {
+    width: 8ch !important;
+}
+
+@media (max-width: 1199.98px) {
+
+    /* .container_tarjetas {
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    } */
 
     #producto-descripcion {
-        font-size: 0.5rem;
-        
+        font-size: 0.95rem !important;
     }
+
+    
 }
+@media (max-width: 991.98px) {
 
-@media screen and (width <= 767.98px) {
-
-    .container_tarjetas {
+    /* .container_tarjetas {
         display: flex;
-        flex-direction: column;
-    }
+        flex-direction: row;
+        gap: 12px;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    } */
 
-    .tarjeta-producto {
-        width: 100%!important;
+    #producto-descripcion {
+        font-size: 0.85rem !important;
         
-    }   
-
-    #producto-img {
-        position: inherit !important;
-        width: 90% !important;
-        max-width: 200px;
-        max-height: 210px !important;
     }
+
 }
+
+@media screen and (max-width: 767.98px) {
+
+    /* .container_tarjetas {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    } */
+
+}
+
+
