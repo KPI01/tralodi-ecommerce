@@ -3,43 +3,6 @@ export const monedas = [
   { nombre: 'Dólar', simbolo: '$' }
 ]
 
-export const usuario = {
-  sesionActiva: false,
-  username: '',
-  correo: '',
-  nombre: 'Sin sesión'
-}
-export const links = [
-  {
-    id: 1,
-    label: 'Inicio',
-    route: '/'
-  },
-  {
-    id: 2,
-    label: 'Ofertas',
-    route: '/ofertas'
-  },
-  {
-    id: 3,
-    label: 'Productos',
-    route: '/productos'
-  },
-  {
-
-    label: 'Marcas',
-    route: '/marcas'
-  },
-  {
-    label: 'Inicio de sesión',
-    route: '/login'
-  }
-  // {
-  //   label: "Carrito",
-  //   route: "/cart",
-  // },
-]
-
 export const marcas = [
   {
     id: 1,

@@ -9,7 +9,7 @@ export default function SelectMnd () {
   // ActionCreator para cambiar moneda
   const cambiarMoneda = (moneda) => {
     dispatch({
-      type: 'SET_MONEDA',
+      type: 'SET_CURRENCY',
       payload: moneda
     })
   }

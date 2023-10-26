@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useEffect, useReducer } from 'react'
-import { monedas, usuario, productos } from './AppContext'
+import { monedas, productos } from './AppContext'
 
 function sessionSet (key, value) {
     sessionStorage.setItem(key, value) 
@@ -12,7 +12,7 @@ export const Reducer = (state, action) => {
   let nuevoProd = ''
 
   switch (action.type) {
-    case 'SET_MONEDA':
+    case 'SET_CURRENCY':
       console.log('Cambio moneda de ', state.mndAct, ' a ', action.payload)
       if (action.payload.simbolo !== state.mndAct.simbolo) {
         state.mndAct = action.payload
@@ -85,7 +85,6 @@ export const Reducer = (state, action) => {
 
 // Información básica para sesión
 const sesion = {
-  usuario,
   mndAct: monedas[0],
   divisas: monedas,
   carrito: [
