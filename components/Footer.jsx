@@ -1,5 +1,3 @@
-import { links } from '../context/AppContext'
-
 export default function Footer () {
   return (
     <footer className='container mt-5'>
@@ -29,19 +27,7 @@ export default function Footer () {
         </div>
         <div id='productos' className='col'>
           <h5>Navegación</h5>
-          <ul id='footer-nav'>
-            {links.map(({ label, route }) => (
-              <li key={route}>
-                <a
-                  href={route}
-                  id='footer-nav-option'
-                  className='text-secondary text-decoration-none'
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ul id='footer-nav' />
         </div>
       </div>
       <hr />

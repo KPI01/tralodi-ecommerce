@@ -1,37 +1,27 @@
 'use client'
 import { useContext } from 'react'
-import { Sesion } from '../../context/sesion'
+import { Sesion } from '../../context/Context'
 import Image from 'next/image'
+import { useCart } from '../../hooks/useCart'
 
-export default function Tarjetas ({ contexto, descuento }) {
+export default function Tarjetas ({ contexto }) {
   // Rescatar valores del contexto
-  const { mndAct, divisas, carrito, dispatch } = useContext(Sesion)
-  // ActionCreator para agregar producto al carrito
-  const addProductoToCarrito = (id) => {
-    dispatch({
-      type: 'ADD_TO_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
-  // ActionCreator para reducir producto al carrito
-  const redProductoToCarrito = (id) => {
-    dispatch({
-      type: 'RED_FROM_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
+  const { mnd, carrito } = useContext(Sesion)
+  const { addProductoToCarrito, redProductoFromCarrito, getCantProducto } = useCart()
 
   // Variable que contiene el valor de la divisa
-  const mndLocal = divisas[0]
+  // const mndLocal = divisas[0]
 
   return (
     <ul id='container-tarjetas' className='container_tarjetas'>
       {contexto.map(producto => {
-        const precioMndLocal = producto.precio * mndLocal.valorDolar
+        const precioMndLocal = producto.precio * 35
         const IVA = producto.precio * 0.16
         const totalProd = producto.precio + IVA
-        const IVAMndLocal = IVA * mndLocal.valorDolar
+        const IVAMndLocal = IVA * 35
         const totalProdMndLocal = precioMndLocal + IVAMndLocal
+        const cantCarrito = getCantProducto(producto.id)
+        console.log('cantCarrito', cantCarrito)
         return (
           <li key={producto.id} id={'producto-' + producto.id} className='tarjeta-producto'>
             <div
@@ -58,7 +48,7 @@ export default function Tarjetas ({ contexto, descuento }) {
               {producto.descripcion} {producto.medida}
             </div>
             <div id='producto-precio' className='d-flex justify-content-between align-items-center'>
-              {mndAct.simbolo} {mndAct.simbolo === '$' ? totalProd : totalProdMndLocal} + IVA
+              {mnd.simb} {mnd.simb === '$' ? totalProd : totalProdMndLocal} + IVA
               {producto.descuento > 0 && <span id='badge-descuento' className='badge bg-secondary text-primary'> -{producto.descuento}%</span>}
             </div>
             <div id='producto-actions' className='d-flex justify-content-between'>
@@ -66,7 +56,7 @@ export default function Tarjetas ({ contexto, descuento }) {
                 <button
                   id='tarjeta-btn-add'
                   className='btn btn-secondary text-primary ms-auto'
-                  onClick={() => addProductoToCarrito(producto.id)}
+                  onClick={() => addProductoToCarrito(producto.id, 1)}
                 >
                   Agregar
                 </button>}
@@ -75,7 +65,7 @@ export default function Tarjetas ({ contexto, descuento }) {
                   <button
                     id='tarjeta-red-cant'
                     className='btn btn-secondary border-0'
-                    onClick={() => redProductoToCarrito(producto.id)}
+                    onClick={() => redProductoFromCarrito(producto.id, 1)}
                   >
                     -
                   </button>
@@ -84,12 +74,12 @@ export default function Tarjetas ({ contexto, descuento }) {
                     className='form-control bg-transparent border-0 text-center'
                     type='text'
                     disabled
-                    defaultValue={carrito.find(prod => prod.id === producto.id).cant}
+                    defaultValue={cantCarrito}
                   />
                   <button
                     id='tarjeta-sum-cant'
                     className='btn btn-secondary border-0'
-                    onClick={() => addProductoToCarrito(producto.id)}
+                    onClick={() => addProductoToCarrito(producto.id, 1)}
                   >+
                   </button>
                 </div>}

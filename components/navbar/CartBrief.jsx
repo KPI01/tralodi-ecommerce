@@ -1,11 +1,11 @@
 'use client'
 import { useContext } from 'react'
-import { Sesion } from '../../context/sesion'
+import { Sesion } from '../../context/Context'
 import Link from 'next/link'
 
 export default function CartBrief () {
-  const { mndAct, divisas, total } = useContext(Sesion)
-  const mndLocal = divisas[0].valorDolar
+  const { mnd, total } = useContext(Sesion)
+  // const mndLocal = divisas[0].valorDolar
 
   return (
     <Link
@@ -19,11 +19,11 @@ export default function CartBrief () {
       >
         <i id='cartbrief-icon' className='bi bi-cart-fill me-1' />
         <span id='cartbrief-cant'>
-          {mndAct.simbolo === '$'
-            ? [mndAct.simbolo, total.toFixed(2)].join(' ')
+          {mnd.simb === '$'
+            ? [mnd.simb, total.toFixed(2)].join(' ')
             : [
-                mndAct.simbolo,
-                (total * mndLocal).toFixed(2)
+                mnd.simb,
+                (total * 35).toFixed(2)
               ].join(' ')}
         </span>
       </button>

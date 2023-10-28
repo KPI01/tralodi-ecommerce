@@ -1,5 +1,5 @@
 import Carousel from '../visual/Carousel'
-import getData from '../../app/libs/getDir'
+import getData from '../../libs/getDir'
 
 export default async function CarouselOfertas () {
   const imgs = []

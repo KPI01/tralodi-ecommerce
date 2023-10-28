@@ -1,43 +1,19 @@
 'use client'
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useContext } from 'react'
-import { Sesion } from '../../context/sesion'
+import { Sesion } from '../../context/Context'
+import { useCart } from '../../hooks/useCart'
 
 export default function Cart () {
   // Utilizar el carrito del contexto
-  const { carrito, mndAct, divisas, subTotal, total, dispatch } =
-    useContext(Sesion)
-    // Variable para obtener el valor del dolar en bolivares
-  const mndLocal = divisas[0]
-  const subTotalMndLocal = subTotal * mndLocal.valorDolar
-  const totalMndLocal = total * mndLocal.valorDolar
+  const { carrito, mnd, subTotal, total } = useContext(Sesion)
+  const { addProductoToCarrito, redProductoFromCarrito, delProductoFromCarrito } = useCart()
+  // Variable para obtener el valor del dolar en bolivares
+  const mndLocal = 35
+  const subTotalMndLocal = subTotal * mndLocal
+  const totalMndLocal = total * mndLocal
   let totalIVA = 0
-
-  // ActionCreator para agregar al carrito de determinado producto
-  const addProductoToCarrito = (id) => {
-    dispatch({
-      type: 'ADD_TO_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
-
-  // ActionCreator para reducir del carrito determinado producto
-  const redProductoFromCarrito = (id) => {
-    dispatch({
-      type: 'RED_FROM_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
-
-  // ActionCreator para eliminar del carrito determinado producto
-  const delProductoFromCarrito = (id) => {
-    dispatch({
-      type: 'DEL_FROM_CARRITO',
-      payload: { id, cant: 1 }
-    })
-  }
 
   // Validando que los productos del carrito tengan más de una unidad y el producto esté activo
   const carritoValid = carrito.filter(
@@ -109,15 +85,15 @@ export default function Cart () {
                     <span id='info-descripcion' className='fw-bold'>{`${prod.descripcion} ${prod.medida}`}</span>
                     <br />
                     <span id='info-precio-unitario'>
-                      {mndAct.simbolo === '$'
-                        ? `Precio unitario: ${mndAct.simbolo} ${prod.precio}`
-                        : `Precio unitario: ${mndAct.simbolo} ${precioMndLocal}`}
+                      {mnd.simbolo === '$'
+                        ? `Precio unitario: ${mnd.simb} ${prod.precio}`
+                        : `Precio unitario: ${mnd.simb} ${precioMndLocal}`}
                     </span>
                     <br />
                     <span id='info-subtotal'>
-                      {mndAct.simbolo === '$'
-                        ? `Sub-Total: ${mndAct.simbolo} ${subTotal}`
-                        : `Sub-Total: ${mndAct.simbolo} ${subTotalMndLocal}`}
+                      {mnd.simb === '$'
+                        ? `Sub-Total: ${mnd.simb} ${subTotal}`
+                        : `Sub-Total: ${mnd.simb} ${subTotalMndLocal}`}
                     </span>
                   </div>
                   <div id='item-actions' className='d-flex justify-content-evenly align-items-center'>
@@ -125,14 +101,14 @@ export default function Cart () {
                       <button
                         id='item-red-btn'
                         className='btn btn-secondary text-primary'
-                        onClick={() => redProductoFromCarrito(prod.id)}
+                        onClick={() => redProductoFromCarrito(prod.id, 1)}
                       >
                         <strong>-</strong> 1
                       </button>
                       <button
                         id='item-add-btn'
                         className='btn btn-secondary text-primary'
-                        onClick={() => addProductoToCarrito(prod.id)}
+                        onClick={() => addProductoToCarrito(prod.id, 1)}
                       >
                         <strong>+</strong> 1
                       </button>
@@ -155,7 +131,7 @@ export default function Cart () {
           <h2 className='display-6 fw-bold'>Resumen</h2>
           <div id='resumen-info'>
             <div id='info-subtotal'>
-              <span className='fs-3'>Sub-Total: {`${mndAct.simbolo} ${mndAct.simbolo === '$' ? (subTotal).toFixed(2) : (subTotalMndLocal).toFixed(2)}`}</span>
+              <span className='fs-3'>Sub-Total: {`${mnd.simb} ${mnd.simb === '$' ? (subTotal).toFixed(2) : (subTotalMndLocal).toFixed(2)}`}</span>
             </div>
             <div id='resumen-iva'>
               <h3 id='iva-titulo' className='mb-0 mt-2 fw-bold'>IVA</h3>
@@ -167,15 +143,15 @@ export default function Cart () {
                   return (
                     <li key={prod.id} id='producto-item' className='d-flex justify-content-between'>
                       <span id='item-descripcion'>{`${prod.descripcion} ${prod.medida}`}</span>
-                      <span id='item-iva'>{`${mndAct.simbolo} ${mndAct.simbolo === '$' ? (iva).toFixed(2) : (ivaMndLocal).toFixed(2)}`}</span>
+                      <span id='item-iva'>{`${mnd.simb} ${mnd.simb === '$' ? (iva).toFixed(2) : (ivaMndLocal).toFixed(2)}`}</span>
                     </li>
                   )
                 })}
               </ul>
-              <span id='IVA-total' className='fs-5'>Total IVA: {`${mndAct.simbolo} ${mndAct.simbolo === '$' ? totalIVA : (totalIVA * mndLocal.valorDolar)}`}</span>
+              <span id='IVA-total' className='fs-5'>Total IVA: {`${mnd.simb} ${mnd.simb === '$' ? totalIVA : (totalIVA * mndLocal)}`}</span>
             </div>
             <h3 id='resumen-total' className='fw-bold mt-3 fs-2'>
-              Total: {`${mndAct.simbolo} ${mndAct.simbolo === '$' ? (total).toFixed(2) : (totalMndLocal).toFixed(2)}`}
+              Total: {`${mnd.simb} ${mnd.simb === '$' ? (total).toFixed(2) : (totalMndLocal).toFixed(2)}`}
             </h3>
           </div>
           <button id='comprar-btn' className='btn btn-alter1 text-primary fs-3 fw-bold text-center w-100'>Comprar</button>

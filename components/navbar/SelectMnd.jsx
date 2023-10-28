@@ -1,16 +1,16 @@
-'use client'
 import { useContext } from 'react'
-import { Sesion } from '../../context/sesion'
+import { Sesion } from '../../context/Context'
 
 export default function SelectMnd () {
   // Traer los valores de las monedas y el dispatch del contexto
-  const { mndAct, divisas, dispatch } = useContext(Sesion)
+  const { mnd, dispatch } = useContext(Sesion)
 
   // ActionCreator para cambiar moneda
   const cambiarMoneda = (moneda) => {
+    const payload = JSON.parse(moneda)
     dispatch({
       type: 'SET_CURRENCY',
-      payload: moneda
+      payload
     })
   }
 
@@ -24,30 +24,29 @@ export default function SelectMnd () {
         aria-expanded='false'
         className='btn btn-primary text-secondary shadow-none dropdown-toggle'
       >
-        {mndAct.nombre} ({mndAct.simbolo})
+        {mnd.nombre} ({mnd.simb})
       </button>
 
       <ul
         id='lista-mnds'
         className='dropdown-menu border-0 bg-secondary dropdown-menu-lg-end'
       >
-        {divisas.map((mnd) => {
-          return (
-            <li key={mnd.simbolo}>
-              <button
-                id='item-mnd'
-                className={
-                  mnd.nombre === mndAct.nombre
-                    ? 'dropdown-item active'
-                    : 'dropdown-item text-primary'
-                }
-                onClick={() => cambiarMoneda(mnd)}
-              >
-                {mnd.nombre} ({mnd.simbolo})
-              </button>
-            </li>
-          )
-        })}
+        <li>
+          <button
+            id='item-mnd'
+            className={'dropdown-item text-primary' + (mnd.nombre === 'Bolívar' ? ' active' : '')}
+            onClick={() => cambiarMoneda('{"nombre": "Bolívar", "simb": "Bs"}')}
+          >Bolívar (Bs)
+          </button>
+        </li>
+        <li>
+          <button
+            id='item-mnd'
+            className={'dropdown-item text-primary' + (mnd.nombre === 'Dólar' ? ' active' : '')}
+            onClick={() => cambiarMoneda('{"nombre": "Dólar", "simb": "$"}')}
+          >Dólar ($)
+          </button>
+        </li>
       </ul>
     </div>
   )

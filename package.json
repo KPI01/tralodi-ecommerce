@@ -23,7 +23,7 @@
   },
   "standard": {
     "ignore": [
-      "/context/sesion.jsx"
+      "/context/Context.js"
     ]
   }
 }
