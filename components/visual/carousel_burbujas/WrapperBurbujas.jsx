@@ -1,6 +1,7 @@
 import Burbuja from './Burbuja'
 
 export default function WrapperBurbujas ({ contexto, activa, callback }) {
+  console.log('Dentro de WrapperBurbujas')
   const handleMarcaSelection = (id) => {
     console.log('Marca seleccionada: ', id)
     callback(id)

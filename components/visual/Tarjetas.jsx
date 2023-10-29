@@ -36,7 +36,7 @@ export default function Tarjetas ({ contexto }) {
                 id='producto-img'
                 className='m-auto'
                 src={'/productos/' + producto.id + '.png'}
-                alt={`${producto.descripcion} ${producto.medida}`}
+                alt={`Imagen ${producto.descripcion} ${producto.medida}`}
                 fill
                 sizes='100%'
                 style={{

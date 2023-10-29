@@ -135,7 +135,7 @@ export const productos = [
   },
   {
     id: 12423747,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestlé',
     descripcion: 'Postre Cacao en Polvo',
     presentacion: 'Bolsa',
@@ -143,11 +143,12 @@ export const productos = [
     categoria: 'Profesional',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 0
   },
   {
     id: 12320237,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestlé',
     descripcion: 'Bebida Achocolatada',
     presentacion: 'Bolsa',
@@ -155,7 +156,8 @@ export const productos = [
     categoria: 'Profesional',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 10
   },
   {
     id: 12300949,

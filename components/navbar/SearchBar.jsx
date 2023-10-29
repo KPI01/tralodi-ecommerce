@@ -15,7 +15,7 @@ export default function SearchBar () {
       <input
         type='search'
         id='searchbar-input'
-        className='form-control bg-primary text-alter1 border-0'
+        className='form-control bg-primary text-alter1 border-0 ms-2'
         placeholder='Buscar...'
         onChange={(e) => setInput(e.target.value)}
         value={input}
