@@ -54,7 +54,7 @@ export default function Footer () {
           <div id='footer-marca-social' className='row'>
             <div className='col'>
               <Link href={'https://www.instagram.com/tralodi.ve/'} className='text-secondary d-flex justify-content-center' target='_blank'>
-                <i id='footer-icon' class='bi bi-instagram fs-3 text-alter1' />
+                <i id='footer-icon' className='bi bi-instagram fs-3 text-alter1' />
               </Link>
             </div>
             <div className='col'>
