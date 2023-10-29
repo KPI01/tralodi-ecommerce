@@ -1,5 +1,45 @@
-#footer-nav {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+#footer {
+    padding: 3vw 9vw
+}
+
+.footer-section-title {
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+}
+
+.footer-section-list {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+.footer-section-item {
+    transition: all 0.15s;
+}
+
+.footer-section-item:hover {
+    transform: translateY(-1.5px);
+}
+
+.footer-section-link {
+    color: var(--alter1);
+    padding: 10px 0;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+.footer-section-item:hover > .footer-section-link {
+    color: var(--alter2);
+}
+
+/* Branding */
+
+#footer-maintitle-main {
+    letter-spacing: 0.1rem;
+}
+
+#footer-icon {
+    transition: all 0.15s;
+}
+
+#footer-icon:hover {
+    color: var(--secondary) !important;
 }

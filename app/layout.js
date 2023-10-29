@@ -1,6 +1,6 @@
+import dynamic from 'next/dynamic'
 import '../styles/scss/main.scss'
 import '../styles/css/main.css'
-import dynamic from 'next/dynamic'
 import { App } from '../context/Context'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
