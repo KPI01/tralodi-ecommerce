@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import Image from 'next/image'
 import { Sesion } from '../../../context/Context'
 import { useCart } from '../../../hooks/useCart'
 

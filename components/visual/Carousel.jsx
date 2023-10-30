@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import crypto from 'crypto'
 
 export default function Carousel ({ nombre, contexto, dir }) {
   return (

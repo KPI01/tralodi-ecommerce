@@ -1,4 +1,5 @@
 import WrapperTarjetas from './WrapperTarjetas'
+import crypto from 'crypto'
 
 export default function CarouselTarjetas ({ name, context }) {
   console.log('Dentro de CarouselTarjetas')
