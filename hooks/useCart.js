@@ -35,7 +35,7 @@ export function useCart () {
       return true
     })
     return cant
-  } 
+  }
 
   return { addProductoToCarrito, redProductoFromCarrito, delProductoFromCarrito, getCantProducto }
 }

@@ -5,12 +5,13 @@ import Tarjetas from '../components/visual/Tarjetas'
 import ProductosMarcas from '../components/app/home/ProductosMarcas'
 
 export default function Home () {
+  console.log('Dentro de Home')
   // Filtro en productos para detectar cuales están activos
   const productosAct = productos.filter(
     (producto) => producto.estado === 'Activo'
   )
 
-  const idNestle = marcas.filter(item => item.label.includes('Nestlé')).id
+  const idNestle = marcas.find(item => item.label.includes('Nestlé'))
 
   return (
     <div id='container-home' className='container-fluid'>
@@ -41,8 +42,8 @@ export default function Home () {
       <CarouselAlter />
 
       <div id='seccion-nestle' className='my-5 mx-auto'>
-        <h3 id='nestle-titulo' className='display-5 fw-bold'> Destacados de Nestlé</h3>
-        <Tarjetas contexto={productosAct.filter(item => item.empresa === 1)} />
+        <h3 id='nestle-titulo' className='display-5 fw-bold'>Destacados de Nestlé</h3>
+        <Tarjetas contexto={productosAct.filter(item => item.empresa === idNestle.id)} />
       </div>
     </div>
   )

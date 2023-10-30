@@ -4,7 +4,6 @@ import Tarjetas from '../../components/visual/Tarjetas'
 import { productos } from '../../context/AppContext'
 
 export default function Ofertas () {
-
   const productosAct = productos.filter(item => item.estado === 'Activo')
 
   return (
