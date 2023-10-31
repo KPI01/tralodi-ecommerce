@@ -1,10 +1,6 @@
-'use client'
-import { useState } from 'react'
 import Accordion from '../../visual/Accordion'
 
 export default function Filtros () {
-  const [active, setActive] = useState(-1)
-
   // Objeto con información de filtros
   const filtros = [
     { header: 'Filtro1', body: 'Contenido filtro 1' },

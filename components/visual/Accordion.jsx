@@ -1,14 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
-export default function Accordion ({ name, items, current, chgCurrent }) {
+export default function Accordion ({ name, items}) {
   console.log('Dentro de Accordion')
-
-  const handleOpen = (id) => {
-    if (current === id) {
-      chgCurrent(-1)
-    }
-    chgCurrent(id)
-  }
 
   return (
     <div id={`accordion-${name}`} className='accordion'>
