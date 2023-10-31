@@ -10,5 +10,5 @@ export default function Filtros () {
     { header: 'Filtro5', body: 'Contenido filtro 5' }
   ]
 
-  return <Accordion name='productos-filtros' items={filtros} current={active} chgCurrent={setActive} />
+  return <Accordion name='productos-filtros' items={filtros} />
 }
