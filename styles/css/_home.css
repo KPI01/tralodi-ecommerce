@@ -1,9 +1,8 @@
-/* Titulos */
+/* Container principal */
 
-#heading {
-    z-index: 900;
+#main-container {
+    padding: 0 10vw !important;
 }
-
 
 /* Reglas para dispositivos grandes */
 

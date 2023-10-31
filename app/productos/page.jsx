@@ -1,37 +1,28 @@
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import '../../styles/css/_productos.css'
+import { productos } from '../../context/AppContext'
+import Tarjetas from '../../components/visual/Tarjetas'
+import Filtros from '../../components/app/productos/Filtros'
+
 export default function Productos () {
+  console.log('Dentro de Productos')
+
+  // Filtrando productos activos
+  const productosAct = productos.filter(item => item.estado === 'Activo' && item.descuento)
+
   return (
-    <div className='container-fluid'>
-      <div className='row'>
-        <div className='col-3'>
-          <h1>Categorías</h1>
-          <div className='accordion' id='accordion'>
-            <div className='accordion-item'>
-              <div className='accordion-header'>
-                <button
-                  className='accordion-button collapsed'
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#item1'
-                  aria-expanded='false'
-                  aria-controls='#item1'
-                >
-                  Item 1
-                </button>
-              </div>
-              <div
-                className='accordion-collapse collapse'
-                id='item1'
-                data-bs-parent='#accordion'
-              >
-                <div className='accordion-body'>
-                  Ejemplo
-                </div>
-              </div>
-            </div>
+    <div id='container-seccion_productos' className='container-fluid'>
+      <h2 id='productos-title' className='display-4 fw-bold'>Productos</h2>
+      <hr />
+      <div id='container-productos' className='container-fluid'>
+        <div className='row'>
+          <div id='productos-filtros' className='col-3'>
+            <Filtros />
           </div>
-        </div>
-        <div className='col-auto'>
-          <h1>Productos</h1>
+          <div id='productos-tarjetas' className='col'>
+
+            <Tarjetas contexto={productosAct} />
+          </div>
         </div>
       </div>
     </div>
