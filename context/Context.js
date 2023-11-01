@@ -87,7 +87,21 @@ export const Reducer = (state, action) => {
 // Información básica para sesión
 const contexto = {
   mnd: { nombre: 'Bolívar', simb: 'Bs.' },
-  carrito: []
+  carrito: [
+    {
+      id: 39100057,
+      empresa: 2,
+      marca: 'Alfonzo Rivas',
+      descripcion: 'Cronch Flakes',
+      presentacion: 'Bolsa',
+      medida: '300 Gr',
+      categoria: 'Cereales',
+      cant: 1,
+      precio: 1,
+      estado: 'Activo',
+      descuento: 0
+    }
+  ]
 }
 
 // Creación del contexto
@@ -102,13 +116,17 @@ export function App (props) {
     const mndStrg = sessionStorage.getItem('mnd')
     // Guardando en sesión el carrito si es que ya no existe
     if (cartStrg) {
+      console.log('Recuperando carrito')
       state.carrito = JSON.parse(cartStrg)
     } else {
+      console.log('Guardando carrito')
       sessionStorage.setItem('carrito', JSON.stringify(state.carrito))
     }
     if (mndStrg) {
+      console.log('Recuperando moneda')
       state.mnd = JSON.parse(mndStrg)
     } else {
+      console.log('Guardando moneda')
       sessionStorage.setItem('mnd', JSON.stringify(state.mnd))
     }
   })

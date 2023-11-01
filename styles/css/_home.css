@@ -1,15 +1,3 @@
-/* Container principal */
-
-#main-container {
-    padding: 0 10vw !important;
-}
-
-/* Reglas para dispositivos grandes */
-
-@media (min-width: 992px) {
-
-}
-
 /* Reglas para dispositivos móviles */
 
 @media (max-width: 991.98px) {

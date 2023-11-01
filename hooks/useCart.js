@@ -2,13 +2,14 @@
 import { useContext } from 'react'
 import { Sesion } from '../context/Context'
 
-export function useCart () {
+export default function useCart () {
+  console.log('Dentro de useCart')
   const { carrito, dispatch } = useContext(Sesion)
   // ActionCreator para agregar al carrito de determinado producto
   const addProductoToCarrito = (id, cant) => {
     dispatch({
       type: 'ADD_TO_CARRITO',
-      payload: { id, cant }
+      payload: { id: id, cant: cant }
     })
   }
 

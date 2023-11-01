@@ -27,7 +27,7 @@ export default function RootLayout ({ children }) {
             <Navbar />
           </header>
           <main>
-            <div id='main-container' className='container-fluid'>{children}</div>
+            <div id='main-container' className='container'>{children}</div>
           </main>
           <Footer />
         </body>

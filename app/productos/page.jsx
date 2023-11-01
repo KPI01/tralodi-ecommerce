@@ -1,8 +1,8 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../../styles/css/_productos.css'
 import { productos } from '../../context/AppContext'
-import Tarjetas from '../../components/visual/Tarjetas'
 import Filtros from '../../components/app/productos/Filtros'
+import ContainerTarjetas from '../../components/visual/tarjetas/ContainerTarjetas'
 
 export default function Productos () {
   console.log('Dentro de Productos')
@@ -11,7 +11,7 @@ export default function Productos () {
   const productosAct = productos.filter(item => item.estado === 'Activo' && item.descuento)
 
   return (
-    <div id='container-seccion_productos' className='container-fluid'>
+    <div id='container-seccion_productos' className='container-fluid m-0'>
       <h2 id='productos-title' className='fw-bold'>Productos</h2>
       <div id='container-productos' className='container-fluid'>
         <div className='row'>
@@ -20,7 +20,7 @@ export default function Productos () {
           </div>
           <div id='productos-tarjetas' className='col'>
 
-            <Tarjetas contexto={productosAct} />
+            <ContainerTarjetas contexto={productosAct} />
           </div>
         </div>
       </div>

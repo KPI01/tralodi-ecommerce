@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useContext } from 'react'
 import { Sesion } from '../../context/Context'
-import { useCart } from '../../hooks/useCart'
+import useCart from '../../hooks/useCart'
 
 export default function Cart () {
   // Utilizar el carrito del contexto

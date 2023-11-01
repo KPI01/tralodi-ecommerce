@@ -1,7 +1,7 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import CarouselOfertas from '../../components/app/ofertas/CarouselOfertas'
-import Tarjetas from '../../components/visual/Tarjetas'
 import { productos } from '../../context/AppContext'
+import ContainerTarjetas from '../../components/visual/tarjetas/ContainerTarjetas'
 
 export default function Ofertas () {
   const productosAct = productos.filter(item => item.estado === 'Activo')
@@ -14,7 +14,7 @@ export default function Ofertas () {
 
       <div id='seccion-productos' className='mt-5'>
         <h3 className='fw-bold'>Productos</h3>
-        <Tarjetas contexto={productosAct.filter(producto => producto.descuento > 0)} />
+        <ContainerTarjetas contexto={productosAct.filter(producto => producto.descuento > 0)} />
       </div>
     </div>
   )

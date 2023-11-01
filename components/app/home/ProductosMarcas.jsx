@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { marcas } from '../../../context/AppContext'
 import CarouselBurbujas from '../../visual/carousel_burbujas/CarouselBurbujas'
-import Tarjetas from '../../visual/Tarjetas'
+import ContainerTarjetas from '../../visual/tarjetas/ContainerTarjetas'
 
 export default function ProductosMarcas ({ contextoTarjetas }) {
   // Estado que permite identificar cual proveedor ha sido seleccionado
@@ -32,7 +32,7 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
     <>
       <CarouselBurbujas context={contextoMarcas} state={marcaAct} callback={setMarcaAct} />
       <hr className='my-4' />
-      <Tarjetas contexto={prdctsMarcaAct} />
+      <ContainerTarjetas contexto={prdctsMarcaAct} />
     </>
   )
 }
