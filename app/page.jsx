@@ -19,21 +19,21 @@ export default function Home () {
       <CarouselMain />
 
       <div id='seccion-ofertas' className='my-5 mx-auto'>
-        <h2 id='ofertas-title' className='display-4 fw-bold'>
+        <h2 id='ofertas-title' className='fw-bold'>
           Productos en Oferta
         </h2>
         <Tarjetas contexto={productosAct.filter(producto => producto.descuento > 0)} />
       </div>
 
       <div id='seccion-destacados' className='my-5 mx-auto'>
-        <h2 id='destacados-titulos' className='display-4 fw-bold'>
+        <h2 id='destacados-titulos' className='fw-bold'>
           Productos Destacados
         </h2>
         <Tarjetas contexto={productosAct.filter(producto => producto.descuento === 0)} />
       </div>
 
       <div id='seccion-marcas' className='my-5'>
-        <h2 id='marcas-titulo' className='display-4 fw-bold'>
+        <h2 id='marcas-titulo' className='fw-bold'>
           Nuestras Marcas Aliadas
         </h2>
         <ProductosMarcas contextoTarjetas={productosAct} />

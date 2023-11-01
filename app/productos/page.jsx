@@ -12,8 +12,7 @@ export default function Productos () {
 
   return (
     <div id='container-seccion_productos' className='container-fluid'>
-      <h2 id='productos-title' className='display-4 fw-bold'>Productos</h2>
-      <hr />
+      <h2 id='productos-title' className='fw-bold'>Productos</h2>
       <div id='container-productos' className='container-fluid'>
         <div className='row'>
           <div id='productos-filtros' className='col-3'>

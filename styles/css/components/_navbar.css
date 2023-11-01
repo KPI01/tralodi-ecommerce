@@ -83,17 +83,7 @@
 }
 
 #searchbar-input::placeholder {
-    color: var(--alter1);
     transition: all 0.1s;
-}
-
-#searchbar-input:hover, #searchbar-input:focus {
-    background-color: var(--alter1) !important;
-    color: var(--primary) !important;
-}
-
-#searchbar-input:hover::placeholder {
-    color: var(--primary) !important;
 }
 
 #searchbar-input::-webkit-search-decoration, #searchbar-input::-webkit-search-cancel-button {

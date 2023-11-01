@@ -27,12 +27,11 @@
 .burbuja {
     margin: 1vw;
     width: 10vw !important;
-    min-width: 100px;
-    min-height: 100px;
     height: 10vw !important;
+    min-width: 125px;
+    min-height: 125px;
     background-color: var(--alter1) !important;
     border-radius: 50%;
-    padding: 2.5% !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,16 +40,17 @@
 }
 
 .burbuja:hover {
-    transform: scale(0.9);
-    box-shadow: 0 0 20px 4px var(--secondary);
+    transform: scale(0.95);
+    box-shadow: 0 0 25px 1px var(--secondary);
 }
 
 .burbuja.active {
-    box-shadow: 0 0 0 6px var(--secondary) !important;
+    box-shadow: 0 0 0 4px var(--secondary) !important;
 }
 
 .burbuja-img {
     width: 100%;
+    padding: 20% !important;
 }
 
 /* Reglas para móviles */

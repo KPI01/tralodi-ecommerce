@@ -8,12 +8,12 @@ export default function Ofertas () {
 
   return (
     <div className='container-fluid'>
-      <h2 className='display-4 fw-bold'>Ofertas</h2>
+      <h2 className='fw-bold'>Ofertas</h2>
 
       <CarouselOfertas />
 
       <div id='seccion-productos' className='mt-5'>
-        <h3 className='display-5 fw-bold'>Productos</h3>
+        <h3 className='fw-bold'>Productos</h3>
         <Tarjetas contexto={productosAct.filter(producto => producto.descuento > 0)} />
       </div>
     </div>
