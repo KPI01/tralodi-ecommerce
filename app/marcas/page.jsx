@@ -1,5 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { marcas, productos } from '../../context/AppContext'
+import { productos } from '../../context/AppContext'
 import ContainerTarjetas from '../../components/visual/tarjetas/ContainerTarjetas'
 
 export default function Marcas () {

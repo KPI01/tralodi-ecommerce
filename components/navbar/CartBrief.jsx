@@ -1,11 +1,13 @@
 'use client'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Sesion } from '../../context/Context'
 import Link from 'next/link'
 
 export default function CartBrief () {
   const { mnd, total } = useContext(Sesion)
-  // const mndLocal = divisas[0].valorDolar
+  const [currMnd] = useState(mnd.simb)
+
+  const totalBs = parseFloat((total * 35).toFixed(2))
 
   return (
     <Link
@@ -19,12 +21,7 @@ export default function CartBrief () {
       >
         <i id='cartbrief-icon' className='bi bi-cart-fill me-1' />
         <span id='cartbrief-cant'>
-          {mnd.simb === '$'
-            ? [mnd.simb, total.toFixed(2)].join(' ')
-            : [
-                mnd.simb,
-                (total * 35).toFixed(2)
-              ].join(' ')}
+          {`${currMnd} ${currMnd === '$' ? total : totalBs}`}
         </span>
       </button>
     </Link>

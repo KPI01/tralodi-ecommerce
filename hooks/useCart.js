@@ -5,38 +5,35 @@ import { Sesion } from '../context/Context'
 export default function useCart () {
   console.log('Dentro de useCart')
   const { carrito, dispatch } = useContext(Sesion)
-  // ActionCreator para agregar al carrito de determinado producto
-  const addProductoToCarrito = (id, cant) => {
-    dispatch({
-      type: 'ADD_TO_CARRITO',
-      payload: { id: id, cant: cant }
-    })
-  }
 
-  // ActionCreator para reducir del carrito determinado producto
-  const redProductoFromCarrito = (id, cant) => {
-    dispatch({
-      type: 'RED_FROM_CARRITO',
-      payload: { id, cant }
-    })
-  }
-
-  // ActionCreator para eliminar del carrito determinado producto
-  const delProductoFromCarrito = (id) => {
-    dispatch({
-      type: 'DEL_FROM_CARRITO',
-      payload: { id }
-    })
-  }
-
-  const getCantProducto = (id) => {
+  const getCantProd = (id) => {
     let cant = 0
+    if (carrito.find(item => item.id === id)) {
+      cant = carrito.filter(item => item.id === id)[0].cant
+      console.log(`${id} esta en el carrito con ${cant} unidades`)
+      return cant
+    } else {
+      console.log(`${id} no está en el carrito, así que cant es ${cant}`)
+      return cant
+    }
+  }
+
+  const isProdInCarrito = (id) => {
+    let is = false
+
     carrito.map(item => {
-      if (item.id === id) cant = item.cant
+      if (item.id === id) {
+        is = true
+      }
       return true
     })
-    return cant
+
+    return is
   }
 
-  return { addProductoToCarrito, redProductoFromCarrito, delProductoFromCarrito, getCantProducto }
+  const clearCarrito = () => {
+    dispatch({ type: 'CLEAR_CARRITO' })
+  }
+
+  return { getCantProd, isProdInCarrito, clearCarrito }
 }

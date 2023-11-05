@@ -1,17 +1,21 @@
-import { useContext } from 'react'
+'use client'
+import { useContext, useState } from 'react'
 import { Sesion } from '../../context/Context'
 
 export default function SelectMnd () {
   // Traer los valores de las monedas y el dispatch del contexto
   const { mnd, dispatch } = useContext(Sesion)
+  const [actMnd, setActMnd] = useState(mnd)
+  const bs = { nombre: 'Bolívar', simb: 'Bs' }
+  const usd = { nombre: 'Dólar', simb: '$' }
 
   // ActionCreator para cambiar moneda
-  const cambiarMoneda = (moneda) => {
-    const payload = JSON.parse(moneda)
+  const handleCambio = (newMnd) => {
     dispatch({
       type: 'SET_CURRENCY',
-      payload
+      payload: newMnd
     })
+    setActMnd(newMnd)
   }
 
   return (
@@ -24,7 +28,7 @@ export default function SelectMnd () {
         aria-expanded='false'
         className='btn btn-primary text-secondary shadow-none dropdown-toggle'
       >
-        {mnd.nombre} ({mnd.simb})
+        {actMnd.nombre} ({actMnd.simb})
       </button>
 
       <ul
@@ -35,7 +39,7 @@ export default function SelectMnd () {
           <button
             id='item-mnd'
             className={'dropdown-item text-primary' + (mnd.nombre === 'Bolívar' ? ' active' : '')}
-            onClick={() => cambiarMoneda('{"nombre": "Bolívar", "simb": "Bs"}')}
+            onClick={() => handleCambio(bs)}
           >Bolívar (Bs)
           </button>
         </li>
@@ -43,7 +47,7 @@ export default function SelectMnd () {
           <button
             id='item-mnd'
             className={'dropdown-item text-primary' + (mnd.nombre === 'Dólar' ? ' active' : '')}
-            onClick={() => cambiarMoneda('{"nombre": "Dólar", "simb": "$"}')}
+            onClick={() => handleCambio(usd)}
           >Dólar ($)
           </button>
         </li>

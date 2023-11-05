@@ -1,40 +1,10 @@
-#carrito-detalles {
-    flex-basis: 70% !important;
+#item-lista-btn:hover {
+    background-color: var(--alter2) !important;
+    border: 1px solid var(--alter2) !important
 }
 
 #carrito-resumen {
-    flex-basis: 30% !important;
-}
-
-#carrito-item {
-    color: var(--primary) !important;
-}
-
-#item-img {
-    flex-basis: 25% !important;
-}
-
-#item-info {
-    flex-basis: 50% !important;
-}
-
-#item-actions {
-    flex-basis: 25% !important;
-}
-
-#item-red-btn:hover, #item-add-btn:hover {
-    background-color: var(--alter2) !important;
-    border: 1px solid var(--alter2);
-}
-
-#item-del-btn:hover {
-    color: var(--primary) !important;
-    background-color: var(--secondary) !important;
-    border: 1px solid var(--secondary);
-}
-
-#producto-item {
-    list-style: none;
+    
 }
 
 #comprar-btn:hover {
@@ -49,6 +19,10 @@
 /* Reglas para móviles */
 
 @media (max-width: 991.98px) {
+
+    #container-brief {
+        min-width: 700px;
+    }
     
     #separador-movil {
         display: block;
@@ -57,23 +31,7 @@
         border-radius: 1rem;
     }
 
-    #container-carrito {
-        margin-top: 13vh;
-    }
-
-    #carrito-detalles {
-        flex-basis: 100%;
-    }
-
-    #carrito-resumen {
-        flex-basis: 100%;
-    }
-
-    #carrito-resumen {
-        padding: 0 !important;
-    }
-
-    #item-actions {
+    #item-lista-btns {
         display: none !important;
     }
 }
@@ -82,21 +40,6 @@
 
 @media (max-width: 1199.98px) {
 
-    /* #item-actions {
-        display: none !important;
-    } */
 
-    #item-info, #item-info > * {
-        flex-basis: auto !important;
-    }
-
-    #item-actions {
-        flex-basis: content !important;
-        margin-left: auto;
-    }
-
-    #actions-edit-cant, #item-del-btn {
-        margin: 0 20px 0;
-    }
 
 }

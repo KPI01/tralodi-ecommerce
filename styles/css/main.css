@@ -1,7 +1,6 @@
 @import '_home';
 @import '_cart';
 @import '_login';
-@import './components/_navpills';
 @import './components/_footer';
 @import './components/_carousel';
 @import './components/_navbar';

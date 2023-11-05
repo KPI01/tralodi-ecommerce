@@ -10,10 +10,15 @@ export default function ContainerTarjetas ({ contexto }) {
             <div key={v4()} className='col'>
               <Tarjeta
                 id={item.id}
+                empresa={item.empresa}
+                marca={item.marca}
                 descripcion={item.descripcion}
                 medida={item.medida}
-                display={item.presentacion}
+                display={item.display}
+                categoria={item.categoria}
                 precio={item.precio}
+                descuento={item.descuento}
+                estado={item.estado}
               />
             </div>
           )
