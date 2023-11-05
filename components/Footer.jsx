@@ -58,7 +58,7 @@ export default function Footer () {
         {/* <div id='footer-nosotros' className='col-2'>
           <h6 className='fw-bold'>Nosotros</h6>
         </div> */}
-        <div id='footer-marca' className='col-auto container-fluid'>
+        <div id='footer-marca' className='col-auto container-fluid me-0'>
           <div className='row'>
             <div className='col'>
               <h5
