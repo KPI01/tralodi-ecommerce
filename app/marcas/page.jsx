@@ -1,10 +1,9 @@
 'use client'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { useState } from "react"
+import { useState } from 'react'
 import { marcas, productos } from '../../context/AppContext'
 import ProductosMarcas from '../../components/app/marcas/ProductosMarcas'
 import ContainerTarjetas from '../../components/visual/tarjetas/ContainerTarjetas'
-
 
 export default function Marcas () {
   const [current, setCurrent] = useState(1)
