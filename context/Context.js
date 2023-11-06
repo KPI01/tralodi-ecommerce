@@ -59,34 +59,7 @@ export const Reducer = (state, action) => {
 // Información básica para sesión
 const contexto = {
   mnd: { nombre: 'Bolívar', simb: 'Bs' },
-  carrito: [
-    {
-      id: 39100057,
-      empresa: 2,
-      marca: 'Alfonzo Rivas',
-      descripcion: 'Cronch Flakes',
-      display: 'Bolsa',
-      medida: '300 Gr',
-      categoria: 'Cereales',
-      cant: 1,
-      precio: 1,
-      estado: 'Activo',
-      descuento: 0
-    },
-    {
-      id: 144400204,
-      empresa: 2,
-      marca: 'McCormick',
-      descripcion: 'Hojas de albahaca',
-      display: 'Frasco',
-      medida: '16 Gr',
-      categoria: 'Infusiones',
-      cant: 2,
-      precio: 1,
-      estado: 'Activo',
-      descuento: 15
-    }
-  ]
+  carrito: []
 }
 
 // Creación del contexto

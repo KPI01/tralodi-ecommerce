@@ -1,12 +1,12 @@
 @import '_home';
 @import '_cart';
-@import '_login';
 @import './components/_footer';
 @import './components/_carousel';
 @import './components/_navbar';
 @import './components/_tarjetas';
 @import './components/_spinner';
 @import './components/_carousel_burbujas';
+@import './components/_tabs';
 
 /* Variables */
 :root {

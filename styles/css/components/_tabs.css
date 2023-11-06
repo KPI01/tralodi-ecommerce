@@ -1,0 +1,17 @@
+#marcas-selector {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+#marcas-selector > li > .nav-link {
+    color: var(--secondary);
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    min-width: max-content;
+}
+
+#marcas-selector > li > .nav-link.active {
+    color: var(--primary);
+    padding: 0.5rem 1rem !important;
+}

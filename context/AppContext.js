@@ -131,7 +131,7 @@ export const productos = [
     categoria: 'enlatados',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    descuento: 50
   },
   {
     id: 12423747,
