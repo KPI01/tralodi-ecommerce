@@ -10,15 +10,15 @@ export default function ProductosMarcas ({ contextoTarjetas }) {
   const [marcaAct, setMarcaAct] = useState(1)
   console.log('ID marca activa:', marcaAct)
 
-  //Media queries
+  // Media queries
   const lgDesktop = useMediaQuery('(min-width: 1200px)')
   const desktop = useMediaQuery('(min-width: 992px)')
   const tablet = useMediaQuery('(min-width: 768px)')
   const smLandscape = useMediaQuery('(min-width: 576px)')
-  console.log('ldDesktop:',lgDesktop)
-  console.log('desktop:',desktop)
-  console.log('tablet:',tablet)
-  console.log('smLandscape:',smLandscape)
+  console.log('ldDesktop:', lgDesktop)
+  console.log('desktop:', desktop)
+  console.log('tablet:', tablet)
+  console.log('smLandscape:', smLandscape)
 
   // Crear array de marcas para el componente
   let contextoMarcas = []
