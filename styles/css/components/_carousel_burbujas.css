@@ -67,3 +67,17 @@
     }
 
 }
+
+@media (min-width: 576px) {
+    
+    .burbuja {
+        min-width: 60px;
+        min-height: 60px;
+    }
+
+    .burbuja-img {
+        padding: 10% !important;
+        margin: auto !important;
+    }
+
+}
