@@ -16,7 +16,7 @@ export default function Home () {
   return (
     <div id='container-home' className='container-fluid'>
 
-      <Banner dir='home_carousel1' name='home-banner1' />
+      <Banner dir='home_carousel1' id='home-banner1' />
 
       <div id='seccion-ofertas' className='my-5 mx-auto'>
         <h2 id='ofertas-title' className='fw-bold'>
@@ -45,6 +45,7 @@ export default function Home () {
         <h3 id='nestle-titulo' className='display-5 fw-bold'>Destacados de Nestlé</h3>
         <ContainerTarjetas contexto={productosAct.filter(item => item.empresa === idNestle.id)} />
       </div>
+
     </div>
   )
 }
