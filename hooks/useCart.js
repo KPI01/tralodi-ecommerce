@@ -7,7 +7,7 @@ export default function useCart () {
   const { carrito, dispatch } = useContext(Sesion)
 
   const getCantProd = (id) => {
-    let cant = 0
+    let cant = 1
     if (carrito.find(item => item.id === id)) {
       cant = carrito.filter(item => item.id === id)[0].cant
       console.log(`${id} esta en el carrito con ${cant} unidades`)
