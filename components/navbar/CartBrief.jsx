@@ -19,9 +19,10 @@ export default function CartBrief () {
         className='bg-transparent text-primary'
       >
         <i id='cartbrief-icon' className='bi bi-cart-fill me-1' />
-        <span id='cartbrief-cant'>
-          {`${mnd.simb} ${mnd.simb === '$' ? total : totalBs}`}
-        </span>
+        {total > 0 &&
+          <span id='cartbrief-cant'>
+            {`${mnd.simb} ${mnd.simb === '$' ? total : totalBs}`}
+          </span>}
       </button>
     </Link>
   )
