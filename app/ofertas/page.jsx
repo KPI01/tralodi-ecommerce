@@ -1,5 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import CarouselOfertas from '../../components/app/ofertas/CarouselOfertas'
+import Banner from '../../components/app/ofertas/Banner'
 import { productos } from '../../context/AppContext'
 import ContainerTarjetas from '../../components/visual/tarjetas/ContainerTarjetas'
 
@@ -10,7 +10,7 @@ export default function Ofertas () {
     <div className='container-fluid'>
       <h2 className='fw-bold'>Ofertas</h2>
 
-      <CarouselOfertas />
+      <Banner dir='ofertas_carousel1' id='ofertas-banner1' />
 
       <div id='seccion-productos' className='mt-5'>
         <h3 className='fw-bold'>Productos</h3>
