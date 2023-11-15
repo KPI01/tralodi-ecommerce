@@ -27,16 +27,20 @@ export default function Cart () {
     )
   } else {
     return (
-      <div className='container-fluid'>
-        <div className='row gx-5'>
+      <div className='container-fluid px-5 px-md-0'>
+        <div className='row row-cols-auto gx-5'>
           <div
-            className='col-8 bg-alter1 text-primary rounded p-2'
-            style={{ '--bs-bg-opacity': 0.95, minWidth: '700px' }}
+            id='container-items'
+            className='col col-lg-7 bg-alter1 text-primary rounded p-2'
+            style={{ '--bs-bg-opacity': 0.95 }}
           >
             <h2 id='detalles-titulo' className='m-3 fw-bold'>Carrito</h2>
             <Lista context={carrito} />
           </div>
-          <div id='container-brief' className='col'>
+          <div
+            id='container-brief'
+            className='col col-lg-5'
+          >
             <Brief context={carrito} />
           </div>
         </div>

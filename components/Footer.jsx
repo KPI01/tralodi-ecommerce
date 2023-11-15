@@ -3,8 +3,8 @@ import Link from 'next/link'
 export default function Footer () {
   return (
     <footer id='footer' className='container'>
-      <div className='row'>
-        <div id='footer-nav' className='col-auto me-4'>
+      <div className='row row-cols-auto g-3 px-5 '>
+        <div id='footer-nav' className='col'>
           <h6 className='footer-section-title'>Navegación</h6>
           <ul className='footer-section-list'>
             <li className='footer-section-item'>
@@ -24,7 +24,7 @@ export default function Footer () {
             </li>
           </ul>
         </div>
-        <div id='footer-cliente' className='col-auto me-4'>
+        <div id='footer-cliente' className='col'>
           <h6 className='footer-section-title'>Servicio al cliente</h6>
           <ul className='footer-section-list'>
             <li className='footer-section-item'>
@@ -41,7 +41,7 @@ export default function Footer () {
             </li>
           </ul>
         </div>
-        <div id='footer-contacto' className='col-auto me-4'>
+        <div id='footer-contacto' className='col'>
           <h6 className='footer-section-title'>Contacto</h6>
           <ul className='footer-section-list'>
             <li className='footer-section-item'>
@@ -58,7 +58,7 @@ export default function Footer () {
         {/* <div id='footer-nosotros' className='col-2'>
           <h6 className='fw-bold'>Nosotros</h6>
         </div> */}
-        <div id='footer-marca' className='col-auto container-fluid me-0'>
+        <div id='footer-marca' className='col container-fluid m-auto'>
           <div className='row'>
             <div className='col'>
               <h5

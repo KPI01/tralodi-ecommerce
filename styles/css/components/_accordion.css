@@ -1,3 +1,7 @@
-.custom_accordion {
-    transition: all 0.15s !important;
+@media (max-width: 991.98px) {
+    
+    #container-filtros {
+        width: 100% !important;
+    }
+    
 }

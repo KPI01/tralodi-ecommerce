@@ -3,8 +3,8 @@ import { v4 } from 'uuid'
 
 export default function ContainerTarjetas ({ contexto }) {
   return (
-    <div className='container-fluid'>
-      <div className='row row-cols-auto g-3'>
+    <div className='container-fluid m-0' style={{ width: '100%' }}>
+      <div className='row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 px-auto' style={{ width: '100%' }}>
         {contexto.map(item => {
           return (
             <div key={v4()} className='col'>

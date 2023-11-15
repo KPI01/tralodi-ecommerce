@@ -18,26 +18,33 @@
 
 @media (max-width: 991.98px) {
 
-    #container-brief {
-        min-width: 700px;
-    }
-    
     #separador-movil {
         display: block;
-        border: 2.5px solid var(--secondary) !important;
+        border: 3px solid var(--secondary) !important;
         opacity: 1;
         border-radius: 1rem;
+    }
+
+    #container-brief {
+        width: 100% !important;
+        padding: 0
+    }
+
+    #container-items {
+        width: 100% !important;
     }
 
     #item-lista-btns {
         display: none !important;
     }
+
 }
 
-/* Reglas para monitores pequeños */
-
-@media (max-width: 1199.98px) {
-
-
+@media (max-width: 767.98px) {
+    
+    #container-brief {
+        padding: 0;
+        min-width: auto;
+    }
 
 }

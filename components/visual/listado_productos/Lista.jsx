@@ -5,7 +5,7 @@ export default function Lista ({ context }) {
 
   if (context.length >= 1) {
     return (
-      <ul className='list-group list-group-flush'>
+      <ul id='lista-carrito' className='list-group list-group-flush'>
         {context.map(item => {
           return (
             <ItemLista

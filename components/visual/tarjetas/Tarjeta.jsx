@@ -81,7 +81,7 @@ export default function Tarjeta ({ id, empresa, marca, descripcion, medida, disp
   return (
     <>
       <div
-        className='card'
+        className='card m-auto'
         style={{
           width: 'fit-content',
           minHeight: '330px'

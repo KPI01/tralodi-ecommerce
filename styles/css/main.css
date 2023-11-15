@@ -1,12 +1,12 @@
-@import '_home';
 @import '_cart';
+@import '_productos';
 @import './components/_footer';
 @import './components/_carousel';
 @import './components/_navbar';
-@import './components/_tarjetas';
 @import './components/_spinner';
 @import './components/_carousel_burbujas';
 @import './components/_tabs';
+@import './components/_accordion';
 
 /* Variables */
 :root {
@@ -21,4 +21,12 @@
     --rgb-alter1-opacity50: rgb(255 255 255 /0.5);
     --rgb-alter1-opacity25: rgb(255 255 255 /0.25);
     --rgb-alter2: rgb(40 225 250);
+}
+
+@media (max-width: 991.98px) {
+    
+    #main-container {
+        margin-top: 12vh !important;
+    }
+
 }

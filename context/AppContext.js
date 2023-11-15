@@ -160,20 +160,8 @@ export const productos = [
     descuento: 10
   },
   {
-    id: 12300949,
-    empresa: 'Nestlé',
-    marca: 'Nestlé',
-    descripcion: 'Nescafé',
-    display: 'NPRO vaso papel',
-    medida: '6 Oz',
-    categoria: 'Profesional',
-    cant: '25 Unidades',
-    precio: 1,
-    estado: 'Activo'
-  },
-  {
     id: 70115795,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestlé',
     descripcion: 'Café Soluble Tradiciñon',
     display: 'Frasco',
@@ -181,11 +169,12 @@ export const productos = [
     categoria: 'Profesional',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 0
   },
   {
     id: 70115796,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestlé',
     descripcion: 'Café Soluble Tradiciñon',
     display: 'Frasco',
@@ -193,11 +182,12 @@ export const productos = [
     categoria: 'Profesional',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 10
   },
   {
     id: 12417147,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Maggi',
     descripcion: 'Caldo de Pollo',
     display: 'Bolsa',
@@ -205,11 +195,12 @@ export const productos = [
     categoria: 'Profesional',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 5
   },
   {
     id: 12089217,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestea   ',
     descripcion: 'Nestea de Limón',
     display: 'Bolsa',
@@ -217,11 +208,12 @@ export const productos = [
     categoria: 'Bebida',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 0
   },
   {
     id: 12089218,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestea   ',
     descripcion: 'Nestea de Durazno',
     display: 'Bolsa',
@@ -229,11 +221,12 @@ export const productos = [
     categoria: 'Bebida',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 5
   },
   {
     id: 12089212,
-    empresa: 'Nestlé',
+    empresa: 1,
     marca: 'Nestea   ',
     descripcion: 'Nestea de Parchita',
     display: 'Bolsa',
@@ -241,7 +234,8 @@ export const productos = [
     categoria: 'Bebida',
     cant: '1 Unidad',
     precio: 1,
-    estado: 'Activo'
+    estado: 'Activo',
+    descuento: 0
   },
   {
     id: 12476007,

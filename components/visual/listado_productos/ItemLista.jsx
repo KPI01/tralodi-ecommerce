@@ -53,6 +53,7 @@ export default function ItemLista ({ id, descripcion, medida, display, precio, d
   if (refCant.current > 0) {
     return (
       <li
+        id='list-item'
         className='list-group-item bg-transparent text-primary container'
       >
         <div className='row'>
@@ -79,7 +80,7 @@ export default function ItemLista ({ id, descripcion, medida, display, precio, d
           <div className='col'>
             <h3 className='fw-bold mb-1' style={{ fontSize: '1rem' }}>{descripcion}</h3>
             <h4 style={{ fontSize: '0.95rem' }}>{`${display} ${medida}`}</h4>
-            <p className='m-0 d-flex align-items-center justify-content-between' style={{ fontSize: '0.9rem' }}>
+            <p id='item-lista-info' className='m-0 d-flex flex-wrap align-items-center justify-content-between' style={{ fontSize: '0.9rem' }}>
               {descuento > 0
                 ? mndS === '$'
                   ? (
@@ -95,7 +96,7 @@ export default function ItemLista ({ id, descripcion, medida, display, precio, d
                   : (
                     `Precio unitario: ${mndS} ${precioBs}`
                     )}
-              {descuento > 0 && <span className='badge bg-secondary text-primary'>{`- ${descuento}%`}</span>}
+              {descuento > 0 && <span className='badge bg-secondary text-primary my-2 my-lg-0'>{`- ${descuento}%`}</span>}
             </p>
             <p className='m-0' style={{ fontSize: '0.9rem' }}>{`Sub-total: ${mndS} ${mndS === '$' ? subTotal : subTotalBs}`}</p>
           </div>
@@ -111,8 +112,8 @@ export default function ItemLista ({ id, descripcion, medida, display, precio, d
               </button>
               <input
                 type='text'
-                className='form-control form-control-sm text-center'
-                style={{ width: '5ch', maxWidth: '40px' }}
+                className='form-control form-control-sm text-center p-1'
+                style={{ maxWidth: ((String(itemCant).length) + 4) + 'ch' }}
                 value={itemCant}
                 readOnly
               />

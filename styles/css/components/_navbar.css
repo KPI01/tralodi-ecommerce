@@ -89,11 +89,6 @@
     display: none;
 }
 
-#searchbar-btn, #searchbar-btn > i {
-    box-shadow: none;
-    transition: ease 0.15s;
-}
-
 #searchbar-btn:hover, #searchbar-btn > i:hover {
     color: var(--alter2) !important;
 }

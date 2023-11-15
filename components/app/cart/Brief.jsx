@@ -17,13 +17,13 @@ export default function Brief () {
       <hr id='separador-movil' />
       <div id='carrito-resumen'>
         <h2 className='fw-bold'>Resumen</h2>
-        <div id='resumen-info'>
-          <div id='info-subtotal'>
-            <span className='fs-3'>Sub-Total: {`${mndS} ${mndS === '$' ? subTotal : subTotalBs}`}</span>
+        <div>
+          <div>
+            <span className=''>Sub-Total: {`${mndS} ${mndS === '$' ? subTotal : subTotalBs}`}</span>
           </div>
-          <div id='resumen-iva'>
-            <h3 id='iva-titulo' className='mb-0 mt-2 fw-bold'>IVA</h3>
-            <ul id='productos-IVA' className='ps-1 mb-0'>
+          <div>
+            <h3 className='mb-0 mt-2'>IVA</h3>
+            <ul className='ps-1 mb-0'>
               {context.map(item => {
                 return (
                   <BriefItem
@@ -40,7 +40,7 @@ export default function Brief () {
               })}
             </ul>
           </div>
-          <h3 id='resumen-total' className='fw-bold mt-3 fs-2'>
+          <h3 className='fw-bold mt-3'>
             Total: {`${mndS} ${mndS === '$' ? total : totalBs}`}
           </h3>
         </div>
